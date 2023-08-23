@@ -1,9 +1,17 @@
+// $white: rgb(228,228,228);
+// $light-grey: rgb(143,143,143);
+// $dark-grey: rgb(73,73,73);
+// $turquoise: rgb(11,64,73);
+//
+
+
+
+
 //colors
-$white: rgb(228,228,228);
-$light-grey: rgb(143,143,143);
-$dark-grey: rgb(73,73,73);
-$turquoise: rgb(11,64,73);
-$black: rgb(22,22,22);
+$color-black: rgb(22,22,22);
 
-
-//themes
+//default theme
+$color-white: #FAF3F0; // Section, Static Nav, Sticky Nav Font, Tiles - Isabelline
+$color-light-grey: #E4DEDB; // Sections, Grids - Timberwolf
+$color-jet:  #434049; // Static Nav Font, Sticky Nav, Card Font - Jet
+$color-tropical-indigo: #957FEF; // Accents, Flavor Color - Tropical indigo

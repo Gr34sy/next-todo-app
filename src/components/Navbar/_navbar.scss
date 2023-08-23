@@ -2,17 +2,26 @@
   position: fixed;
   z-index: 5;
   width: 100%;
-  background: $turquoise;
+  background: $color-white;
+  color: $color-jet;
   transition: 0.5s;
   font-family: $font-headers;
 
-  -webkit-box-shadow: 0px 2px 5px 0px $black;
-  -moz-box-shadow: 0px 2px 5px 0px $black;
-  box-shadow: 0px 2px 5px 0px $black;
+  // -webkit-box-shadow: 0px 2px 5px 0px $color-black;
+  // -moz-box-shadow: 0px 2px 5px 0px $color-black;
+  // box-shadow: 0px 2px 5px 0px $color-black;
+
+  .logotype{
+    color: $color-jet;
+  }
+
+  a {
+    color: $color-jet;
+  }
 
   @media (min-width: 850px) {
-    padding-inline: 15px;
-    padding-block: 25px;
+    padding-inline: 1rem;
+    padding-block: 2.5rem;
   }
 }
 
@@ -43,12 +52,27 @@
 }
 
 .sticky {
-  padding-block: 0;
+  background-color: $color-tropical-indigo;
+  -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
+  -moz-box-shadow: 0px 2px 5px 0px $color-jet;
+  box-shadow: 0px 2px 5px 0px $color-jet;
+
+  .logotype{
+    color: $color-white;
+  } 
+
+  a {
+    color: $color-white;
+  }
+
+  @media (min-width: 850px) {
+    padding-block: 0.8rem;
+  }
 }
 
 .x-icon,
 .hamburger-icon {
-  color: $white;
+  color: $color-white;
   font-size: 2rem;
   padding: 15px;
 
@@ -63,7 +87,7 @@
   text-align: center;
   width: 100%;
   font-size: 1.2rem;
-  background-color: $turquoise;
+  background-color: $color-jet;
   position: fixed;
   top: 73px;
   margin: 0 auto;
@@ -76,7 +100,7 @@
 
     a {
       text-decoration: none;
-      color: $white;
+      color: $color-white;
       font-family: $font-main;
     }
   }
