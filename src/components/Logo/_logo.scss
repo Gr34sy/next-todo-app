@@ -1,18 +1,17 @@
 .logo {
-  
-    a {
-      display: block;
-      padding: 0;
-      margin: 0;
-      height: auto;
-      text-decoration: none;
-    }
+  a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    text-decoration: none;
   }
+}
 
-.logotype{
-    font-family: $font-logotype;
-    font-size: 2rem;
-    line-height: 1.1em;
-    color: $color-white;
-    text-align: center;
+.logotype {
+  font-family: $font-logotype;
+  font-size: 2rem;
+  line-height: 1.1em;
+  color: $color-white;
+  text-align: center;
 }

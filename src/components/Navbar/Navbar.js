@@ -22,8 +22,8 @@ export function Navbar(){
 
     return(
         <>
-        <nav className={scroll>50 ? 'navbar sticky' : 'navbar'} onScroll={(e) => e.currentTarget.class="scroll"}>
-            <div className="content">
+        <nav className={scroll>50 ? 'navbar nav--sticky' : 'navbar'} onScroll={(e) => e.currentTarget.class="scroll"}>
+            <div className="nav__content">
                 <Logo/>
 
                 <ul className="nav__list">
