@@ -1,6 +1,10 @@
-// import '@/styles/globals.css';
 import '@/styles/scss/main.scss';
+import  Layout  from '../components/Layout/Layout';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
