@@ -7,7 +7,7 @@
   transition: 0.5s;
   font-family: $font-headers;
   padding-block: 1.5rem;
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
 
   .logotype {
     color: $color-jet;
@@ -22,7 +22,7 @@
   }
 
   @media (min-width: 850px) {
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     padding-block: 2.5rem;
   }
 }
@@ -33,7 +33,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-inline: 20px;
 }
 
 .nav__list {
@@ -75,10 +74,6 @@
   .hamburger-icon {
     color: $color-white;
   }
-
-  @media (min-width: 850px) {
-    padding-block: 1rem;
-  }
 }
 
 .x-icon,
@@ -100,7 +95,7 @@
   font-size: 1.2rem;
   background-color: $color-jet;
   position: fixed;
-  top: 73px;
+  top: 140px;
   margin: 0 auto;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -114,10 +109,6 @@
       color: $color-white;
       font-family: $font-main;
     }
-  }
-
-  @media (min-width: 550px) {
-    width: 65%;
   }
 
   @include display-mobile;
