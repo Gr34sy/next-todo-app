@@ -1,16 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
 export function Logo({isDark}) {
   return (
     <div className={isDark ? "logo logo--dark" : "logo"}>
-      <a href="/">
-        
-        ToDo 
-        <span>
-          App
-        </span>
-      
-      </a>
+      <Link href="/">
+
+        ToDo <span> App </span>
+  
+      </Link>
     </div>
   );
 }
