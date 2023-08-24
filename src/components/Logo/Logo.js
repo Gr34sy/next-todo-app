@@ -1,10 +1,15 @@
 import React from "react";
 
-export function Logo() {
+export function Logo({isDark}) {
   return (
-    <div className="logo">
-      <a href="#">
-        <p className="logotype">ToDo</p>
+    <div className={isDark ? "logo logo--dark" : "logo"}>
+      <a href="/">
+        
+        ToDo 
+        <span>
+          App
+        </span>
+      
       </a>
     </div>
   );

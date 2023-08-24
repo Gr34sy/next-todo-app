@@ -20,11 +20,12 @@ export function Navbar(){
         return () => setScroll(0);
     },[])
 
+
     return(
         <>
         <nav className={scroll>50 ? 'navbar nav--sticky' : 'navbar'} onScroll={(e) => e.currentTarget.class="scroll"}>
             <div className="nav__content">
-                <Logo/>
+                <Logo isDark={scroll>50 ? false : true} />
 
                 <ul className="nav__list">
                     <li><a className="custom-link" href="#hero">Home</a></li>

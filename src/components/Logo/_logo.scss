@@ -1,17 +1,26 @@
 .logo {
+  font-family: $font-logotype;
+  font-size: 2rem;
+  line-height: 1.1em;
+  text-align: center;
   a {
-    display: block;
     padding: 0;
     margin: 0;
     height: auto;
     text-decoration: none;
+    color: $color-white;
+  }
+
+  span {
+    padding-left: 10px;
+    color: $color-jet;
   }
 }
 
-.logotype {
-  font-family: $font-logotype;
-  font-size: 2rem;
-  line-height: 1.1em;
-  color: $color-white;
-  text-align: center;
+.logo--dark {
+  color: $color-jet;
+
+  span {
+    color: $color-celestial-blue;
+  }
 }
