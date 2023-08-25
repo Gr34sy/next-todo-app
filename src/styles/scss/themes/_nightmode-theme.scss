@@ -1,0 +1,48 @@
+body.nightmode{
+    background-color: $color-onyx;
+
+    .navbar{
+        background-color: $color-onyx;
+
+        a {
+            color: $color-white;
+
+            span{
+                color: $color-celestial-blue;
+            }
+
+            &::before {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    .nav--sticky{
+        background-color: $color-jet;
+        
+        a {
+            color: $color-white;
+        
+            &::before {
+              background-color: $color-white;
+            }
+        }
+    }
+
+    .footer{
+        background-color: $color-jet;
+        color: $color-white;
+
+        a{
+            span{
+                color: $color-celestial-blue;
+            }
+
+            .footer__link{
+                &:hover{
+                    color: $color-celestial-blue;
+                }
+            }
+        }
+    }
+}
