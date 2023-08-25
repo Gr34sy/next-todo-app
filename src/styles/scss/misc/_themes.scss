@@ -1,5 +1,49 @@
 //celestial blue
 
 body.celestial-blue{
-    
+    // .navbar{
+        
+    // }
+
+    .nav--sticky{
+        background-color: $color-celestial-blue;
+    }
+
+    .footer{
+        background-color: $color-celestial-blue;
+    }
+}
+
+body.orange{
+    // .navbar{
+        
+    // }
+
+    .nav--sticky{
+        background-color: $color-orange;
+    }
+
+    .footer{
+        background-color: $color-orange;
+    }
+}
+
+body.midnight-green{
+    .nav--sticky{
+        background-color: $color-tiffany-blue;
+    }
+
+    .footer{
+        background-color: $color-tiffany-blue;
+    }
+}
+
+body.pinky{
+    .nav--sticky{
+        background-color: $color-pink;
+    }
+
+    .footer{
+        background-color: $color-pink;
+    }
 }
