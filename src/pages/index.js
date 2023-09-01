@@ -5,7 +5,12 @@ export default function HomePage() {
     <main>
 
       <div style={{height: '200vh'}}>
-          <Form/>
+          <Form>
+            <input name="title" className="form__input"/>
+            <input name="deadline" className="form__input"/>
+            <input name="tags" className="form__input"/>
+            <textarea name="description" rows="10" className="form__input"/>
+          </Form>
       </div>
     </main>
   )

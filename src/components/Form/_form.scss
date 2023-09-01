@@ -1,0 +1,38 @@
+.form{
+    padding-block: 100px;
+    background-color: $color-light-grey;
+    min-height: 600px;
+    margin: auto;
+    width: 70%;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form__button{
+    background-color: $color-jet;
+    color: $color-white;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+
+.form__input{
+    border-radius: 5px;
+    border: 2px solid transparent;
+    padding: 8px;
+    width: 55%;
+
+    &:focus{
+        border: 2px solid $color-celestial-blue;
+        outline: none;
+    }
+}
