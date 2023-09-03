@@ -19,6 +19,9 @@ body.nightmode {
 
   .nav--sticky {
     background-color: $color-jet;
+    -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
+    -moz-box-shadow: 0px 2px 5px 0px $color-jet;
+    box-shadow: 0px 2px 5px 0px $color-jet;
 
     a {
       color: $color-white;
@@ -33,10 +36,10 @@ body.nightmode {
     background-color: $color-ultraviolet;
 
     .form__button {
-      background-color: $color-onyx;
+      background-color: $color-cadet-gray;
 
       &:hover {
-        background-color: $color-cadet-gray;
+        background-color: $color-onyx;
       }
     }
 
@@ -68,7 +71,7 @@ body.nightmode {
 
       .footer__link {
         path {
-          color: $color-onyx;
+          color: $color-celestial-blue;
         }
 
         &:hover {

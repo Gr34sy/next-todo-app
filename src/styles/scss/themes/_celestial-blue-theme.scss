@@ -14,9 +14,9 @@ body.celestial-blue{
 
     .nav--sticky{
         background-color: $color-celestial-blue;
-        -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
-        -moz-box-shadow: 0px 2px 5px 0px $color-jet;
-        box-shadow: 0px 2px 5px 0px $color-jet;
+        -webkit-box-shadow: 0px 2px 5px 0px $color-onyx;
+        -moz-box-shadow: 0px 2px 5px 0px $color-onyx;
+        box-shadow: 0px 2px 5px 0px $color-onyx;
 
         a {
             color: $color-white;
@@ -31,10 +31,10 @@ body.celestial-blue{
         background-color: $color-powder-blue;
     
         .form__button {
-          background-color: $color-celestial-blue;
+          background-color: $color-byzantine-blue;
     
           &:hover {
-            background-color: $color-byzantine-blue;
+            background-color: $color-celestial-blue;
             
           }
         }

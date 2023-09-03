@@ -1,6 +1,5 @@
 .form {
   padding-block: 100px;
-  background-color: $color-light-grey;
   min-height: 500px;
   margin: auto;
   width: 70%;
@@ -17,7 +16,6 @@
 }
 
 .form__button {
-  background-color: $color-jet;
   color: $color-white;
   padding: 16px;
   outline: none;
@@ -28,7 +26,6 @@
 
   &:hover {
     cursor: pointer;
-    background-color: $color-tropical-indigo;
   }
 }
 
@@ -50,10 +47,6 @@
   justify-content: center;
   font-size: 1.5rem;
   cursor: pointer;
-  
-  path{
-    color: $color-onyx;
-  }
 }
 
 .label--textarea {
@@ -98,9 +91,6 @@
   cursor: pointer;
   border-radius: 4px;
 
-  &:checked {
-    background-color: $color-jet;
-  }
 }
 
 .checkbox__div {

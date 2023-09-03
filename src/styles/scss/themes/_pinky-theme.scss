@@ -1,33 +1,61 @@
-body.pinky{
-    .navbar{
+body.pinky {
+  .navbar {
+    background-color: $color-white;
+
+    a {
+      color: $color-jet;
+
+      &::before {
+        background-color: $color-jet;
+      }
+    }
+  }
+
+  .nav--sticky {
+    background-color: $color-pink;
+    -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
+    -moz-box-shadow: 0px 2px 5px 0px $color-jet;
+    box-shadow: 0px 2px 5px 0px $color-jet;
+
+    a {
+      color: $color-white;
+
+      &::before {
         background-color: $color-white;
-
-        a {
-            color: $color-jet;
-        
-            &::before {
-              background-color: $color-jet;
-            }
-        }
+      }
     }
+  }
 
-    .nav--sticky{
+  .form {
+    background-color: $color-light-grey;
+
+    .form__button {
+      background-color: $color-onyx;
+
+      &:hover {
         background-color: $color-pink;
-        -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
-        -moz-box-shadow: 0px 2px 5px 0px $color-jet;
-        box-shadow: 0px 2px 5px 0px $color-jet;
-
-        a {
-            color: $color-white;
-        
-            &::before {
-              background-color: $color-white;
-            }
-        }
+      }
     }
 
-    .footer{
-        background-color: $color-pink;
-        color: $color-white;
+    .label__icon {
+      path {
+        color: $color-onyx;
+      }
     }
+
+    .checkbox__description {
+      color: $color-onyx;
+    }
+
+    .form__checkbox {
+      &:checked {
+        background-color: $color-onyx;
+      }
+    }
+  }
+
+  .footer {
+    background-color: $color-pink;
+    color: $color-white;
+  }
 }
