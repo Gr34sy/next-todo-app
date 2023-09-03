@@ -11,6 +11,7 @@ body.celestial-blue{
         }
     }
 
+
     .nav--sticky{
         background-color: $color-celestial-blue;
         -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
@@ -26,8 +27,43 @@ body.celestial-blue{
         }
     }
 
+    .form {
+        background-color: $color-powder-blue;
+    
+        .form__button {
+          background-color: $color-celestial-blue;
+    
+          &:hover {
+            background-color: $color-byzantine-blue;
+            
+          }
+        }
+    
+        .label__icon {
+          path {
+            color: $color-byzantine-blue;
+          }
+        }
+    
+        .checkbox__description {
+          color: $color-onyx;
+        }
+    
+        .form__checkbox {
+          &:checked {
+            background-color: $color-byzantine-blue;
+          }
+        }
+      }
+
     .footer{
         background-color: $color-celestial-blue;
         color: $color-white;
+
+        .footer__link{
+            path{
+                color: $color-onyx;
+            }
+        }
     }
 }
