@@ -8,43 +8,77 @@ import { faTag } from "@fortawesome/free-solid-svg-icons";
 export function FormCreateTaskList() {
   return (
     <Form>
-      <label className="form__label" for="title">
+      <label className="form__label" htmlFor="form-title">
         <div className="label__icon">
           <FontAwesomeIcon icon={faList} />
         </div>
 
-        <input name="title" className="form__input" placeholder="List Title" />
+        <input
+          type="text"
+          name="title"
+          id="form-title"
+          className="form__input"
+          placeholder="List Title"
+        />
       </label>
 
-      <label className="form__label" for="deadline">
+      <label className="form__label" htmlFor="form-deadline">
         <div className="label__icon">
           <FontAwesomeIcon icon={faCalendarDays} />
         </div>
 
-        <input name="deadline" className="form__input" placeholder="Deadline" />
+        <input
+          type="text"
+          onFocus={(e) => (e.target.type = "date")}
+          onBlur={(e) => (e.target.type = "text")}
+          name="deadline"
+          id="form-deadline"
+          className="form__input"
+          placeholder="Deadline"
+        />
       </label>
 
-      <label className="form__label" for="tags">
+      <label className="form__label" htmlFor="form-tags">
         <div className="label__icon">
           <FontAwesomeIcon icon={faTag} />
         </div>
 
-        <input name="tags" className="form__input" placeholder="Tags" />
+        <input
+          type="text"
+          name="tags"
+          id="form-tags"
+          className="form__input"
+          placeholder="Tags"
+        />
       </label>
 
       <button className="form__button form__button--tag">Add Tag</button>
 
-      <label className="form__label label--textarea" for="description">
+      <label className="form__label label--textarea" htmlFor="form-description">
         <div className="label__icon">
           <FontAwesomeIcon icon={faNoteSticky} />
         </div>
 
         <textarea
           name="description"
+          id="form-description"
           rows="10"
           className="form__input"
           placeholder="Description"
         />
+      </label>
+
+      <label className="form__label" htmlFor="form-pinned">
+        <div className="checkbox__div">
+          <input
+            type="checkbox"
+            name="pinned"
+            id="form-pinned"
+            className="form__checkbox"
+          />
+        </div>
+
+        <p className="checkbox__description">Pinned List</p>
       </label>
     </Form>
   );
