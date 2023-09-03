@@ -1,48 +1,82 @@
-body.nightmode{
+body.nightmode {
+  background-color: $color-onyx;
+
+  .navbar {
     background-color: $color-onyx;
 
-    .navbar{
-        background-color: $color-onyx;
+    a {
+      color: $color-white;
 
-        a {
-            color: $color-white;
+      span {
+        color: $color-celestial-blue;
+      }
 
-            span{
-                color: $color-celestial-blue;
-            }
+      &::before {
+        background-color: $color-white;
+      }
+    }
+  }
 
-            &::before {
-                background-color: $color-white;
-            }
-        }
+  .nav--sticky {
+    background-color: $color-jet;
+
+    a {
+      color: $color-white;
+
+      &::before {
+        background-color: $color-white;
+      }
+    }
+  }
+
+  .form {
+    background-color: $color-ultraviolet;
+
+    .form__button {
+      background-color: $color-onyx;
+
+      &:hover {
+        background-color: $color-cadet-gray;
+      }
     }
 
-    .nav--sticky{
-        background-color: $color-jet;
-        
-        a {
-            color: $color-white;
-        
-            &::before {
-              background-color: $color-white;
-            }
-        }
+    .label__icon {
+      path {
+        color: $color-cadet-gray;
+      }
     }
 
-    .footer{
-        background-color: $color-jet;
-        color: $color-white;
-
-        a{
-            span{
-                color: $color-celestial-blue;
-            }
-
-            .footer__link{
-                &:hover{
-                    color: $color-celestial-blue;
-                }
-            }
-        }
+    .checkbox__description {
+      color: $color-cadet-gray;
     }
+
+    .form__checkbox {
+
+      &:checked {
+        background-color: $color-cadet-gray;
+      }
+    }
+  }
+
+  .footer {
+    background-color: $color-jet;
+    color: $color-white;
+
+    a {
+      span {
+        color: $color-celestial-blue;
+      }
+
+      .footer__link {
+
+        path{
+            color: $color-onyx;
+        }
+
+        &:hover {
+          color: $color-celestial-blue;
+        }
+      }
+    }
+  }
 }

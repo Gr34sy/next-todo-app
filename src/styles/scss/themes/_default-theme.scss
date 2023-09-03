@@ -3,19 +3,19 @@ body.default{
         background-color: $color-white;
 
         a {
-            color: $color-jet;
+            color: $color-onyx;
         
             &::before {
-              background-color: $color-jet;
+              background-color: $color-onyx;
             }
         }
     }
 
     .nav--sticky{
         background-color: $color-tropical-indigo;
-        -webkit-box-shadow: 0px 2px 5px 0px $color-jet;
-        -moz-box-shadow: 0px 2px 5px 0px $color-jet;
-        box-shadow: 0px 2px 5px 0px $color-jet;
+        -webkit-box-shadow: 0px 2px 5px 0px $color-onyx;
+        -moz-box-shadow: 0px 2px 5px 0px $color-onyx;
+        box-shadow: 0px 2px 5px 0px $color-onyx;
 
         a {
             color: $color-white;
