@@ -29,8 +29,6 @@ export function FormCreateTaskList() {
 
         <input
           type="text"
-          onFocus={(e) => (e.target.type = "date")}
-          onBlur={(e) => (e.target.type = "text")}
           name="deadline"
           id="form-deadline"
           className="form__input"
@@ -70,12 +68,12 @@ export function FormCreateTaskList() {
 
       <label className="form__label" htmlFor="form-pinned">
         <div className="checkbox__div">
-          <input
-            type="checkbox"
-            name="pinned"
-            id="form-pinned"
-            className="form__checkbox"
-          />
+        <input
+          type="checkbox"
+          name="pinned"
+          id="form-pinned"
+          className="form__checkbox"
+        />
         </div>
 
         <p className="checkbox__description">Pinned List</p>

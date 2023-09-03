@@ -1,4 +1,4 @@
-import { FormCreateTaskList } from "@/components/FormCreateTaskList/FormCreateTaskList";
+import { FormCreateTaskList } from "@/components/Forms/FormCreateTaskList";
 
 export default function HomePage() {
   return (
