@@ -1,0 +1,28 @@
+.app-info__wrapper{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-info__pictures{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.pic1, .pic2{
+    width: 350px;
+    height: 400px;
+    background-color: $color-onyx;
+}
+
+.app-info__content{
+    height: 850px;
+    width: 800px;
+    background-color: $color-light-grey;
+}
+
+.app-info__header{
+    text-align: center;
+}
