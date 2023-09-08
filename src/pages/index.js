@@ -6,7 +6,7 @@ export default function HomePage() {
       <section className="app-info section section--colored">
         <div className="app-info__wrapper">
           <div className="app-info__pictures">
-            <div className="app-info__picture-1">
+            <div className="app-info__picture-div-1">
               <Image
                 className="app-info__image"
                 src="/images/CoffeeNotes.jpg"
@@ -16,7 +16,7 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="app-info__picture-2">
+            <div className="app-info__picture-div-2">
               <Image
                 className="app-info__image"
                 src="/images/Notes.jpg"
