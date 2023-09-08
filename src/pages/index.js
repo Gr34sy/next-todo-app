@@ -6,21 +6,23 @@ export default function HomePage() {
       <section className="app-info section section--colored">
         <div className="app-info__wrapper">
           <div className="app-info__pictures">
-            <div className="pic1">
+            <div className="app-info__picture-1">
               <Image
                 className="app-info__image"
                 src="/images/CoffeeNotes.jpg"
                 fill={true}
                 alt="Coffe Notes"
+                sizes="(max-width: 768px) 100vw"
               />
             </div>
 
-            <div className="pic2">
+            <div className="app-info__picture-2">
               <Image
                 className="app-info__image"
                 src="/images/Notes.jpg"
                 fill={true}
                 alt="Notes"
+                sizes="(max-width: 1050px) 100vw"
               />
             </div>
           </div>
