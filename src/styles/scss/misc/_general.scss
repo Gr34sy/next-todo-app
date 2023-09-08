@@ -16,8 +16,17 @@ body{
 }
 
 .section{
-    padding-block: 100px;
-    padding-inline: 200px;
+    padding-block: 30px;
+    padding-inline: 30px;
+
+    @media(min-width: 1050px){
+        padding-inline: 80px;
+        padding-block: 100px;
+    }
+
+    @media(min-width: 1465px){
+        padding-inline: 200px;
+    }
 }
 
 .custom-link{
