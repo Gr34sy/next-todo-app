@@ -1,4 +1,8 @@
 body.orange {
+  .text-highlight{
+    color: $color-orange;
+  }
+
   .navbar {
     background-color: $color-white;
 
@@ -24,6 +28,10 @@ body.orange {
         background-color: $color-white;
       }
     }
+  }
+
+  .app-info__content {
+    background-color: $color-light-grey;
   }
 
   .form {

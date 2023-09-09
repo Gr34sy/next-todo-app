@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Logo } from "@/components/Logo/Logo";
 
 export default function HomePage() {
   return (
@@ -28,12 +29,17 @@ export default function HomePage() {
           </div>
 
           <div className="app-info__content">
-            <h1 className="app-info__header">About the app</h1>
+            <h1 className="app-info__header">
+              About the <Logo isDark={true} />{" "}
+            </h1>
 
-            <p className="app-info__description">
-              In ToDo App (logotype) you can not only create a simple todo list,
-              but you can also create a much advanced tasklist.
-            </p>
+            <div className="app-info__description">
+              <p className="app-info__description_p">
+                In this app you can not only create a simple todo list, but you can also
+                create a much advanced lists which are called 
+                <span className="text-highlight"> tasklists</span>.
+              </p>
+            </div>
           </div>
         </div>
       </section>

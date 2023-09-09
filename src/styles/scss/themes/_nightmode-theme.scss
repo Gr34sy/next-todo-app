@@ -1,6 +1,10 @@
 body.nightmode {
   background-color: $color-onyx;
 
+  .text-highlight{
+    color: $color-cadet-gray;
+  }
+
   .navbar {
     background-color: $color-onyx;
 
@@ -28,6 +32,18 @@ body.nightmode {
 
       &::before {
         background-color: $color-white;
+      }
+    }
+  }
+
+  .app-info__content {
+    background-color: $color-ultraviolet;
+    
+    .app-info__header{
+      .logo{
+        a {
+          color: $color-white;
+        }
       }
     }
   }

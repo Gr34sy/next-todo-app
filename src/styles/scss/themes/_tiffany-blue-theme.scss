@@ -1,4 +1,8 @@
 body.tiffany-blue {
+  .text-highlight{
+    color: $color-celestial-blue;
+  }
+
   .navbar {
     background-color: $color-white;
 
@@ -26,8 +30,12 @@ body.tiffany-blue {
     }
   }
 
+  .app-info__content {
+    background-color: $color-light-grey;
+  }
+
   .form {
-    background-color: $color-powder-blue;
+    background-color: $color-light-grey;
 
     .form__button {
       background-color: $color-onyx;

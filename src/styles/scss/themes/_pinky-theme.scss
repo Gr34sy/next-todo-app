@@ -1,4 +1,8 @@
 body.pinky {
+  .text-highlight{
+    color: $color-pink;
+  }
+
   .navbar {
     background-color: $color-white;
 
@@ -24,6 +28,10 @@ body.pinky {
         background-color: $color-white;
       }
     }
+  }
+
+  .app-info__content {
+    background-color: $color-light-grey;
   }
 
   .form {

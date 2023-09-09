@@ -1,6 +1,10 @@
 body.midnight-green {
   background-color: $color-midnight-green;
 
+  .text-highlight{
+    color: $color-midnight-green;
+  }
+
   .navbar {
     background-color: $color-midnight-green;
 
@@ -28,6 +32,18 @@ body.midnight-green {
 
       &::before {
         background-color: $color-onyx;
+      }
+    }
+  }
+
+  .app-info__content {
+    background-color: $color-cadet-gray;
+
+    .app-info__header{
+      .logo{
+        a {
+          color: $color-white;
+        }
       }
     }
   }
