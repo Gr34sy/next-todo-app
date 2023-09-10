@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
+import Link from "next/link";
+
 
 export function Navbar(){
     const [scroll, setScroll] = useState(0);
@@ -28,10 +30,10 @@ export function Navbar(){
                 <Logo isDark={scroll>50 ? false : true} />
 
                 <ul className="nav__list">
-                    <li><a className="custom-link" href="#hero">Home</a></li>
-                    <li><a className="custom-link" href="#about">About Me</a></li>
-                    <li><a className="custom-link" href="#gallery">Gallery</a></li>
-                    <li><a className="custom-link" href="#footer">Contact</a></li>
+                    <li><Link className="custom-link" href="/">Home</Link></li>
+                    <li><Link className="custom-link" href="/about-app">About App</Link></li>
+                    <li><Link className="custom-link" href="/lists">Your Lists</Link></li>
+                    <li><Link className="custom-link" href="list-creator">List Creator</Link></li>
                 </ul>
 
                 { !showMobileList && <div className="hamburger-icon" onClick={() => setShowMobileList(true)}>
@@ -46,10 +48,10 @@ export function Navbar(){
         
         { showMobileList && 
         <ul className="nav__list--mobile">
-            <li><a className="custom-link" href="#hero">Home</a></li>
-            <li><a className="custom-link" href="#about">About Me</a></li>
-            <li><a className="custom-link" href="#gallery">Gallery</a></li>
-            <li><a className="custom-link" href="#footer">Contact</a></li>
+            <li><Link className="custom-link" href="/">Home</Link></li>
+            <li><Link className="custom-link" href="/about-app">About App</Link></li>
+            <li><Link className="custom-link" href="/lists">Your Lists</Link></li>
+            <li><Link className="custom-link" href="list-creator">List Creator</Link></li>
         </ul>}
         </>
     )
