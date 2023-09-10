@@ -1,6 +1,10 @@
 body.tiffany-blue {
   .text-highlight{
     color: $color-celestial-blue;
+
+    a{
+      color: $color-celestial-blue;
+    }
   }
 
   .navbar {

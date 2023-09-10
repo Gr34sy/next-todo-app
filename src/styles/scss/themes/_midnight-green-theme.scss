@@ -3,6 +3,10 @@ body.midnight-green {
 
   .text-highlight{
     color: $color-midnight-green;
+
+    a{
+      color: $color-midnight-green;
+    }
   }
 
   .navbar {

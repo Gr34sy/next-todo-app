@@ -3,6 +3,10 @@ body.nightmode {
 
   .text-highlight{
     color: $color-cadet-gray;
+
+    a{
+      color: $color-cadet-gray;
+    }
   }
 
   .navbar {

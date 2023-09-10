@@ -1,6 +1,10 @@
 body.default {
-  .text-highlight{
+  .text-highlight {
     color: $color-tropical-indigo;
+
+    a {
+      color: $color-tropical-indigo;
+    }
   }
 
   .navbar {

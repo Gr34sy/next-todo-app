@@ -1,6 +1,10 @@
 body.orange {
   .text-highlight{
     color: $color-orange;
+
+    a{
+      color: $color-orange;
+    }
   }
 
   .navbar {

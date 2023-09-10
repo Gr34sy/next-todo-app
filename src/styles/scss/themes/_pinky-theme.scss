@@ -1,6 +1,10 @@
 body.pinky {
   .text-highlight{
     color: $color-pink;
+    
+    a{
+      color: $color-pink;
+    }
   }
 
   .navbar {
