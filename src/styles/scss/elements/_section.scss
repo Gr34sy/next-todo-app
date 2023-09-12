@@ -1,0 +1,42 @@
+.main {
+  padding-block: 30px 80px;
+  padding-inline: 30px;
+
+  @media (min-width: 1050px) {
+    padding-inline: 80px;
+    padding-block: 50px;
+  }
+
+}
+
+.section {
+  padding-block: 80px;
+  padding-inline: 30px;
+
+  @media (min-width: 1050px) {
+    padding-inline: 80px;
+    padding-block: 50px;
+  }
+}
+
+.section__header {
+  text-align: center;
+  font-family: $font-headers;
+  color: $color-jet;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.3em;
+  padding-bottom: 15px;
+
+  .logo a {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1050px) {
+    font-size: $h-size;
+
+    .logo a {
+      font-size: $h-size;
+    }
+  }
+}

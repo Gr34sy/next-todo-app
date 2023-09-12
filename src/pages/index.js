@@ -2,8 +2,10 @@ import { FormLogIn } from "@/components/Forms/FormLogIn";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="main">
+      
       <FormLogIn />
+      
     </main>
   );
 }

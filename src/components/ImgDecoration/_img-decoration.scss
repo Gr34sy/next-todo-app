@@ -1,0 +1,16 @@
+.image__decoration--bottom {
+  bottom: -18px;
+  left: -15px;
+}
+
+.image__decoration--top {
+  top: -18px;
+  right: -15px;
+  transform: rotate(180deg);
+}
+
+.image__decoration--bottom,
+.image__decoration--top {
+  position: absolute;
+  z-index: 3;
+}
