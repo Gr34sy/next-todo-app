@@ -40,21 +40,48 @@ body.midnight-green {
     }
   }
 
-  .app-info__content {
-    background-color: $color-cadet-gray;
+  .section__header{
+    color: $color-white;
 
-    .app-info__header{
-      .logo{
-        a {
-          color: $color-white;
-        }
+    .logo a {
+      color: $color-jet;
+    }
+  }
+
+  .section__description_h2{
+    color: $color-white;
+  }
+
+  .section__description_p{
+    color: $color-cadet-gray
+  }
+
+  .section--colored{
+    background-color: $color-midnight-green;
+
+    .text-highlight{
+      color: $color-white;
+
+      a{
+        color: $color-white;
       }
     }
   }
 
-  .section--colored{
+  .app-info__content {
     background-color: $color-cadet-gray;
+
+    .section__header{
+      .logo a {
+        color: $color-jet;
+      }
+    }
+
+    .section__description_h2, .section__description_p{
+      color: $color-onyx;
+    }
   }
+
 
   .form {
     background-color: $color-cadet-gray;

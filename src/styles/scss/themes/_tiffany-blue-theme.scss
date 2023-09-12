@@ -34,6 +34,17 @@ body.tiffany-blue {
     }
   }
 
+  .section__header{
+    .logo a {
+      color: $color-jet;
+    }
+  }
+  .section__description_h2, .section__description_p{
+    color: $color-onyx;
+  }
+  .section--colored{
+    background-color: $color-light-grey;
+  }
   .app-info__content {
     background-color: $color-light-grey;
   }

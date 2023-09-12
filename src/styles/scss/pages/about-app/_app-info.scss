@@ -67,7 +67,6 @@
   min-height: 1000px;
   border-radius: $border-radius;
   padding: 1rem;
-  color: $color-onyx;
 
   @media (min-width: 1050px) {
     padding: 2rem;
@@ -76,21 +75,4 @@
   @media (min-width: 1465px) {
     width: 70%;
   }
-}
-
-.app-info__description{
-  font-family: $font-main;
-  font-size: 1.1rem;
-  line-height: 1.5em;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.app-info__description_h2{
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: $color-jet;
-  margin-top: 20px;
 }

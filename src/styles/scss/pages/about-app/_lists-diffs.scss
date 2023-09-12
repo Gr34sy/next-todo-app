@@ -6,8 +6,8 @@
     width: 100%;
     position: relative;
     height: 350px;
+}
 
-    @media (min-width: 1050px) {
-        height: 475px;
-    }
+.lists-diffs__content{
+    padding-top: 40px;
 }

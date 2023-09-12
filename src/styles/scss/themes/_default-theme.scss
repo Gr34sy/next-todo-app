@@ -34,11 +34,18 @@ body.default {
     }
   }
 
-  .app-info__content {
+  .section__header{
+    .logo a {
+      color: $color-jet;
+    }
+  }
+  .section__description_h2, .section__description_p{
+    color: $color-onyx;
+  }
+  .section--colored{
     background-color: $color-light-grey;
   }
-
-  .section--colored{
+  .app-info__content {
     background-color: $color-light-grey;
   }
 
