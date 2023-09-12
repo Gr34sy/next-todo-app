@@ -4,7 +4,7 @@ export function Form(props) {
       <div className="form__wrapper">
         {props.children}
         <button className="form__button form__button--create">
-          Create List
+          {props.formSubmitText}
         </button>
       </div>
     </form>

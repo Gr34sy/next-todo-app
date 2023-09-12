@@ -5,7 +5,7 @@ import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 export function FormCreateSimpleList() {
   return (
-    <Form>
+    <Form formSubmitText="Create List">
       <label className="form__label" htmlFor="form-title">
         <div className="label__icon">
           <FontAwesomeIcon icon={faList} />
