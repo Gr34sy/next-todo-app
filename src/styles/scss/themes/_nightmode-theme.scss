@@ -78,6 +78,34 @@ body.nightmode {
         background-color: $color-cadet-gray;
       }
     }
+
+    .form__login-methods__title {
+      color: $color-white
+    }
+
+    .form__button--method {
+      color: $color-onyx;
+      background-color: $color-white;
+      border: 3px solid $color-ultraviolet;
+
+      path {
+        color: $color-onyx;
+      }
+    
+      &:hover {
+        border-color: $color-white;
+      }
+    
+      &.chosen-login-method,
+      &:hover {
+        color: $color-white;
+        background-color: $color-cadet-gray;
+    
+        path {
+          color: $color-white;
+        }
+      }
+    }
   }
 
   .footer {

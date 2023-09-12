@@ -64,6 +64,30 @@ body.default {
         background-color: $color-onyx;
       }
     }
+
+    .form__button--method {
+      color: $color-onyx;
+      background-color: $color-white;
+      border: 3px solid $color-light-grey;
+
+      path {
+        color: $color-onyx;
+      }
+    
+      &:hover {
+        border-color: $color-white;
+      }
+    
+      &.chosen-login-method,
+      &:hover {
+        color: $color-white;
+        background-color: $color-tropical-indigo;
+    
+        path {
+          color: $color-white;
+        }
+      }
+    }
   }
 
   .footer {

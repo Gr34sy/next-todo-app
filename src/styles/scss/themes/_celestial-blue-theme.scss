@@ -1,83 +1,105 @@
-body.celestial-blue{
-    .text-highlight{
-      color: $color-byzantine-blue;
-    }
+body.celestial-blue {
+  .text-highlight {
+    color: $color-byzantine-blue;
+  }
 
-    .navbar{
+  .navbar {
+    background-color: $color-white;
+
+    a {
+      color: $color-jet;
+
+      &::before {
+        background-color: $color-jet;
+      }
+    }
+  }
+
+  .nav--sticky {
+    background-color: $color-celestial-blue;
+    -webkit-box-shadow: 0px 2px 5px 0px $color-onyx;
+    -moz-box-shadow: 0px 2px 5px 0px $color-onyx;
+    box-shadow: 0px 2px 5px 0px $color-onyx;
+
+    a {
+      color: $color-white;
+
+      &::before {
         background-color: $color-white;
-
-        a {
-            color: $color-jet;
-        
-            &::before {
-              background-color: $color-jet;
-            }
-        }
+      }
     }
+  }
 
+  .app-info__content {
+    background-color: $color-powder-blue;
 
-    .nav--sticky{
+    .app-info__header {
+      .logo a {
+        color: $color-white;
+      }
+    }
+  }
+
+  .form {
+    background-color: $color-powder-blue;
+
+    .form__button {
+      background-color: $color-byzantine-blue;
+
+      &:hover {
         background-color: $color-celestial-blue;
-        -webkit-box-shadow: 0px 2px 5px 0px $color-onyx;
-        -moz-box-shadow: 0px 2px 5px 0px $color-onyx;
-        box-shadow: 0px 2px 5px 0px $color-onyx;
-
-        a {
-            color: $color-white;
-        
-            &::before {
-              background-color: $color-white;
-            }
-        }
+      }
     }
 
-    .app-info__content {
-      background-color: $color-powder-blue;
+    .label__icon {
+      path {
+        color: $color-byzantine-blue;
+      }
+    }
 
-      .app-info__header{
-        .logo a{
+    .checkbox__description {
+      color: $color-onyx;
+    }
+
+    .form__checkbox {
+      &:checked {
+        background-color: $color-byzantine-blue;
+      }
+    }
+
+    .form__button--method {
+      color: $color-byzantine-blue;
+      background-color: $color-white;
+      border: 3px solid $color-powder-blue;
+
+      path {
+        color: $color-byzantine-blue;
+      }
+
+      &:hover {
+        border-color: $color-white;
+      }
+
+      &.chosen-login-method,
+      &:hover {
+        color: $color-white;
+        background-color: $color-celestial-blue;
+
+        path {
           color: $color-white;
         }
       }
     }
+  }
 
-    .form {
-        background-color: $color-powder-blue;
-    
-        .form__button {
-          background-color: $color-byzantine-blue;
-    
-          &:hover {
-            background-color: $color-celestial-blue;
-            
-          }
-        }
-    
-        .label__icon {
-          path {
-            color: $color-byzantine-blue;
-          }
-        }
-    
-        .checkbox__description {
-          color: $color-onyx;
-        }
-    
-        .form__checkbox {
-          &:checked {
-            background-color: $color-byzantine-blue;
-          }
-        }
+  .footer {
+    background-color: $color-celestial-blue;
+    color: $color-white;
+
+    .footer__link {
+      path {
+        color: $color-onyx;
       }
-
-    .footer{
-        background-color: $color-celestial-blue;
-        color: $color-white;
-
-        .footer__link{
-            path{
-                color: $color-onyx;
-            }
-        }
     }
+  }
 }

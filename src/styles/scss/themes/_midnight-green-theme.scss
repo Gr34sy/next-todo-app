@@ -78,6 +78,30 @@ body.midnight-green {
         background-color: $color-onyx;
       }
     }
+
+    .form__button--method {
+      color: $color-onyx;
+      background-color: $color-white;
+      border: 3px solid $color-cadet-gray;
+
+      path {
+        color: $color-onyx;
+      }
+    
+      &:hover {
+        border-color: $color-white;
+      }
+    
+      &.chosen-login-method,
+      &:hover {
+        color: $color-white;
+        background-color: $color-midnight-green;
+    
+        path {
+          color: $color-white;
+        }
+      }
+    }
   }
 
   .footer {
