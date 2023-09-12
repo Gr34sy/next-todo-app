@@ -4,37 +4,37 @@ import { Logo } from "@/components/Logo/Logo";
 export default function AboutAppPage() {
   return (
     <main>
-      <section className="app-info section section--colored">
+      <section className="app-info section">
         <div className="app-info__wrapper">
           <div className="app-info__pictures">
             <Image
               src="/images/ImgDecoration.png"
               width={120}
               height={100}
-              className="app-info__decoration-top"
+              className="image__decoration--top"
               alt="image decoration"
             />
             <Image
               src="/images/ImgDecoration.png"
               width={120}
               height={100}
-              className="app-info__decoration-bottom"
+              className="image__decoration--bottom"
               alt="image decoration"
             />
 
             <div className="app-info__picture-div-1">
               <Image
-                className="app-info__image"
+                className="next-image"
                 src="/images/MacNotes.jpg"
                 fill={true}
-                alt="Coffe Notes"
+                alt="Macbook Notes"
                 sizes="(max-width: 768px) 100vw"
               />
             </div>
 
             <div className="app-info__picture-div-2">
               <Image
-                className="app-info__image"
+                className="next-image"
                 src="/images/Notes.jpg"
                 fill={true}
                 alt="Notes"
@@ -44,7 +44,7 @@ export default function AboutAppPage() {
           </div>
 
           <div className="app-info__content">
-            <h1 className="app-info__header">
+            <h1 className="section__header">
               About the <Logo isDark={true} />{" "}
             </h1>
 
@@ -127,7 +127,31 @@ export default function AboutAppPage() {
       </section>
 
       <section className="lists-diffs section section--colored">
-        
+        <div className="lists-diffs__picture">
+          <Image
+            src="/images/ImgDecoration.png"
+            width={120}
+            height={100}
+            className="image__decoration--top"
+            alt="image decoration"
+          />
+          <Image
+            src="/images/ImgDecoration.png"
+            width={120}
+            height={100}
+            className="image__decoration--bottom"
+            alt="image decoration"
+          />
+
+          <Image
+            className="next-image"
+            src="/images/PinnedNotes.jpg"
+            fill={true}
+            alt="Coffe and Notes"
+            sizes="(max-width: 768px) 100vw"
+          />
+        </div>
+        <h1 className="section__header">Differences between <br />tasklists and simple lists</h1>
       </section>
     </main>
   );

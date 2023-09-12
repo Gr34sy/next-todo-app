@@ -1,0 +1,13 @@
+.lists-diffs{
+    width: 100%;
+}
+
+.lists-diffs__picture{
+    width: 100%;
+    position: relative;
+    height: 350px;
+
+    @media (min-width: 1050px) {
+        height: 475px;
+    }
+}
