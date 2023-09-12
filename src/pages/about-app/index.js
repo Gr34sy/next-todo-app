@@ -125,6 +125,10 @@ export default function AboutAppPage() {
           </div>
         </div>
       </section>
+
+      <section className="lists-diffs section section--colored">
+        
+      </section>
     </main>
   );
 }
