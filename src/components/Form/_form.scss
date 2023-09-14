@@ -1,24 +1,37 @@
 .form {
   margin: auto;
-  width: 70%;
+  width: 100%;
   border-radius: $border-radius;
+
+  @media(min-width: 1050px){
+    width: 85%;
+  }
+
+  @media (min-width: 1465px) {
+    width: 75%;
+  }
 }
 
 .form__wrapper {
-  width: 65%;
+  width: 88%;
   margin: auto;
-  min-height: 500px;
-  padding-block: 100px;
+  min-height: 350px;
+  padding-block: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media(min-width: 1050px){
+    width: 65%;
+    padding-block: 100px;
+  }
 }
 
 .form__button {
   color: $color-white;
-  padding: 16px;
+  padding: 10px;
   outline: none;
   border: none;
   border-radius: 8px;
@@ -28,11 +41,19 @@
   &:hover {
     cursor: pointer;
   }
+
+  @media(min-width: 700px){
+    padding: 16px;
+  }
 }
 
 .form__button--tag {
   font-size: 1rem;
-  padding: 12px;
+  padding: 8px;
+
+  @media(min-width: 700px){
+    padding: 12px;
+  }
 }
 
 .form__label {
@@ -46,8 +67,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
+
+  @media(min-width: 700px){
+    font-size: 1.5rem;
+  }
 }
 
 .label--textarea {
@@ -61,7 +86,7 @@
 .form__input {
   border-radius: 5px;
   border: 2px solid transparent;
-  padding: 8px;
+  padding: 5px;
   width: 90%;
 
   &:focus {
@@ -74,13 +99,21 @@
     padding-left: 5px;
     color: $color-light-grey;
   }
+
+  @media(min-width: 700px){
+    padding: 8px;
+  }
 }
 
 .form__input,
 .checkbox__description {
   color: $color-jet;
   font-family: $font-main;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+
+  @media(min-width: 700px){
+    font-size: 1.2rem;
+  }
 }
 
 .form__checkbox {
@@ -112,6 +145,7 @@
   font-family: $font-headers;
   font-weight: 300;
   color: $color-onyx;
+  text-align: center;
 }
 
 .form__login-methods {

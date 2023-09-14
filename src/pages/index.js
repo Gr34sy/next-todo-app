@@ -5,7 +5,7 @@ export default function HomePage() {
     <main className="main">
       
       <FormLogIn />
-      
+
     </main>
   );
 }
