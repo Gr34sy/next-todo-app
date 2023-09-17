@@ -7,8 +7,24 @@ function OptionsPage() {
 
   return (
     <section className="section options">
-      <h1>Options Page</h1>
-      <div>
+      <div className="options__wrapper">
+        <h1 className="section__header">Options</h1>
+        <div className="options__menu">
+            <div className="options__menu_item">
+
+            </div>
+
+            <div className="options__menu_item">
+
+            </div>
+
+            <div className="options__menu_item">
+
+            </div>
+        </div>
+      </div>
+
+      {/* <div>
         <button className="custom-link" data-value="default" onClick={colorThemeHandler}>Default</button>
 
         <button className="custom-link" data-value="celestial-blue" onClick={colorThemeHandler}>Celestial Blue</button>
@@ -22,7 +38,7 @@ function OptionsPage() {
         <button className="custom-link" data-value="orange" onClick={colorThemeHandler}>Orange</button>
 
         <button className="custom-link" data-value="tiffany-blue" onClick={colorThemeHandler}>Tiffany Blue</button>
-      </div>
+      </div> */}
     </section>
   );
 }

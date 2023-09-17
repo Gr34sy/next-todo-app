@@ -1,11 +1,75 @@
-.options{
-    button.custom-link{
-        display: block;
-        margin-top: 10px;
-        border: none;
-        background-color: $color-celestial-blue;
-        min-width: 100px;
-        padding: 15px;
-        border-radius: 12px;
-    }
+.options {
+  button.custom-link {
+    display: block;
+    margin-top: 10px;
+    border: none;
+    background-color: $color-celestial-blue;
+    min-width: 100px;
+    padding: 15px;
+    border-radius: 12px;
+  }
+}
+
+.options__wrapper {
+  width: 100%;
+  min-height: 1000px;
+  border-radius: $border-radius;
+  padding: 1rem;
+
+  @media (min-width: 1050px) {
+    padding: 2rem;
+    min-height: 800px;
+  }
+
+  @media (min-width: 1465px) {
+    width: 70%;
+    min-height: 1000px;
+  }
+
+  background-color: $color-light-grey;
+}
+
+.options__menu {
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+
+  @media (min-width: 1050px) {
+    flex-direction: column;
+    width: 85%;
+    padding: 2rem;
+  }
+
+  @media (min-width: 1465px) {
+    width: 80%;
+  }
+}
+
+.options__menu_item {
+  width: 100%;
+  height: 100px;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  @media (min-width: 1050px) {
+    border-left: none;
+
+    border-bottom: 3px solid $color-light-grey;
+  }
+
+  border-left: 3px solid $color-light-grey;
+  background-color: $color-white;
+  &:hover{
+    background-color: $color-tropical-indigo;
+  }
+}
+
+.options__menu_item:first-child {
+  border-left: none;
 }
