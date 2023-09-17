@@ -8,6 +8,10 @@ body {
   font-size: 16px;
 }
 
+.d-none{
+  display: none;
+}
+
 @mixin display-mobile {
   display: block;
 

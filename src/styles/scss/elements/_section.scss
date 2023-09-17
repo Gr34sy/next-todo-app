@@ -1,20 +1,13 @@
-.main {
-  padding-block: 30px 80px;
+.main, .section {
+  padding-block: 50px;
   padding-inline: 30px;
 
-  @media (min-width: 1050px) {
+  @media(min-width: 1050px){
     padding-inline: 80px;
-    padding-block: 50px;
   }
-}
 
-.section {
-  padding-block: 80px;
-  padding-inline: 30px;
-
-  @media (min-width: 1050px) {
-    padding-inline: 80px;
-    padding-block: 50px;
+  @media (min-width: 1465px) {
+    padding-block: 80px;
   }
 }
 
