@@ -9,18 +9,20 @@ function OptionsPage() {
     <section className="section options">
       <div className="options__wrapper">
         <h1 className="section__header">Options</h1>
-        <div className="options__menu">
-            <div className="options__menu_item">
+        <div className="options__content">
 
-            </div>
+          <div className="options__menu">
+            <div className="options__menu_item"></div>
 
-            <div className="options__menu_item">
+            <div className="options__menu_item"></div>
 
-            </div>
+            <div className="options__menu_item"></div>
+          </div>
 
-            <div className="options__menu_item">
+          <div className="menu_item__description">
 
-            </div>
+          </div>
+          
         </div>
       </div>
 
