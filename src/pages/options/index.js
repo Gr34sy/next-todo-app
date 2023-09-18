@@ -1,13 +1,9 @@
 import { useState } from "react";
 
 function OptionsPage() {
-  const [chosenMenuItem, setChosenMenuItem] = useState(null);
+  const [chosenMenuItem, setChosenMenuItem] = useState("pinned-lists");
 
-  function colorThemeHandler(e) {
-    e.preventDefault();
-    document.body.className = "";
-    document.body.classList.add(e.target.dataset.value);
-  }
+  function themeChangeHandler() {}
 
   function menuItemHandler(e) {
     e.preventDefault();
@@ -67,63 +63,93 @@ function OptionsPage() {
                 : "menu_item__content d-none"
             }
           >
-            Themes
-            <div>
-              <button
-                className="custom-link"
-                data-value="default"
-                onClick={colorThemeHandler}
-              >
-                Default
-              </button>
+            <h2 className="menu-content__h2">Choose Your Theme</h2>
+            <div className="menu-content__themes">
+              <label htmlFor="theme-default" className="menu-content__radio">
+                <div className="menu-content__color-block color-block--default"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-default"
+                  value="default"
+                />
+                <p className="menu-content__p">Default</p>
+              </label>
 
-              <button
-                className="custom-link"
-                data-value="celestial-blue"
-                onClick={colorThemeHandler}
-              >
-                Celestial Blue
-              </button>
+              <label htmlFor="theme-nightmode" className="menu-content__radio">
+                <div className="menu-content__color-block color-block--nightmode"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-nightmode"
+                  value="nightmode"
+                />
+                <p className="menu-content__p">Nightmode</p>
+              </label>
 
-              <button
-                className="custom-link"
-                data-value="midnight-green"
-                onClick={colorThemeHandler}
+              <label
+                htmlFor="theme-celestial-blue"
+                className="menu-content__radio"
               >
-                Midnight Green
-              </button>
+                <div className="menu-content__color-block color-block--celestial-blue"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-celestial-blue"
+                  value="celestial-blue"
+                />
+                <p className="menu-content__p">Celestial Blue</p>
+              </label>
 
-              <button
-                className="custom-link"
-                data-value="nightmode"
-                onClick={colorThemeHandler}
+              <label
+                htmlFor="theme-midnight-green"
+                className="menu-content__radio"
               >
-                Nightmode
-              </button>
+                <div className="menu-content__color-block color-block--midnight-green"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-midnight-green"
+                  value="midnight-green"
+                />
+                <p className="menu-content__p">Midnight Green</p>
+              </label>
 
-              <button
-                className="custom-link"
-                data-value="pinky"
-                onClick={colorThemeHandler}
+              <label
+                htmlFor="theme-tiffany-blue"
+                className="menu-content__radio"
               >
-                Pinky
-              </button>
+                <div className="menu-content__color-block color-block--tiffany-blue"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-tiffany-blue"
+                  value="tiffany-blue"
+                />
+                <p className="menu-content__p">Tiffany Blue</p>
+              </label>
 
-              <button
-                className="custom-link"
-                data-value="orange"
-                onClick={colorThemeHandler}
-              >
-                Orange
-              </button>
+              <label htmlFor="theme-pinky" className="menu-content__radio">
+                <div className="menu-content__color-block color-block--pinky"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-pinky"
+                  value="pinky"
+                />
+                <p className="menu-content__p">Pinky</p>
+              </label>
 
-              <button
-                className="custom-link"
-                data-value="tiffany-blue"
-                onClick={colorThemeHandler}
-              >
-                Tiffany Blue
-              </button>
+              <label htmlFor="theme-orange" className="menu-content__radio">
+                <div className="menu-content__color-block color-block--orange"></div>
+                <input
+                  type="radio"
+                  name="color-themes"
+                  id="theme-orange"
+                  value="orange"
+                />
+                <p className="menu-content__p">Orange</p>
+              </label>
             </div>
           </div>
         </div>
