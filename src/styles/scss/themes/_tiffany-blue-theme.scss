@@ -6,6 +6,13 @@ body.tiffany-blue {
       color: $color-celestial-blue;
     }
   }
+  .custom-button {
+    background-color: $color-onyx;
+
+    &:hover {
+      background-color: $color-tiffany-blue;
+    }
+  }
 
   .navbar {
     background-color: $color-white;
@@ -67,14 +74,6 @@ body.tiffany-blue {
   .form {
     background-color: $color-light-grey;
 
-    .form__button {
-      background-color: $color-onyx;
-
-      &:hover {
-        background-color: $color-tiffany-blue;
-      }
-    }
-
     .label__icon {
       path {
         color: $color-onyx;
@@ -91,7 +90,7 @@ body.tiffany-blue {
       }
     }
 
-    .form__button--method {
+    .form__method-button {
       color: $color-onyx;
       background-color: $color-white;
       border: 3px solid $color-light-grey;

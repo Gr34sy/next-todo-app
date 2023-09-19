@@ -6,6 +6,13 @@ body.default {
       color: $color-tropical-indigo;
     }
   }
+  .custom-button {
+    background-color: $color-onyx;
+
+    &:hover {
+      background-color: $color-tropical-indigo;
+    }
+  }
 
   .navbar {
     background-color: $color-white;
@@ -91,7 +98,7 @@ body.default {
       }
     }
 
-    .form__button--method {
+    .form__method-button {
       color: $color-onyx;
       background-color: $color-white;
       border: 3px solid $color-light-grey;

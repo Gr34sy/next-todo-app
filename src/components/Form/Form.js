@@ -3,7 +3,7 @@ export function Form(props) {
     <form className="form">
       <div className="form__wrapper">
         {props.children}
-        <button className="form__button form__button--create">
+        <button className="custom-button custom-button--big">
           {props.formSubmitText}
         </button>
       </div>

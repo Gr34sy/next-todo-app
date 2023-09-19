@@ -24,13 +24,13 @@ export function FormLogIn() {
     <Form formSubmitText="Log In" title="Sign in to use the application!">
       <h2 className="form__login-methods__title">Choose login option</h2>
       <div className="form__login-methods">
-        <button className={logInMethod === 'Github' ? "form__button form__button--method chosen-login-method" : "form__button form__button--method"} data-value="Github" onClick={logInMethodHandler}>
+        <button className={logInMethod === 'Github' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Github" onClick={logInMethodHandler}>
           <FontAwesomeIcon icon={faGithub} /> Github
         </button>
-        <button className={logInMethod === 'Google' ? "form__button form__button--method chosen-login-method" : "form__button form__button--method"} data-value="Google" onClick={logInMethodHandler}>
+        <button className={logInMethod === 'Google' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Google" onClick={logInMethodHandler}>
           <FontAwesomeIcon icon={faGoogle} /> Google
         </button>
-        <button className={logInMethod === 'Facebook' ? "form__button form__button--method chosen-login-method" : "form__button form__button--method"} data-value="Facebook" onClick={logInMethodHandler}>
+        <button className={logInMethod === 'Facebook' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Facebook" onClick={logInMethodHandler}>
           <FontAwesomeIcon icon={faFacebook} /> Facebook
         </button>
       </div>

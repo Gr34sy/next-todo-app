@@ -2,6 +2,13 @@ body.celestial-blue {
   .text-highlight {
     color: $color-byzantine-blue;
   }
+  .custom-button {
+    background-color: $color-byzantine-blue;
+
+    &:hover {
+      background-color: $color-celestial-blue;
+    }
+  }
 
   .navbar {
     background-color: $color-white;
@@ -66,14 +73,6 @@ body.celestial-blue {
   .form {
     background-color: $color-powder-blue;
 
-    .form__button {
-      background-color: $color-byzantine-blue;
-
-      &:hover {
-        background-color: $color-celestial-blue;
-      }
-    }
-
     .label__icon {
       path {
         color: $color-byzantine-blue;
@@ -90,7 +89,7 @@ body.celestial-blue {
       }
     }
 
-    .form__button--method {
+    .form__method-button {
       color: $color-byzantine-blue;
       background-color: $color-white;
       border: 3px solid $color-powder-blue;

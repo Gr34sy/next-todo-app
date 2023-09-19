@@ -5,15 +5,15 @@ export function ThemeOptionsPanel() {
 
   function themeChangeHandler(e) {
     setChosenColorTheme(e.target.value);
-    
-    document.body.className = '';
+
+    document.body.className = "";
     document.body.className = `${e.target.value}`;
   }
 
   return (
-    <>
-      <h2 className="menu-content__h2">Choose Your Theme</h2>
-      <div className="menu-content__themes">
+    <div className="options__themes-panel">
+      <div className="themes-panel__radios">
+        <h2 className="menu-content__h2">Choose Your Theme</h2>
         <label htmlFor="theme-default" className="menu-content__radio">
           <div className="menu-content__color-block color-block--default"></div>
           <input
@@ -105,6 +105,11 @@ export function ThemeOptionsPanel() {
           <p className="menu-content__p">Orange</p>
         </label>
       </div>
-    </>
+      <div className="options__themes-panel_buttons">
+        <button>Decline Change</button>
+
+        <button>Save Color Theme</button>
+      </div>
+    </div>
   );
 }

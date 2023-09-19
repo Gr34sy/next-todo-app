@@ -34,6 +34,36 @@ body {
   font-weight: 600;
 }
 
+.custom-button {
+  color: $color-white;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  align-self: flex-end;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+.custom-button--big{
+  font-size: 1.3rem;
+  padding: 10px;
+
+  @media(min-width: 700px){
+    padding: 16px;
+  }
+}
+.custom-button--small {
+  font-size: 1rem;
+  padding: 8px;
+
+  @media(min-width: 700px){
+    padding: 12px;
+  }
+}
+
 .custom-link {
   display: block;
   position: relative;

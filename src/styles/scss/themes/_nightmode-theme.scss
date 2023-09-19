@@ -14,6 +14,13 @@ body.nightmode {
       color: $color-white;
     }
   }
+  .custom-button {
+    background-color: $color-cadet-gray;
+
+    &:hover {
+      background-color: $color-onyx;
+    }
+  }
 
   .navbar {
     background-color: $color-onyx;
@@ -85,14 +92,6 @@ body.nightmode {
   .form {
     background-color: $color-ultraviolet;
 
-    .form__button {
-      background-color: $color-cadet-gray;
-
-      &:hover {
-        background-color: $color-onyx;
-      }
-    }
-
     .label__icon {
       path {
         color: $color-cadet-gray;
@@ -113,7 +112,7 @@ body.nightmode {
       color: $color-white
     }
 
-    .form__button--method {
+    .form__method-button {
       color: $color-onyx;
       background-color: $color-white;
       border: 3px solid $color-ultraviolet;

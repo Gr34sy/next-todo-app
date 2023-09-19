@@ -29,33 +29,6 @@
   }
 }
 
-.form__button {
-  color: $color-white;
-  padding: 10px;
-  outline: none;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.3rem;
-  align-self: flex-end;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media(min-width: 700px){
-    padding: 16px;
-  }
-}
-
-.form__button--tag {
-  font-size: 1rem;
-  padding: 8px;
-
-  @media(min-width: 700px){
-    padding: 12px;
-  }
-}
-
 .form__label {
   display: flex;
   align-items: center;
@@ -157,7 +130,7 @@
   margin-bottom: 35px;
 }
 
-.form__button--method {
+.form__method-button{
   width: 100%;
   font-family: $font-logotype;
   text-align: center;

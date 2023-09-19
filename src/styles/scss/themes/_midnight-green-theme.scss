@@ -8,6 +8,13 @@ body.midnight-green {
       color: $color-midnight-green;
     }
   }
+  .custom-button {
+    background-color: $color-onyx;
+
+    &:hover {
+      background-color: $color-midnight-green;
+    }
+  }
 
   .navbar {
     background-color: $color-midnight-green;
@@ -99,14 +106,6 @@ body.midnight-green {
   .form {
     background-color: $color-cadet-gray;
 
-    .form__button {
-      background-color: $color-onyx;
-
-      &:hover {
-        background-color: $color-midnight-green;
-      }
-    }
-
     .label__icon {
       path {
         color: $color-onyx;
@@ -123,7 +122,7 @@ body.midnight-green {
       }
     }
 
-    .form__button--method {
+    .form__method-button {
       color: $color-onyx;
       background-color: $color-white;
       border: 3px solid $color-cadet-gray;

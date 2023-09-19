@@ -34,7 +34,7 @@ export function FormCreateSimpleList() {
         />
       </label>
 
-      <button className="form__button form__button--tag">Add Tag</button>
+      <button className="custom-button custom-button--small">Add Tag</button>
 
 
       <label className="form__label" htmlFor="form-pinned">
