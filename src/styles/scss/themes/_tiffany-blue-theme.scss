@@ -49,6 +49,21 @@ body.tiffany-blue {
     background-color: $color-light-grey;
   }
 
+
+  .options__menu_item{
+    color: $color-white;
+    background-color: $color-tiffany-blue;
+
+    &:hover {
+      background-color: $color-light-grey;
+      color: $color-tiffany-blue;
+    }
+  }
+  .menu_item__content{
+    background-color: $color-light-grey;
+  }
+
+  
   .form {
     background-color: $color-light-grey;
 

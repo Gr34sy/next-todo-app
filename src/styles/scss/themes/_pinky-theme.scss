@@ -50,6 +50,20 @@ body.pinky {
   }
 
 
+  .options__menu_item{
+    color: $color-white;
+    background-color: $color-pink;
+
+    &:hover {
+      background-color: $color-light-grey;
+      color: $color-pink;
+    }
+  }
+  .menu_item__content{
+    background-color: $color-light-grey;
+  }
+
+
   .form {
     background-color: $color-light-grey;
 

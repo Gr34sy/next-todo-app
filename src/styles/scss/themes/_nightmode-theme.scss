@@ -1,6 +1,12 @@
 body.nightmode {
   background-color: $color-onyx;
 
+  .hamburger-icon, .x-icon{
+    path{
+      color: $color-white;
+    }
+  }
+
   .text-highlight{
     color: $color-white;
 
@@ -54,6 +60,24 @@ body.nightmode {
 
   }
   .app-info__content {
+    background-color: $color-ultraviolet;
+  }
+
+
+  .options__menu_item{
+    color: $color-onyx;
+    background-color: $color-white;
+
+    &:hover {
+      background-color: $color-cadet-gray;
+      color: $color-white;
+    }
+  }
+  .menu_item__content{
+    p, h2 {
+      color: $color-cadet-gray;
+    }
+
     background-color: $color-ultraviolet;
   }
 

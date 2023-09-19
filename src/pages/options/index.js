@@ -4,14 +4,9 @@ import { useState } from "react";
 function OptionsPage() {
   const [chosenMenuItem, setChosenMenuItem] = useState("pinned-lists");
 
-
   function menuItemHandler(e) {
     e.preventDefault();
-    if (e.target.dataset.value !== "log-out") {
-      setChosenMenuItem(e.target.dataset.value);
-    } else {
-      setChosenMenuItem(null);
-    }
+    setChosenMenuItem(e.target.dataset.value);
   }
 
   return (
@@ -46,26 +41,16 @@ function OptionsPage() {
             </div>
           </div>
 
-          <div
-            className={
-              chosenMenuItem === "pinned-lists"
-                ? "menu_item__content"
-                : "menu_item__content d-none"
-            }
-          >
-            Pinned
+          <div className="menu_item__content">
+            {chosenMenuItem === "pinned-lists" && <p>Pinned</p>}
+            {chosenMenuItem === "color-themes" && <ThemeOptionsPanel />}
+            {chosenMenuItem === "log-out" && (
+              <div>
+                <p>Are you sure to log out?</p>
+                <button>Yes</button>
+              </div>
+            )}
           </div>
-
-          <div
-            className={
-              chosenMenuItem === "color-themes"
-                ? "menu_item__content"
-                : "menu_item__content d-none"
-            }
-          >
-            <ThemeOptionsPanel />
-          </div>
-
         </div>
       </div>
     </section>

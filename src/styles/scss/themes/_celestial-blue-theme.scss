@@ -48,6 +48,21 @@ body.celestial-blue {
     background-color: $color-powder-blue;
   }
 
+
+  .options__menu_item{
+    color: $color-white;
+    background-color: $color-celestial-blue;
+
+    &:hover {
+      background-color: $color-powder-blue;
+      color: $color-celestial-blue;
+    }
+  }
+  .menu_item__content{
+    background-color: $color-powder-blue;
+  }
+
+
   .form {
     background-color: $color-powder-blue;
 

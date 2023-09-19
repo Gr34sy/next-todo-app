@@ -49,6 +49,21 @@ body.default {
     background-color: $color-light-grey;
   }
 
+
+  .options__menu_item{
+    color: $color-white;
+    background-color: $color-tropical-indigo;
+
+    &:hover {
+      background-color: $color-light-grey;
+      color: $color-tropical-indigo;
+    }
+  }
+  .menu_item__content{
+    background-color: $color-light-grey;
+  }
+
+
   .form {
     background-color: $color-light-grey;
 

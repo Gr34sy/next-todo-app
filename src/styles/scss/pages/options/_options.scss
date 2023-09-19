@@ -44,7 +44,6 @@
   line-height: 1em;
   padding: 0.8rem 0.4rem;
   text-align: center;
-  color: $color-white;
 
   &:hover {
     cursor: pointer;
@@ -64,12 +63,6 @@
     display: block;
     padding: 1.5rem;
     font-size: 1.5rem;
-  }
-  background-color: $color-tropical-indigo;
-
-  &:hover {
-    background-color: $color-light-grey;
-    color: $color-tropical-indigo;
   }
 }
 

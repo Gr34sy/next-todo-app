@@ -82,6 +82,19 @@ body.midnight-green {
     }
   }
 
+  
+  .options__menu_item{
+    background-color: $color-white;
+
+    &:hover {
+      background-color: $color-cadet-gray;
+      color: $color-midnight-green;
+    }
+  }
+  .menu_item__content{
+    background-color: $color-cadet-gray;
+  }
+
 
   .form {
     background-color: $color-cadet-gray;

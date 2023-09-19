@@ -49,6 +49,21 @@ body.orange {
     background-color: $color-light-grey;
   }
 
+
+  .options__menu_item{
+    color: $color-white;
+    background-color: $color-orange;
+
+    &:hover {
+      background-color: $color-light-grey;
+      color: $color-orange;
+    }
+  }
+  .menu_item__content{
+    background-color: $color-light-grey;
+  }
+  
+
   .form {
     background-color: $color-light-grey;
 
