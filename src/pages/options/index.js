@@ -1,4 +1,5 @@
 import { ThemeOptionsPanel } from "@/components/OptionsPanels/ThemeOptionsPanel";
+import { LogOutPanel } from "@/components/OptionsPanels/LogOutPanel";
 import { useState } from "react";
 
 function OptionsPage() {
@@ -44,12 +45,7 @@ function OptionsPage() {
           <div className="menu_item__content">
             {chosenMenuItem === "pinned-lists" && <p>Pinned</p>}
             {chosenMenuItem === "color-themes" && <ThemeOptionsPanel />}
-            {chosenMenuItem === "log-out" && (
-              <div>
-                <p>Are you sure to log out?</p>
-                <button>Yes</button>
-              </div>
-            )}
+            {chosenMenuItem === "log-out" && <LogOutPanel />}
           </div>
         </div>
       </div>
