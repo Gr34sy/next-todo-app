@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function ThemeOptionsPanel() {
-  const [chosenColorTheme, setChosenColorTheme] = useState("default");
+  const [chosenColorTheme, setChosenColorTheme] = useState(document.body.className);
 
   function themeChangeHandler(e) {
     setChosenColorTheme(e.target.value);
@@ -106,9 +106,9 @@ export function ThemeOptionsPanel() {
         </label>
       </div>
       <div className="options__themes-panel_buttons">
-        <button>Decline Change</button>
+        <button className="custom-button custom-button--small">Decline Change</button>
 
-        <button>Save Color Theme</button>
+        <button className="custom-button custom-button--small">Save Color Theme</button>
       </div>
     </div>
   );
