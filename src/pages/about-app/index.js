@@ -123,8 +123,7 @@ export default function AboutAppPage() {
 
       <section className="lists-diffs section section--colored">
         <h1 className="section__header">
-          Differences between <br />
-          tasklists and simple lists
+          Tasklists and simple lists
         </h1>
         <div className="lists-diffs__picture">
           <ImgDecoration type="top" />
@@ -141,33 +140,68 @@ export default function AboutAppPage() {
 
         <div className="lists-diffs__content section__description">
           <div className="section__description_div">
-            <h2 className="section__description_h2">Foreword</h2>
+            <h2 className="section__description_h2">Simple lists</h2>
             <p className="section__description_p">
-              Hello, I'm Peter.I study IT in Wrocław. I build this app to repeat
-              my frontend knowledge. You can find more information about me{" "}
-              <span className="text-highlight">
-                <a
-                  target="_blank"
-                  href="https://heroic-quokka-3e69bf.netlify.app"
-                >
-                  here
-                </a>
-              </span>
-              , on my portfolio site.
+              Great option for simple tasks which don't take much time to
+              finish. If you have to do bunch of easy things which don't require
+              much effort nor complicated operations, this type of a list would
+              be perfect. They also work great as shopping lists or house
+              chores' lists.
             </p>
+
             <p className="section__description_p">
-              The idea behind this app was to create project which will be at
-              least a little bit useful, but not too complex. I've completed{" "}
-              <span className="text-highlight">
-                <a target="_blank" href="https://nextjs.org">
-                  NextJS
-                </a>
-              </span>{" "}
-              course recently and I needed a practical way to repeat the lessons
-              I've learnt. So I've come up with the idea of ToDo List project. I
-              knew that simple ToDo list would not be that interesting but the
-              kanban board would require too much work. Finally I've decided to
-              build ToDo app expanded with several additional functionalities.
+              To create the list, simply go to the{" "}
+              <span className="text-highlight"> Your Lists</span> page and then
+              select simple list on list creator. Now you can write a title of
+              the list, add any tags if you want or choose if the list would be
+              displayed on Homepage as a pinned list. Afterwards you can click
+              button "Create List", which will automatically open up new tab in
+              the browser with the generated list. There you can edit it - add
+              or remove tasks from that list or mark them as finished. Users can
+              also change the tags and title.
+            </p>
+          </div>
+
+          <div className="section__description_div">
+            <h2 className="section__description_h2">Taskists</h2>
+            <p className="section__description_p">
+              When it comes to the projects or long-term plans that consists of
+              many subtasks, the tasklists are here to help you to organize them
+              all. In this app the subtasks are called "operations".
+            </p>
+
+            <p className="section__description_p">
+              Creation of tasklist is similar to simple list. Firstly you go to
+              the <span className="text-highlight"> Your Lists</span> page.
+              Secondly you select "tasklist" in list creator. Then you set up
+              your title and tags. In addition to that you can select a deadline
+              (date by which all subtasks should be completed) and add the
+              description. Afterwards you will be redirected to the list you've
+              just created.
+              There you can add and manage operations. Tasklists can contain any
+              amount of them. Each operation can have its own deadline and
+              description. You can also change the subtasks order.
+            </p>
+
+          </div>
+
+          <div className="section__description_div">
+            <h2 className="section__description_h2">Tags</h2>
+            <p className="section__description_p">
+              Tags are sort of keywords that you can assign to each list. They
+              enable you to find them by filtering lists on{" "}
+              <span className="text-highlight"> Your Lists </span> page.
+            </p>
+          </div>
+
+          <div className="section__description_div">
+            <h2 className="section__description_h2">
+              Pinning lists and tasklists
+            </h2>
+            <p className="section__description_p">
+              You can have maximum of two pinned simple lists and one tasklist.
+              To manage pinned lists you need to go to the{" "}
+              <span className="text-highlight">Options</span> page.
             </p>
           </div>
         </div>
