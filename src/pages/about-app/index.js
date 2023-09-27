@@ -199,7 +199,7 @@ export default function AboutAppPage() {
               Pinning lists and tasklists
             </h2>
             <p className="section__description_p">
-              You can have maximum of two pinned simple lists and one tasklist.
+              You can have up to two pinned simple lists and one tasklist.
               To manage pinned lists you need to go to the{" "}
               <span className="text-highlight">Options</span> page.
             </p>

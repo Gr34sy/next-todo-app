@@ -1,0 +1,24 @@
+.options__pinned-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 20px;
+}
+
+.pinned-panel__radios {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.pinned-panel__tasklists-radios,
+.pinned-panel__lists-radios {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 10px;
+}
