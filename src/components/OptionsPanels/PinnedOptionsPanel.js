@@ -8,22 +8,37 @@ export function PinnedOptionsPanel() {
 
   function pinnedListChangeHandler(e) {
     const clickedValue = e.target.value;
-    const clickedCheckbox = document.querySelector(`.pinned-panel__lists-radios [for=${clickedValue}] .checkmark__div`);
+    const clickedCheckbox = document.querySelector(
+      `.pinned-panel__lists-radios [for=${clickedValue}] .checkmark__div`
+    );
 
-    if(pinnedLists.includes(e.target.value)){
-        clickedCheckbox.classList.remove('checked');
+    if (pinnedLists.includes(e.target.value)) {
+      clickedCheckbox.classList.remove("checked");
 
-        setPinnedLists((prevLists) =>  prevLists.filter((list) => list != clickedValue));
-    }else{
-        const checkboxes = document.querySelectorAll('.pinned-panel__lists-radios .checkmark__div');
-        checkboxes.forEach((checkbox) => checkbox.classList.remove('checked'));
-        clickedCheckbox.classList.add('checked');
+      setPinnedLists((prevLists) =>
+        prevLists.filter((list) => list != clickedValue)
+      );
+    } else {
+      const checkboxes = Array.from(
+        document.querySelectorAll(".pinned-panel__lists-radios .checkmark__div")
+      );
 
-        if(pinnedLists.length <= 1){
-            setPinnedLists((prevLists) => [...prevLists, clickedValue])
-        }else{
-            setPinnedLists((prevLists) => [...prevLists.shift(), clickedValue])
-        }
+      checkboxes.forEach((checkbox) => checkbox.classList.remove("checked"));
+      if (pinnedLists.length <= 1) {
+        setPinnedLists((prevLists) => [...prevLists, clickedValue]);
+        checkboxes
+          .filter((checkbox) => checkbox != pinnedLists[0])
+          .forEach((checkbox) => checkbox.classList.remove("checked"));
+      } else {
+        setPinnedLists((prevLists) => [...prevLists.shift(), clickedValue]);
+        checkboxes
+          .filter(
+            (checkbox) =>
+              checkbox != pinnedLists[0] && checkbox != pinnedLists[1]
+          )
+          .forEach((checkbox) => checkbox.classList.remove("checked"));
+      }
+      clickedCheckbox.classList.add("checked");
     }
   }
 
@@ -39,7 +54,9 @@ export function PinnedOptionsPanel() {
 
           <label htmlFor="pinned-list-1" className="menu-content__radio">
             <div className="menu-content__color-block color-block--default"></div>
-            <div className='checkmark__div'><FontAwesomeIcon className="checkmark__icon" icon={faCheck}/></div>
+            <div className="checkmark__div">
+              <FontAwesomeIcon className="checkmark__icon" icon={faCheck} />
+            </div>
             <input
               className="custom-checkbox"
               type="checkbox"
@@ -54,7 +71,9 @@ export function PinnedOptionsPanel() {
 
           <label htmlFor="pinned-list-2" className="menu-content__radio">
             <div className="menu-content__color-block color-block--default"></div>
-            <div className='checkmark__div'><FontAwesomeIcon className="checkmark__icon" icon={faCheck}/></div>
+            <div className="checkmark__div">
+              <FontAwesomeIcon className="checkmark__icon" icon={faCheck} />
+            </div>
             <input
               className="custom-checkbox"
               type="checkbox"
@@ -109,7 +128,6 @@ export function PinnedOptionsPanel() {
             />
             <p className="menu-content__p">Tasklist 3</p>
           </label>
-
         </div>
       </div>
 
