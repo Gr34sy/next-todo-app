@@ -8,9 +8,18 @@
     background-color: $color-white;
     border-radius: 5px;
     color: $color-white;
+    position: relative;
+
 
     .checkmark__icon{
         display: none;
+        position: absolute;
+        top: 18%;
+        left: 18%;
+
+        path{
+            color: $color-white;
+        }
     }
 }
 

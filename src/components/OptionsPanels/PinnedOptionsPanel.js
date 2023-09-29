@@ -3,23 +3,27 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 export function PinnedOptionsPanel() {
-  const [chosenColorTheme, setChosenColorTheme] = useState("");
-  const [pinnedLists, setPinnedLists] = useState(null);
+  const [pinnedLists, setPinnedLists] = useState([]);
   const [pinnedTasklist, setPinnedTasklist] = useState(null);
 
   function pinnedListChangeHandler(e) {
-    const clickedCheckbox = document.querySelector(`.pinned-panel__lists-radios [for=${e.target.value}] .checkmark__div`);
-    console.log(clickedCheckbox);
+    const clickedValue = e.target.value;
+    const clickedCheckbox = document.querySelector(`.pinned-panel__lists-radios [for=${clickedValue}] .checkmark__div`);
 
-    if(pinnedLists === e.target.value){
-        setPinnedLists(null);
+    if(pinnedLists.includes(e.target.value)){
         clickedCheckbox.classList.remove('checked');
+
+        setPinnedLists((prevLists) =>  prevLists.filter((list) => list != clickedValue));
     }else{
         const checkboxes = document.querySelectorAll('.pinned-panel__lists-radios .checkmark__div');
         checkboxes.forEach((checkbox) => checkbox.classList.remove('checked'));
-
-        setPinnedLists(e.target.value);
         clickedCheckbox.classList.add('checked');
+
+        if(pinnedLists.length <= 1){
+            setPinnedLists((prevLists) => [...prevLists, clickedValue])
+        }else{
+            setPinnedLists((prevLists) => [...prevLists.shift(), clickedValue])
+        }
     }
   }
 
