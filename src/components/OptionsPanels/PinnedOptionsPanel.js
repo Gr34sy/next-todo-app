@@ -147,7 +147,7 @@ export function PinnedOptionsPanel() {
         </div>
       </div>
 
-      <div className="options__themes-panel_buttons">
+      <div className="options__themes-panel_buttons flex-end">
         <button className="custom-button custom-button--small">
           Save Changes
         </button>

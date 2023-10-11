@@ -1,27 +1,19 @@
 
-
 export function  List(){
     return (
         <div className="list">
-            <ul>
+            <h3 className="list__title">List Title</h3>
+            <ul className="list__ul">
                 <li>
-                    dupa
+                    Ziemniaki
                 </li>
 
                 <li>
-                    dupa
+                    Szynka
                 </li>
 
                 <li>
-                    dupa
-                </li>
-
-                <li>
-                    dupa
-                </li>
-
-                <li>
-                    dupa
+                    Syr
                 </li>
             </ul>
         </div>

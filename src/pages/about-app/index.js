@@ -103,7 +103,7 @@ export default function AboutAppPage() {
                   <span className="text-highlight"> pinned lists</span> on the
                   homepage. In the list creator, there is a possibility to mark
                   the checkbox in order to display the list in the pinned lists
-                  section. There are two slots for simple lists and one slot for
+                  section. There are three slots for simple lists and one slot for
                   tasklist to pin. You can manage the pinned lists in the
                   options panel.
                 </p>
@@ -195,7 +195,7 @@ export default function AboutAppPage() {
               Pinning lists and tasklists
             </h2>
             <p className="section__description_p">
-              You can have up to two pinned simple lists and one tasklist. To
+              You can have up to three pinned simple lists and one tasklist. To
               manage pinned lists you need to go to the{" "}
               <span className="text-highlight">Options</span> page.
             </p>

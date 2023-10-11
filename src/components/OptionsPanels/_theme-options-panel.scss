@@ -1,9 +1,10 @@
 .options__themes-panel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: left;
   gap: 20px;
+  height: 100%;
 }
 
 .themes-panel__radios {
