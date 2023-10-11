@@ -1,0 +1,9 @@
+.tasklist{
+    height: 350px;
+    width: 100%;
+    border-radius: $border-radius;
+    background-color: $color-light-grey;
+    overflow-y: hidden;
+    padding: 15px;
+    cursor: pointer;
+}
