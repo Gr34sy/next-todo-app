@@ -1,4 +1,5 @@
 import { FormLogIn } from "@/components/Forms/FormLogIn";
+import { List } from '../components/List/List';
 
 export default function HomePage() {
   return (
@@ -6,9 +7,11 @@ export default function HomePage() {
       <main className="main">
         <h1 className="section__header">Pinned Lists</h1>
         <div className="homepage__pinned-lists">
-
+          <List />
+          <List />
+          <List />
         </div>
-        
+
         <div className="homepage__pinned-tasklist">
 
         </div>

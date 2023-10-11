@@ -11,7 +11,6 @@ export function PinnedOptionsPanel() {
     const clickedValue = e.target.value;
 
     if (pinnedLists.includes(clickedValue)) {
-      clickedCheckbox.classList.remove("checked");
       setPinnedLists((prevLists) =>
         prevLists.filter((list) => list != clickedValue)
       );
@@ -19,7 +18,7 @@ export function PinnedOptionsPanel() {
     } else {
       setPinnedLists((prevLists) => [
         clickedValue,
-        ...prevLists.filter((value, i) => i < 1)
+        ...prevLists.filter((value, i) => i < 2)
       ]);
       console.log(pinnedLists); // check
     }
