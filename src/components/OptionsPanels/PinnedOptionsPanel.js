@@ -2,21 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-// checkboxes.forEach((checkbox) => checkbox.classList.remove("checked"));
-//       if (pinnedLists.length <= 2) {
-//         setPinnedLists((prevLists) => [...prevLists, clickedValue]);
-//         checkboxes
-//           .filter((checkbox) => checkbox != pinnedLists[0])
-//           .forEach((checkbox) => checkbox.classList.remove("checked"));
-//       } else {
-//         setPinnedLists((prevLists) => [...prevLists.shift(), clickedValue]);
-//         checkboxes
-//           .filter(
-//             (checkbox) =>
-//               checkbox != pinnedLists[0] && checkbox != pinnedLists[1]
-//           )
-//           .forEach((checkbox) => checkbox.classList.remove("checked"));
-//       }
 
 export function PinnedOptionsPanel() {
   const [pinnedLists, setPinnedLists] = useState([]);
@@ -24,7 +9,7 @@ export function PinnedOptionsPanel() {
 
   function pinnedListChangeHandler(e) {
     const clickedValue = e.target.value;
-    
+
     if (pinnedLists.includes(clickedValue)) {
       clickedCheckbox.classList.remove("checked");
       setPinnedLists((prevLists) =>

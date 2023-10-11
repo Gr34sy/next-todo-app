@@ -4,8 +4,8 @@ import { Logo } from "@/components/Logo/Logo";
 
 export default function AboutAppPage() {
   return (
-    <main>
-      <main className="app-info main">
+    <div className="app-info">
+      <main className="main">
         <div className="app-info__wrapper">
           <div className="app-info__pictures">
             <ImgDecoration type="top" />
@@ -122,9 +122,7 @@ export default function AboutAppPage() {
       </main>
 
       <section className="lists-diffs section section--colored">
-        <h1 className="section__header">
-          Tasklists and simple lists
-        </h1>
+        <h1 className="section__header">Tasklists and simple lists</h1>
         <div className="lists-diffs__picture">
           <ImgDecoration type="top" />
           <ImgDecoration type="bottom" />
@@ -177,12 +175,10 @@ export default function AboutAppPage() {
               your title and tags. In addition to that you can select a deadline
               (date by which all subtasks should be completed) and add the
               description. Afterwards you will be redirected to the list you've
-              just created.
-              There you can add and manage operations. Tasklists can contain any
-              amount of them. Each operation can have its own deadline and
-              description. You can also change the subtasks order.
+              just created. There you can add and manage operations. Tasklists
+              can contain any amount of them. Each operation can have its own
+              deadline and description. You can also change the subtasks order.
             </p>
-
           </div>
 
           <div className="section__description_div">
@@ -199,13 +195,13 @@ export default function AboutAppPage() {
               Pinning lists and tasklists
             </h2>
             <p className="section__description_p">
-              You can have up to two pinned simple lists and one tasklist.
-              To manage pinned lists you need to go to the{" "}
+              You can have up to two pinned simple lists and one tasklist. To
+              manage pinned lists you need to go to the{" "}
               <span className="text-highlight">Options</span> page.
             </p>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
