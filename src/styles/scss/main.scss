@@ -18,6 +18,7 @@
 @import './pages/about-app/lists-diffs';
 @import './pages/options/options';
 @import './pages/homepage/homepage';
+@import './pages/lists-page/lists-page';
 
 //elements
 @import './elements/section';
@@ -34,3 +35,4 @@
 @import '../../components/OptionsPanels/pinned-options-panel';
 @import '../../components/List/list';
 @import '../../components/Tasklist/Tasklist';
+@import '../../components/ChoiceTile/choice-tile';
