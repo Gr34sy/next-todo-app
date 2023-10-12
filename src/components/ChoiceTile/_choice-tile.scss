@@ -1,0 +1,22 @@
+.choice-tile{
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-light-grey;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    @media(min-width: 650px){
+        flex-direction: row;
+    }
+}
+
+.choice-tile__description{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $color-onyx;
+    text-align: center;
+}

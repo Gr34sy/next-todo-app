@@ -1,10 +1,9 @@
-
-function ListCreatorPage(){
-    return (
-        <h1>
-            List Creator Page
-        </h1>
-    )
+function TasklistCreatorPage() {
+  return (
+    <main className="main">
+      <h1>Tasklist Creator Page</h1>
+    </main>
+  );
 }
 
-export default ListCreatorPage;
+export default TasklistCreatorPage;

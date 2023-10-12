@@ -1,10 +1,9 @@
-
-function ListCreatorPage(){
-    return (
-        <h1>
-            List Creator Page
-        </h1>
-    )
+function SimpleListCreatorPage() {
+  return (
+    <main className="main">
+      <h1>Simple List Creator Page</h1>
+    </main>
+  );
 }
 
-export default ListCreatorPage;
+export default SimpleListCreatorPage;
