@@ -4,8 +4,22 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+
+import { useState } from "react";
 
 export function FormCreateTaskList() {
+
+  const [isPinned, setIsPinned] = useState(false);
+
+  function pinnedListChangeHandler() {
+    if (isPinned) {
+      setIsPinned(false);
+    } else {
+      setIsPinned(true);
+    }
+  }
+
   return (
     <Form formSubmitText="Create List">
       <label className="form__label" htmlFor="form-title">
@@ -66,14 +80,13 @@ export function FormCreateTaskList() {
         />
       </label>
 
-      <label className="form__label" htmlFor="form-pinned">
+      <label className="form__label" onClick={pinnedListChangeHandler}>
         <div className="checkbox__div">
-        <input
-          type="checkbox"
-          name="pinned"
-          id="form-pinned"
-          className="form__checkbox"
-        />
+          <div
+            className={isPinned ? "checkmark__div checked" : "checkmark__div"}
+          >
+            <FontAwesomeIcon className="checkmark__icon" icon={faCheck} />
+          </div>
         </div>
 
         <p className="checkbox__description">Pinned List</p>

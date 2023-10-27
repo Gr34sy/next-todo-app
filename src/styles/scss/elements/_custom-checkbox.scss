@@ -21,6 +21,10 @@
             color: $color-white;
         }
     }
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .checkmark__div.checked{
