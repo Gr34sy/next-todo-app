@@ -25,14 +25,14 @@
 @import './elements/custom-checkbox';
 
 //components
-@import '../../components/Logo/logo';
-@import '../../components/Navbar/navbar';
-@import '../../components/Footer/footer';
-@import '../../components/Form/form';
-@import '../../components/ImgDecoration/img-decoration';
-@import '../../components/OptionsPanels/theme-options-panel';
-@import '../../components/OptionsPanels/logout-options-panel';
-@import '../../components/OptionsPanels/pinned-options-panel';
-@import '../../components/List/list';
-@import '../../components/Tasklist/Tasklist';
-@import '../../components/ChoiceTile/choice-tile';
+@import './components/logo';
+@import './components/navbar';
+@import './components/footer';
+@import './components/form';
+@import './components/img-decoration';
+@import './components/list';
+@import './components/tasklist';
+@import './components/choice-tile';
+@import './components/options-panels/theme-options-panel';
+@import './components/options-panels/logout-options-panel';
+@import './components/options-panels/pinned-options-panel';
