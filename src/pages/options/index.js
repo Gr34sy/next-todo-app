@@ -1,7 +1,7 @@
 import { ThemeOptionsPanel } from "@/components/OptionsPanels/ThemeOptionsPanel";
 import { LogOutPanel } from "@/components/OptionsPanels/LogOutPanel";
 import { useState } from "react";
-import { PinnedOptionsPanel } from "@/components/OptionsPanels/PinnedOptionsPanel";
+import { CreateOptionsPanel } from "@/components/OptionsPanels/CreateListPanel";
 
 function OptionsPage() {
   const [chosenMenuItem, setChosenMenuItem] = useState("pinned-lists");
@@ -23,7 +23,7 @@ function OptionsPage() {
               data-value="pinned-lists"
               onClick={menuItemHandler}
             >
-              Pinned Lists
+              Create List
             </div>
 
             <div
@@ -44,7 +44,7 @@ function OptionsPage() {
           </div>
 
           <div className="menu_item__content">
-            {chosenMenuItem === "pinned-lists" && <PinnedOptionsPanel />}
+            {chosenMenuItem === "pinned-lists" && <CreateOptionsPanel />}
             {chosenMenuItem === "color-themes" && <ThemeOptionsPanel />}
             {chosenMenuItem === "log-out" && <LogOutPanel />}
           </div>
