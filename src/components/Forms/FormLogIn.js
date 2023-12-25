@@ -46,7 +46,7 @@ export function FormLogIn() {
           id="form-username"
           className="form__input"
           placeholder="Username"
-          autocomplete="on"
+          autoComplete="on"
         />
       </label>
 
@@ -61,7 +61,7 @@ export function FormLogIn() {
           id="form-password"
           className="form__input"
           placeholder="Password"
-          autocomplete="on"
+          autoComplete="on"
         />
       </label>
     </Form>
