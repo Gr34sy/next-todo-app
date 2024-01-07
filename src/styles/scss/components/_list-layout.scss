@@ -1,0 +1,25 @@
+.list-layout{
+    width: 100%;
+    min-height: 500px;
+    max-width: 1000px;
+    margin-inline: auto;
+
+    background-color: $color-light-grey;
+    border-radius: $border-radius;
+
+    padding: 20px 30px;
+}
+
+.list-layout__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-layout__title{
+    font-size: 2rem;
+    padding: 0;
+
+    @media (min-width: 700px) {
+        font-size: 2.4rem;
+    }
+}

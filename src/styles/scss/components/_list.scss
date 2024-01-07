@@ -1,20 +1,31 @@
-.list{
-    height: 350px;
-    width: 30%;
-    border-radius: $border-radius;
-    background-color: $color-light-grey;
-    overflow-y: hidden;
-    padding: 15px;
-    cursor: pointer;
+.list {
+  height: 350px;
+  width: 30%;
+  border-radius: $border-radius;
+  background-color: $color-light-grey;
+  overflow-y: hidden;
+  padding: 15px;
+  cursor: pointer;
 }
 
-.list__title{
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-align: center;
-    width: 100%;
+.list__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 
-.list__ul{
-    font-size: 1.3rem;
+.list__ul {
+  font-size: 1.3rem;
+}
+
+// remove shit above
+.simple-list {
+  margin-top: 60px;
+  max-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
 }

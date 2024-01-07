@@ -31,8 +31,8 @@ export function Navbar(){
 
                 <ul className="nav__list">
                     <li><Link className="custom-link" href="/">Home</Link></li>
-                    <li><Link className="custom-link" href="/about-app">About the App</Link></li>
                     <li><Link className="custom-link" href="/lists">Lists</Link></li>
+                    <li><Link className="custom-link" href="/about-app">About the App</Link></li>
                     <li><Link className="custom-link" href="/options">Options</Link></li>
                 </ul>
 
@@ -49,8 +49,8 @@ export function Navbar(){
         { showMobileList && 
         <ul className="nav__list--mobile">
             <li><Link className="custom-link" href="/">Home</Link></li>
-            <li><Link className="custom-link" href="/about-app">About the App</Link></li>
             <li><Link className="custom-link" href="/lists">Lists</Link></li>
+            <li><Link className="custom-link" href="/about-app">About the App</Link></li>
             <li><Link className="custom-link" href="/options">Options</Link></li>
         </ul>}
         </>
