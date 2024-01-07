@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 export function ListLayout(props) {
   return (
@@ -10,7 +11,7 @@ export function ListLayout(props) {
         }
       >
         <div className="list-layout__header">
-          <h1 className="section__header list-layout__title">{props.title}</h1>
+          <h1 className="section__header list-layout__title">{props.enableEdit && <FontAwesomeIcon icon={faPen}/>} {props.title}</h1>
           <button
             className="custom-button custom-button--big"
             onClick={props.onClick}

@@ -21,21 +21,57 @@
 
 // remove shit above
 .simple-list {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
-.simple-list__items{
-    max-height: 300px;
+.simple-list__add-task {
+  height: 30px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.add-task__input {
+    border: 2px solid $color-tropical-indigo;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 0.9rem;
+}
+.add-task__button {
+  font-size: 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.simple-list__item{
+.simple-list__items {
+  max-height: 300px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.simple-list__item {
+    width: 100%;
+
+  div {
     display: flex;
     gap: 10px;
     font-size: 1.1rem;
     align-items: center;
+    justify-content: flex-start;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  svg {
+    font-size: 22px;
+  }
 }
