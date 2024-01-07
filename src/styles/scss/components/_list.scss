@@ -22,10 +22,20 @@
 // remove shit above
 .simple-list {
   margin-top: 60px;
-  max-height: 300px;
+}
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 10px;
+.simple-list__items{
+    max-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.simple-list__item{
+    display: flex;
+    gap: 10px;
+    font-size: 1.1rem;
+    align-items: center;
 }

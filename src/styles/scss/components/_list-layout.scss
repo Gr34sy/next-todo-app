@@ -8,12 +8,16 @@
     border-radius: $border-radius;
 
     padding: 20px 30px;
+    border: 3px solid transparent;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 .list-layout__header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .list-layout__title{
     font-size: 2rem;
@@ -22,4 +26,13 @@
     @media (min-width: 700px) {
         font-size: 2.4rem;
     }
+}
+
+.list-layout--edit{
+    border: 3px solid $color-tropical-indigo;
+}
+
+.list-layout__save-btn{
+    align-self: end;
+    justify-self: end;
 }

@@ -1,8 +1,4 @@
-.custom-checkbox{
-  appearance: none;
-}
-
-.checkmark__div{
+.checkbox__div{
     width: 22px;
     height: 22px;
     background-color: $color-white;
@@ -11,11 +7,12 @@
     position: relative;
 
 
-    .checkmark__icon{
+    .checkbox__icon{
         display: none;
         position: absolute;
-        top: 18%;
-        left: 18%;
+        font-size: 14px;
+        left: 5px;
+        top: 4px;
 
         path{
             color: $color-white;
@@ -27,11 +24,11 @@
     }
 }
 
-.checkmark__div.checked{
+.checkbox__div.checked{
     display: block;
     background-color: $color-onyx;
 
-    .checkmark__icon{
+    .checkbox__icon{
         display: block;
     }
 }
