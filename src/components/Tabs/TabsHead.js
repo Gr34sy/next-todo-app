@@ -3,7 +3,7 @@ export function TabsHead({header1, header2, handlerFunction}){
         <div className="tabs__head">
             <div
               className="tabs__head_item"
-              data-value="header1"
+              data-value="content1"
               onClick={handlerFunction}
             >
               {header1}
@@ -11,7 +11,7 @@ export function TabsHead({header1, header2, handlerFunction}){
 
             <div
               className="tabs__head_item"
-              data-value="header2"
+              data-value="content2"
               onClick={handlerFunction}
             >
               {header2}

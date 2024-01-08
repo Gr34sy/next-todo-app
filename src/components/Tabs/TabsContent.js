@@ -1,7 +1,7 @@
-export function TabsContent(){
+export function TabsContent({content}){
     return (
         <div className="tabs__content">
-            2
+            {content}
         </div>
     )
 }
