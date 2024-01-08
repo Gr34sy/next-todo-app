@@ -3,6 +3,7 @@
 @import './misc/typography';
 @import './misc/colors';
 @import './misc/general';
+@import './misc/section';
 
 //themes
 @import './themes/default-theme';
@@ -14,25 +15,21 @@
 @import './themes/orange-theme';
 
 //pages
-@import './pages/about-app/app-info';
-@import './pages/about-app/lists-diffs';
+@import './pages/about/app-info';
+@import './pages/about/lists-diffs';
 @import './pages/options/options';
 @import './pages/homepage/homepage';
-@import './pages/lists-page/lists-page';
-
-//elements
-@import './elements/section';
+@import './pages/lists/list';
+@import './pages/lists/tasklist';
 
 //components
 @import './components/logo';
 @import './components/navbar';
 @import './components/footer';
-@import './components/form';
+@import './components/form-layout';
 @import './components/img-decoration';
-@import './components/list';
-@import './components/tasklist';
-@import './components/choice-tile';
 @import './components/list-layout';
+@import './components/tabs';
 @import './components/options-panels/theme-options-panel';
 @import './components/options-panels/logout-options-panel';
 @import './components/options-panels/create-options-panel';

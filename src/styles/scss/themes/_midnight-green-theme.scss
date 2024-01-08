@@ -90,7 +90,7 @@ body.midnight-green {
   }
 
   
-  .options__menu_item{
+  .tabs__head_item, .options__menu_item{
     background-color: $color-white;
 
     &:hover {
@@ -98,7 +98,7 @@ body.midnight-green {
       color: $color-midnight-green;
     }
   }
-  .menu_item__content{
+  .tabs__content, .menu_item__content{
     background-color: $color-cadet-gray;
   }
 

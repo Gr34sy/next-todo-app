@@ -56,7 +56,7 @@ body.celestial-blue {
   }
 
 
-  .options__menu_item{
+  .tabs__head_item, .options__menu_item{
     color: $color-white;
     background-color: $color-celestial-blue;
 
@@ -65,7 +65,7 @@ body.celestial-blue {
       color: $color-celestial-blue;
     }
   }
-  .menu_item__content{
+  .tabs__content, .menu_item__content{
     background-color: $color-powder-blue;
   }
 

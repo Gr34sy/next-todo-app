@@ -6,7 +6,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 //forms
-import { Form } from "../Form/Form";
+import { FormLayout } from "../FormLayout/FormLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //js imports
@@ -21,7 +21,7 @@ export function FormLogIn() {
   }
 
   return (
-    <Form formSubmitText="Log In" title="Sign in to use the application!">
+    <FormLayout formSubmitText="Log In" title="Sign in to use the application!">
       <h2 className="form__login-methods__title">Choose login option</h2>
       <div className="form__login-methods">
         <button className={logInMethod === 'Github' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Github" onClick={logInMethodHandler}>
@@ -64,6 +64,6 @@ export function FormLogIn() {
           autoComplete="on"
         />
       </label>
-    </Form>
+    </FormLayout>
   );
 }

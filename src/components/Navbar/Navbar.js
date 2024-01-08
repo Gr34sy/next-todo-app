@@ -30,10 +30,10 @@ export function Navbar(){
                 <Logo isDark={scroll>25 ? false : true} />
 
                 <ul className="nav__list">
-                    <li><Link className="custom-link" href="/">Home</Link></li>
-                    <li><Link className="custom-link" href="/lists">Lists</Link></li>
-                    <li><Link className="custom-link" href="/about-app">About the App</Link></li>
-                    <li><Link className="custom-link" href="/options">Options</Link></li>
+                    <li><Link className="navbar__link" href="/">Home</Link></li>
+                    <li><Link className="navbar__link" href="/list-creator">List Creator</Link></li>
+                    <li><Link className="navbar__link" href="/about-app">About</Link></li>
+                    <li><Link className="navbar__link" href="/options">Options</Link></li>
                 </ul>
 
                 { !showMobileList && <div className="hamburger-icon" onClick={() => setShowMobileList(true)}>
@@ -48,10 +48,10 @@ export function Navbar(){
         
         { showMobileList && 
         <ul className="nav__list--mobile">
-            <li><Link className="custom-link" href="/">Home</Link></li>
-            <li><Link className="custom-link" href="/lists">Lists</Link></li>
-            <li><Link className="custom-link" href="/about-app">About the App</Link></li>
-            <li><Link className="custom-link" href="/options">Options</Link></li>
+            <li><Link className="navbar__link" href="/">Home</Link></li>
+            <li><Link className="navbar__link" href="/list-creator">List Creator</Link></li>
+            <li><Link className="navbar__link" href="/about-app">About the App</Link></li>
+            <li><Link className="navbar__link" href="/options">Options</Link></li>
         </ul>}
         </>
     )

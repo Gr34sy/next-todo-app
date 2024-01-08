@@ -57,7 +57,7 @@ body.tiffany-blue {
   }
 
 
-  .options__menu_item{
+  .tabs__head_item, .options__menu_item{
     color: $color-white;
     background-color: $color-tiffany-blue;
 
@@ -66,7 +66,7 @@ body.tiffany-blue {
       color: $color-tiffany-blue;
     }
   }
-  .menu_item__content{
+  .tabs__content, .menu_item__content{
     background-color: $color-light-grey;
   }
 

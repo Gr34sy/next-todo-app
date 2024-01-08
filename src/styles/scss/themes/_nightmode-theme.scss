@@ -71,7 +71,7 @@ body.nightmode {
   }
 
 
-  .options__menu_item{
+  .tabs__head_item, .options__menu_item{
     color: $color-onyx;
     background-color: $color-white;
 
@@ -80,7 +80,7 @@ body.nightmode {
       color: $color-white;
     }
   }
-  .menu_item__content{
+  .tabs__content, .menu_item__content{
     p, h2 {
       color: $color-cadet-gray;
     }

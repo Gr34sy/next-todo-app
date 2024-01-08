@@ -1,4 +1,4 @@
-import { Form } from "@/components/Form/Form";
+import { FormLayout } from "@/components/FormLayout/FormLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +21,7 @@ export function FormCreateTaskList() {
   }
 
   return (
-    <Form formSubmitText="Create List">
+    <FormLayout formSubmitText="Create List">
       <label className="form__label" htmlFor="form-title">
         <div className="label__icon">
           <FontAwesomeIcon icon={faList} />
@@ -91,6 +91,6 @@ export function FormCreateTaskList() {
 
         <p className="checkbox__description">Pinned List</p>
       </label>
-    </Form>
+    </FormLayout>
   );
 }
