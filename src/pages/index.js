@@ -12,10 +12,6 @@ export default function HomePage() {
       </main>
 
       <section className="section">
-        <Tabs header1='Header 1' header2='Header 2'content1='1' content2='2'/>
-      </section>
-
-      <section className="section">
         <FormLogIn />
       </section>
     </div>
