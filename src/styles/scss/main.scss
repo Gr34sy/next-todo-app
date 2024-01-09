@@ -19,8 +19,8 @@
 @import './pages/about/lists-diffs';
 @import './pages/options/options';
 @import './pages/homepage/homepage';
-@import './pages/lists/list';
-@import './pages/lists/tasklist';
+@import './pages/lists/list-page';
+@import './pages/lists/tasklist-page';
 
 //components
 @import './components/logo';
@@ -28,6 +28,9 @@
 @import './components/footer';
 @import './components/form-layout';
 @import './components/img-decoration';
-@import './components/list-layout';
 @import './components/tabs';
 @import './components/checkbox';
+@import './components/lists/list-layout';
+@import './components/lists/list';
+@import './components/lists/tasklist/task-tile';
+

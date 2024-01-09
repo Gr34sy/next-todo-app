@@ -7,8 +7,8 @@ export default function HomePage() {
     <div className="homepage">
       <main className="main homepage__pinned">
         <h1 className="section__header">Your Lists</h1>
-        <Link href="/lists/list">Simple List </Link> <br/>
-        <Link href="/lists/tasklist">Tasklist </Link>
+        <Link href="/lists/list-id">Simple List </Link> <br/>
+        <Link href="/lists/tasklist-id">Tasklist </Link>
       </main>
 
       <section className="section">

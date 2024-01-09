@@ -1,8 +1,8 @@
-.simple-list {
-  margin-top: 20px;
+.list {
+  padding-top: 10px;
 }
 
-.simple-list__add-task {
+.list__add-item {
   height: 30px;
 
   display: flex;
@@ -10,13 +10,13 @@
   justify-content: flex-start;
   gap: 10px;
 }
-.add-task__input {
-    border: 2px solid $color-tropical-indigo;
-    border-radius: 5px;
-    padding: 4px;
-    font-size: 0.9rem;
+.add-item__input {
+  border: 2px solid $color-tropical-indigo;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 0.9rem;
 }
-.add-task__button {
+.add-item__button {
   font-size: 30px;
 
   &:hover {
@@ -24,7 +24,7 @@
   }
 }
 
-.simple-list__items {
+.list__container {
   max-height: 300px;
   margin-top: 20px;
 
@@ -33,8 +33,7 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-
-.simple-list__item {
+.list__item {
     width: 100%;
 
   div {
