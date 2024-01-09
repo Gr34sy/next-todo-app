@@ -15,7 +15,11 @@ export default function TasklistPage() {
       onClick={handleClick}
       editMode={enableEdit}
     >
-      <TaskTile editMode={enableEdit}/>
+      <div className="task-list">
+        <TaskTile editMode={enableEdit} />
+
+        <TaskTile editMode={enableEdit} />
+      </div>
     </ListPageLayout>
   );
 }

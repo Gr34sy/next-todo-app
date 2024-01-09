@@ -1,9 +1,6 @@
 import { ListPageLayout } from "@/components/Lists/ListPageLayout";
 import { List } from "@/components/Lists/List";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
-
 import { Dummy_List } from "@/utils/dummy-data";
 
 import { useState } from "react";

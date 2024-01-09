@@ -2,7 +2,7 @@ import { Checkbox } from "@/components/Checkbox/Checkbox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen,faSquarePlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-export function List({ editMode, contentArray }) {
+export function List({ editMode, contentArray}) {
   function ListLine(props) {
     if (editMode)
       return (
@@ -26,15 +26,15 @@ export function List({ editMode, contentArray }) {
   }
 
   return (
-    <div className="list">
+    <div className='list'>
       <div className="list__add-item">
         {editMode && <input type="text" className="add-item__input" />}
         {editMode && <FontAwesomeIcon icon={faSquarePlus} className="add-item__button"/>}
       </div>
 
       <ul className="list__container">
-        {contentArray.map((content) => (
-          <ListLine content={content} />
+        {contentArray.map((content,i) => (
+          <ListLine content={content} key={i}/>
         ))}
       </ul>
     </div>

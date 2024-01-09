@@ -1,0 +1,35 @@
+.task-tile{
+    border: 2px solid transparent;
+}
+
+.task-tile--edit{
+    border-color: $color-onyx;
+
+    .task-tile__header{
+        border-color: $color-onyx;
+    }
+}
+
+.task-tile__header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: $color-white;
+    padding: 10px;
+    border-bottom: 2px solid transparent;
+}
+.task-tile__header_deadline{
+    color: $color-tropical-indigo;
+}
+
+.task-tile__edit_icon{
+    justify-self: end;
+    align-self: center;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.task-tile__list{
+    background-color: $color-tropical-indigo;
+}
