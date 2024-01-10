@@ -16,17 +16,22 @@
   }
 }
 
+.section--colored{
+  background-color: var(--color-alt-bg);
+}
+
 .section__header {
   text-align: center;
   font-family: $font-headers;
-  color: $color-jet;
   font-weight: 600;
   font-size: 2rem;
   line-height: 1.3em;
   padding-bottom: 25px;
 
+
   .logo a {
     font-size: 2rem;
+    color: var(--color-font-1);
   }
 
   @media (min-width: 1050px) {
@@ -62,4 +67,8 @@
     &:last-of-type{
         padding-bottom: 0;
     }
+}
+
+.section__description_h2, .section__description_p{
+  color: var(--color-font-1);
 }

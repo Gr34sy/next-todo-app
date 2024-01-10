@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-export function Logo({isDark}) {
+export function Logo() {
   return (
-    <div className={isDark ? "logo logo--dark" : "logo"}>
+    <div className="logo">
       <Link href="/">
 
         ToDo <span> App </span>

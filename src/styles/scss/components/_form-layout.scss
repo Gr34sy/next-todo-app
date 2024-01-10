@@ -2,6 +2,7 @@
   margin: auto;
   width: 100%;
   border-radius: $border-radius;
+  background-color: var(--color-alt-bg);
 
   @media(min-width: 1050px){
     width: 85%;
@@ -47,6 +48,10 @@
   font-size: 1.2rem;
   cursor: pointer;
 
+  path {
+    color: var(--color-accent-1);
+  }
+
   @media(min-width: 700px){
     font-size: 1.5rem;
   }
@@ -87,6 +92,7 @@
   color: $color-jet;
   font-family: $font-main;
   font-size: 1.1rem;
+  color: var(--color-font-1);
 
   @media(min-width: 700px){
     font-size: 1.2rem;
@@ -121,7 +127,6 @@
   font-size: 1.6rem;
   font-family: $font-headers;
   font-weight: 300;
-  color: $color-onyx;
   text-align: center;
 }
 
@@ -138,4 +143,21 @@
   width: 100%;
   font-family: $font-logotype;
   text-align: center;
+  color: $color-onyx;
+  background-color: $color-white;
+
+
+  &:hover {
+    border-color: var(--color-font-2);
+  }
+
+  &.chosen-login-method,
+  &:hover {
+    color: var(--color-font-2);
+    background-color: var(--color-accent-1);
+
+    path {
+      color: var(--color-font-2);
+    }
+  }
 }

@@ -67,6 +67,7 @@
   min-height: 1000px;
   border-radius: $border-radius;
   padding: 1rem;
+  background-color: var(--color-alt-bg);
 
   @media (min-width: 1050px) {
     padding: 2rem;

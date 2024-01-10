@@ -4,25 +4,47 @@
   line-height: 1em;
   text-align: center;
   display: inline-block;
+
   a {
     padding: 0;
     margin: 0;
     height: auto;
     text-decoration: none;
-    color: $color-white;
+    color: var(--color-font-1);
   }
 
   span {
-    color: $color-jet;
+    color: var(--color-accent-1);
   }
 }
 
-.logo--dark {
-  a{
-    color: $color-jet;
-  }
+footer{
+  .logo{
+    a{
+      color: var(--color-font-2);
 
-  span {
-    color: $color-celestial-blue;
+    }
+
+    span{
+      color: var(--color-accent-1);
+    }
   }
 }
+
+.nightmode {
+  .logo{
+    a{
+      color: $color-white;
+    }
+
+    span {
+      color: $color-celestial-blue;
+    }
+  }
+  
+  footer {
+    background-color: var(--color-alt-bg);
+  }
+}
+
+
