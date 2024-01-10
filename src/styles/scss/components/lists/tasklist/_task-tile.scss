@@ -2,6 +2,10 @@
     border: 2px solid transparent;
 }
 
+.task-tile, .task-tile__header{
+    transition: .8s;
+}
+
 .task-tile--edit{
     border-color: $color-onyx;
 
@@ -17,11 +21,27 @@
     padding: 10px;
     border-bottom: 2px solid transparent;
 }
+.task-tile__header_title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .checkbox__div{
+        background-color: $color-onyx;
+    }
+    .checkbox__div.checked{
+        background-color: $color-tropical-indigo;
+    }
+}
 .task-tile__header_deadline{
     color: $color-tropical-indigo;
 }
 
-.task-tile__edit_icon{
+.task-tile__header_title,.task-tile__header_edit-icon{
+    font-size: 22px;
+}
+
+.task-tile__header_edit-icon{
     justify-self: end;
     align-self: center;
 
@@ -30,6 +50,12 @@
     }
 }
 
-.task-tile__list{
+.task-tile__container{
+    padding: 10px;
     background-color: $color-tropical-indigo;
+}
+
+.task-tile__save-button{
+    margin-left: auto;
+    display: block;
 }

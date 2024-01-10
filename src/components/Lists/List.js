@@ -18,7 +18,7 @@ export function List({ editMode, contentArray}) {
       return (
         <li className="list__item">
           <div>
-            <Checkbox isChecked={true} />
+            <Checkbox isChecked={false} />
             {props.content}
           </div>
         </li>

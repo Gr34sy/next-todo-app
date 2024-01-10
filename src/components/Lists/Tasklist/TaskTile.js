@@ -5,6 +5,7 @@ import {
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { List } from "../List";
+import { Checkbox } from "@/components/Checkbox/Checkbox";
 
 import { useState } from "react";
 
@@ -18,13 +19,14 @@ export function TaskTile(props) {
   return (
     <div className={ enableEdit ? "task-tile task-tile--edit" : "task-tile"}>
       <div className="task-tile__header">
-        <h2 className="task-tile__header_title">
+        <div className="task-tile__header_title">
           {enableEdit && <FontAwesomeIcon icon={faPen} />}{" "}
-          Task Title
-        </h2>
+          {!enableEdit && <Checkbox isChecked={true} />}
+          <h2>Task Title</h2>
+        </div>
         <FontAwesomeIcon
           icon={enableEdit ? faArrowRightFromBracket : faPenToSquare}
-          className="task-tile__edit_icon"
+          className="task-tile__header_edit-icon"
           onClick={handleClick}
         />
 
@@ -32,8 +34,9 @@ export function TaskTile(props) {
         <p className="task-tile__header_date">22-2-2024</p>
       </div>
 
-      <div className="task-tile__list">
+      <div className="task-tile__container">
         <List editMode={enableEdit} contentArray={["Do", "you?", "Paris", "Berlin","Hong Kong","Tokyo"]} />
+        { enableEdit && <button className="custom-button custom-button--small task-tile__save-button">Save Changes</button>}
       </div>
     </div>
   );
