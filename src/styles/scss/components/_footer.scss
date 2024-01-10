@@ -46,10 +46,20 @@
   padding-right: 0.8rem;
 }
 
-.footer {
-  .logo {
-    span {
-      color: $color-ultraviolet;
+.footer{
+  .logo{
+    a{
+      color: $color-white;
     }
+
+    span{
+      color: $color-black;
+    }
+  }
+}
+
+.nightmode{
+  footer {
+    background-color: var(--color-alt-bg);
   }
 }

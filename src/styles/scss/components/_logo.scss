@@ -18,33 +18,4 @@
   }
 }
 
-footer{
-  .logo{
-    a{
-      color: var(--color-font-2);
-
-    }
-
-    span{
-      color: var(--color-accent-1);
-    }
-  }
-}
-
-.nightmode {
-  .logo{
-    a{
-      color: $color-white;
-    }
-
-    span {
-      color: $color-celestial-blue;
-    }
-  }
-  
-  footer {
-    background-color: var(--color-alt-bg);
-  }
-}
-
 

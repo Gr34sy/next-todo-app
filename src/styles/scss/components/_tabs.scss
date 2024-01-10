@@ -75,3 +75,10 @@
 
   background-color: var(--color-alt-bg);
 }
+
+.tabs__head_item{
+  &:hover{
+    color: var(--color-font-1);
+    background-color: var(--color-alt-bg);
+  }
+} 

@@ -30,4 +30,22 @@ body {
     --color-accent-1: #3596DC;
     --color-accent-2: #3D52D5;
   }
+
+  &.midnight-green {
+    --color-alt-bg: #95A3B3;
+    --color-accent-1: #0B4049;
+  }
+
+  &.tiffany-blue {
+    --color-accent-1: #84DCC6;
+  }
+
+  &.pinky {
+    --color-alt-bg: #E7CFCD;
+    --color-accent-1: #FF6EC7;
+  }
+
+  &.orange {
+    --color-accent-1: #F5830A;
+  }
 }

@@ -4,7 +4,7 @@
     max-width: 1000px;
     margin-inline: auto;
 
-    background-color: $color-light-grey;
+    background-color: var(--color-alt-bg);
     border-radius: $border-radius;
 
     padding: 20px 30px;
@@ -24,13 +24,17 @@
     font-size: 2rem;
     padding: 0;
 
+    svg{
+        color: var(--color-accent-1);
+    }
+
     @media (min-width: 700px) {
         font-size: 2.4rem;
     }
 }
 
 .list-layout--edit{
-    border: 3px solid $color-tropical-indigo;
+    border: 3px solid var(--color-accent-1);
 }
 
 .list-layout__save-btn{

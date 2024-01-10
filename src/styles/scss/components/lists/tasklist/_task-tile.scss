@@ -1,5 +1,9 @@
 .task-tile{
-    border: 2px solid transparent;
+    border: 2px solid var(--color-font-2);
+}
+
+.task-tile__container{
+    padding: 10px;
 }
 
 .task-tile, .task-tile__header{
@@ -17,7 +21,7 @@
 .task-tile__header{
     display: grid;
     grid-template-columns: 1fr auto;
-    background-color: $color-white;
+    background-color: var(--color-bg);
     padding: 10px;
     border-bottom: 2px solid transparent;
 }
@@ -27,14 +31,14 @@
     gap: 5px;
 
     .checkbox__div{
-        background-color: $color-onyx;
+        background-color: var(--color-alt-bg);
     }
     .checkbox__div.checked{
-        background-color: $color-tropical-indigo;
+        background-color: var(--color-accent-1);
     }
 }
 .task-tile__header_deadline{
-    color: $color-tropical-indigo;
+    color: var(--color-accent-1);
 }
 
 .task-tile__header_title,.task-tile__header_edit-icon{
@@ -48,14 +52,4 @@
     &:hover{
         cursor: pointer;
     }
-}
-
-.task-tile__container{
-    padding: 10px;
-    background-color: $color-tropical-indigo;
-}
-
-.task-tile__save-button{
-    margin-left: auto;
-    display: block;
 }

@@ -1,6 +1,6 @@
-// .list {
-  
-// }
+.list {
+  padding: 10px;
+}
 
 .list__add-item {
   height: 30px;
@@ -11,44 +11,51 @@
   gap: 10px;
 }
 .add-item__input {
-  border: 2px solid $color-tropical-indigo;
   border-radius: 5px;
   padding: 4px;
   font-size: 0.9rem;
+  border: none;
 }
 .add-item__button {
   font-size: 30px;
 
   &:hover {
     cursor: pointer;
+    color: var(--color-accent-1)
   }
 }
 
 .list__container {
   max-height: 300px;
-  margin-top: 5px;
+  margin-top: 10px;
 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .list__item {
-    width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
 
-  div {
-    display: flex;
-    gap: 10px;
-    font-size: 1.1rem;
-    align-items: center;
-    justify-content: flex-start;
+  font-size: 1.1rem;
+  align-items: center;
+  justify-content: flex-start;
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
   }
 
   svg {
     font-size: 22px;
   }
+}
+
+.list__item_pen-icon{
+  color: var(--color-accent-1);
+}
+.list__item_trash-icon{
+  color: $color-red;
 }

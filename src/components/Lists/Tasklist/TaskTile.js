@@ -17,7 +17,7 @@ export function TaskTile(props) {
   }
 
   return (
-    <div className={ enableEdit ? "task-tile task-tile--edit" : "task-tile"}>
+    <div className={enableEdit ? "task-tile task-tile--edit" : "task-tile"}>
       <div className="task-tile__header">
         <div className="task-tile__header_title">
           {enableEdit && <FontAwesomeIcon icon={faPen} />}{" "}
@@ -34,10 +34,10 @@ export function TaskTile(props) {
         <p className="task-tile__header_date">22-2-2024</p>
       </div>
 
-      <div className="task-tile__container">
-        <List editMode={enableEdit} contentArray={["Do", "you?", "Paris", "Berlin","Hong Kong","Tokyo"]} />
-        { enableEdit && <button className="custom-button custom-button--small task-tile__save-button">Save Changes</button>}
-      </div>
+      <List
+        editMode={enableEdit}
+        contentArray={["Do", "you?", "Paris", "Berlin", "Hong Kong", "Tokyo"]}
+      />
     </div>
   );
 }
