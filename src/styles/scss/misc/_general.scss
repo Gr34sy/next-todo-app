@@ -5,6 +5,13 @@ body {
   color: var(--color-font-1);
 }
 
+textarea, input{
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 0.9rem;
+  border: none;
+}
+
 .layout{
   padding-top: 120px;
 }

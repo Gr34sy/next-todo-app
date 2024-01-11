@@ -1,6 +1,6 @@
 .task-list{
     display: grid;
-    gap: 50px;
+    gap: 30px;
 
     @media(min-width: 800px){
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))

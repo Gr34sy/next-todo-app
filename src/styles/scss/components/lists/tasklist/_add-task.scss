@@ -1,0 +1,73 @@
+.add-task {
+  grid-column: 1/-1;
+
+  .list {
+    padding: 0;
+  }
+}
+
+.add-task__header {
+  background-color: var(--color-font-2);
+}
+
+.add-task__container {
+  display: grid;
+  gap: 25px 50px;
+  background-color: var(--color-accent-1);
+  padding: 15px;
+
+  .list__item_pen-icon {
+    color: var(--color-accent-2);
+  }
+
+  .add-item__button {
+    &:hover {
+      color: var(--color-font-2);
+    }
+  }
+
+  @media (min-width: 780px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.add-task__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  align-items: flex-start;
+}
+
+.add-task__labels_label {
+
+  textarea,
+  input {
+    width: 100%;
+
+    @media (min-width: 780px) {
+      width: 300px;
+    }
+    @media (min-width: 1050px) {
+      width: 450px;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.add-task__add-operation {
+  display: flex;
+  flex-direction: column;
+}
+.add-task__add-operation_button {
+  margin-top: 10px;
+  align-self: flex-end;
+
+  &:hover {
+    color: var(--color-font-1);
+    background-color: var(--color-font-2);
+  }
+}

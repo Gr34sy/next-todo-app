@@ -1,4 +1,5 @@
 import { ListPageLayout } from "@/components/Lists/ListPageLayout";
+import { AddTask } from "@/components/Lists/Tasklist/AddTask";
 import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
 import { useState } from "react";
 
@@ -17,6 +18,7 @@ export default function TasklistPage() {
       modifierClass="list-layout--tasklist"
     >
       <div className="task-list">
+        <AddTask />
         <TaskTile editMode={enableEdit} />
         <TaskTile editMode={enableEdit} />
         <TaskTile editMode={enableEdit} />

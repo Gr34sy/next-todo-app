@@ -10,12 +10,8 @@
   justify-content: flex-start;
   gap: 10px;
 }
-.add-item__input {
-  border-radius: 5px;
-  padding: 4px;
-  font-size: 0.9rem;
-  border: none;
-}
+// .add-item__input {
+// }
 .add-item__button {
   font-size: 30px;
 
@@ -59,3 +55,4 @@
 .list__item_trash-icon{
   color: $color-red;
 }
+
