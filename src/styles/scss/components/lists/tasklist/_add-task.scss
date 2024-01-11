@@ -7,6 +7,8 @@
 }
 
 .add-task__header {
+  font-size: 2rem;
+  text-align: center;
   background-color: var(--color-font-2);
 }
 
@@ -59,12 +61,14 @@
 }
 
 .add-task__add-operation {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
 }
 .add-task__add-operation_button {
   margin-top: 10px;
-  align-self: flex-end;
+  align-self: end;
+  justify-self: end;
 
   &:hover {
     color: var(--color-font-1);

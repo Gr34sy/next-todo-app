@@ -6,3 +6,27 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
     }
 }
+
+.task-list__deadline{
+    display: flex;
+    justify-content: space-between;
+    max-width: 250px;
+    font-size: 1.2rem;
+
+    p:first-child{
+        color: var(--color-accent-1);
+    }
+}
+
+.task-list__description{
+    grid-column: 1/-1;
+    background-color: var(--color-font-2);
+    border-radius: $border-radius;
+    min-height: 100px;
+    padding: 10px;
+
+    p:first-child{
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+}
