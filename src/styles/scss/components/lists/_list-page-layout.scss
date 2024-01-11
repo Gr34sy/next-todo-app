@@ -15,6 +15,10 @@
     grid-template-rows: auto 1fr auto;
 }
 
+.list-layout--tasklist{
+    max-width: 1400px;
+}
+
 .list-layout__header{
     display: flex;
     justify-content: space-between;

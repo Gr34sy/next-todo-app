@@ -11,10 +11,10 @@
 }
 
 .task-tile--edit{
-    border-color: $color-onyx;
+    border-color: var(--color-accent-1);
 
     .task-tile__header{
-        border-color: $color-onyx;
+        border-color: var(--color-accent-1);
     }
 }
 

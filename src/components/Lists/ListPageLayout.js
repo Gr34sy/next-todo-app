@@ -7,16 +7,16 @@ export function ListPageLayout(props) {
     <main className="main">
       <section
         className={
-          props.editMode ? "list-layout list-layout--edit" : "list-layout"
+          (props.editMode ? "list-layout list-layout--edit " : "list-layout ") + props.modifierClass
         }
       >
-        <div className="list-layout__header">
+        <div className='list-layout__header'>
           <h1 className="section__header list-layout__title">{props.editMode && <FontAwesomeIcon icon={faPen}/>} {props.title}</h1>
           <button
             className="custom-button custom-button--big"
             onClick={props.onClick}
           >
-            {props.editMode ? "Exit Editing" : "Edit"}
+            {props.editMode ? "Discard Changes" : "Edit"}
           </button>
         </div>
 
@@ -29,7 +29,7 @@ export function ListPageLayout(props) {
             className="custom-button custom-button--big list-layout__save-btn"
             onClick={props.onClick}
           >
-            Save and Exit
+            Save Changes
           </button>
         )}
       </section>

@@ -14,10 +14,12 @@ export default function TasklistPage() {
       title={"Tasklist"}
       onClick={handleClick}
       editMode={enableEdit}
+      modifierClass="list-layout--tasklist"
     >
       <div className="task-list">
         <TaskTile editMode={enableEdit} />
-
+        <TaskTile editMode={enableEdit} />
+        <TaskTile editMode={enableEdit} />
         <TaskTile editMode={enableEdit} />
       </div>
     </ListPageLayout>

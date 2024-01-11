@@ -13,7 +13,7 @@ body {
     --color-accent-1: #957FEF;
     --color-accent-2: #1B1B1B;
     --color-font-1: #1B1B1B;
-    --color-font-2: #E4DEDB;
+    --color-font-2: #FAF3F0;
   }
 
   &.nightmode {
@@ -37,6 +37,7 @@ body {
   }
 
   &.tiffany-blue {
+    --color-alt-bg: #95A3B3;
     --color-accent-1: #84DCC6;
   }
 
