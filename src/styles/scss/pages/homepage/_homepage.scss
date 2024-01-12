@@ -1,12 +1,54 @@
-// .homepage{
-
-// }
-
-
-.homepage__pinned-lists{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
+.homepage {
+  min-height: 76vh;
 }
 
+.homepage__lists {
+  max-width: 1300px;
+  margin: auto;
+}
+.homepage__list-header {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-font-2);
+  background-color: var(--color-accent-1);
+  border: solid 3px var(--color-accent-1);
+  border-top-right-radius: $border-radius ;
+  border-top-left-radius: $border-radius;
+}
+
+.homepage__list-wrapper {
+    &:first-child{
+        margin-bottom: 30px;
+    }
+}
+
+.homepage__list{
+    border: solid 3px var(--color-alt-bg);
+    background-color: var(--color-alt-bg);
+    border-bottom-right-radius: $border-radius - 3px;
+    border-bottom-left-radius: $border-radius - 3px;
+}
+
+.homepage__list_item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 15px 20px;
+    cursor: pointer;
+
+    &:nth-child(2n){
+        background-color: var(--color-bg);
+    }
+
+    &:last-child{
+        border-bottom-right-radius: calc($border-radius - 5px);
+        border-bottom-left-radius: calc($border-radius - 5px);
+    }
+}
+
+.homepage__list_icon{
+    padding-right: 15px;
+    color: var(--color-accent-1);
+}

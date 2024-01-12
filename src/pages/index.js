@@ -1,19 +1,51 @@
 import { FormLogIn } from "@/components/Forms/FormLogIn";
-import { Tabs } from "@/components/Tabs/Tabs";
+import { useState } from "react";
+
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomePage() {
-  return (
-    <div className="homepage">
-      <main className="main homepage__pinned">
-        <h1 className="section__header">Your Lists</h1>
-        <Link href="/lists/list-id">Simple List </Link> <br/>
-        <Link href="/lists/tasklist-id">Tasklist </Link>
-      </main>
+  const [userLogged, setUserLogged] = useState(0);
 
-      <section className="section">
-        <FormLogIn />
-      </section>
-    </div>
+  function HomepageList({ containsTasklists, items }) {
+    return (
+      <ul className="homepage__list">
+        {items.map((item, i) => (
+          <li className="homepage__list_item" key={i}>
+            <FontAwesomeIcon
+              icon={containsTasklists ? faList : faNoteSticky}
+              className="homepage__list_icon"
+            />
+            <Link href={containsTasklists ? 'lists/tasklist-id' : 'lists/list-id'}> {item}</Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  return (
+    <main className="main homepage">
+      <h1 className="section__header">Your Lists</h1>
+      <div className="homepage__lists">
+        <div className="homepage__list-wrapper">
+          <h2 className="homepage__list-header ">Simple Lists</h2>
+          <HomepageList
+            containsTasklists={false}
+            items={["What", "is", "this", "I'm", "feeling?"]}
+          />
+        </div>
+
+        <div className="homepage__list-wrapper">
+          <h2 className="homepage__list-header ">Tasklists</h2>
+          <HomepageList
+            containsTasklists={true}
+            items={["Is", "it", "the", "new", "beginning?"]}
+          />
+        </div>
+      </div>
+
+      {!!userLogged && <FormLogIn />}
+    </main>
   );
 }
