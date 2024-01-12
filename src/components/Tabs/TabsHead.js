@@ -1,8 +1,8 @@
-export function TabsHead({header1, header2, handlerFunction}){
+export function TabsHead({header1, header2, handlerFunction, activeContent}){
     return (
         <div className="tabs__head">
             <div
-              className="tabs__head_item"
+              className={ activeContent == "content1" ? "tabs__head_item tabs__head_item--active" : "tabs__head_item "}
               data-value="content1"
               onClick={handlerFunction}
             >
@@ -10,7 +10,7 @@ export function TabsHead({header1, header2, handlerFunction}){
             </div>
 
             <div
-              className="tabs__head_item"
+              className={ activeContent == "content2" ? "tabs__head_item tabs__head_item--active" : "tabs__head_item "}
               data-value="content2"
               onClick={handlerFunction}
             >

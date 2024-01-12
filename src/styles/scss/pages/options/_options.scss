@@ -19,7 +19,7 @@
 
 .options__logout-panel, .options__themes-panel{
   padding: 20px;
-  min-height: 400px;
+  min-height: 380px;
   border-bottom-right-radius: $border-radius;
   border-bottom-left-radius: $border-radius;
 
@@ -70,7 +70,8 @@
 }
 
 .menu-content__p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  font-weight: 200;
   line-height: 1em;
 }
 

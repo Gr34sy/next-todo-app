@@ -13,7 +13,7 @@ export function Tabs(props){
 
     return (
         <div className="tabs">
-            <TabsHead header1={props.header1} header2={props.header2} handlerFunction={displayChange}/>
+            <TabsHead header1={props.header1} header2={props.header2} handlerFunction={displayChange} activeContent={display} />
             {display === "content1" && <TabsContent content={props.content1} />}
             {display === "content2" && <TabsContent content={props.content2} />}
         </div>
