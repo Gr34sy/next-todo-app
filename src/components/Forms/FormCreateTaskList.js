@@ -1,4 +1,4 @@
-import { FormLayout } from "@/components/FormLayout/FormLayout";
+import { FormLayout } from "@/components/Forms/FormLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";

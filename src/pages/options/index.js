@@ -136,7 +136,7 @@ function OptionsPage() {
   }
 
   return (
-    <section className="section options">
+    <main className="options">
       <h1 className="section__header">Options</h1>
 
       <div className="options__wrapper">
@@ -147,7 +147,7 @@ function OptionsPage() {
           content2={<LogOutPanel />}
         />
       </div>
-    </section>
+    </main>
   );
 }
 

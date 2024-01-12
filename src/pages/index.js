@@ -25,7 +25,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="main homepage">
+    <main className="homepage">
       <h1 className="section__header">Your Lists</h1>
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">

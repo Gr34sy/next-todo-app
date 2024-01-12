@@ -1,5 +1,16 @@
 .page-layout{
     display: grid;
-
     grid-template-rows: auto 1fr auto;
+
+    padding-inline: 20px;
+    padding-block: 25px 50px;
+  
+  
+    @media(min-width: 1050px){
+      padding-inline: 80px;
+    }
+  
+    @media (min-width: 1465px) {
+      padding-block: 10px 100px;
+    }
 }

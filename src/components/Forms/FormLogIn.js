@@ -6,7 +6,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 //forms
-import { FormLayout } from "../FormLayout/FormLayout";
+import { FormLayout } from "./FormLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //js imports
