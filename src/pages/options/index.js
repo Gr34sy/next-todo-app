@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs } from "@/components/Tabs/Tabs";
 
 function OptionsPage() {
-  const [chosenColorTheme, setChosenColorTheme] = useState(
-    document.body.className
-  );
+  const [chosenColorTheme, setChosenColorTheme] = useState('default');
+
+  useEffect(() => {
+    setChosenColorTheme(document.body.className);
+  }, [])
 
   function themeChangeHandler(e) {
     setChosenColorTheme(e.target.value);

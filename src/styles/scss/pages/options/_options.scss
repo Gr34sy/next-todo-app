@@ -17,6 +17,15 @@
   justify-content: center;
 }
 
+.options__logout-panel, .options__themes-panel{
+  padding: 20px;
+  min-height: 400px;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+
+  background-color: var(--color-alt-bg);
+}
+
 // themes panel
 .options__themes-panel {
   display: flex;
@@ -25,6 +34,7 @@
   align-items: left;
   gap: 20px;
   height: 100%;
+
 }
 
 .themes-panel__radios {

@@ -3,6 +3,10 @@ body {
   font-family: $font-main;
   font-size: 16px;
   color: var(--color-font-1);
+
+  @media (min-width: 850px) {
+    padding-top: 150px;
+  }
 }
 textarea, input{
   border-radius: 5px;
@@ -16,10 +20,6 @@ textarea{
 a{
   color: var(--color-font-1);
   text-decoration: none;
-}
-
-.layout{
-  padding-top: 120px;
 }
 
 .d-none{

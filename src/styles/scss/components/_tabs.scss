@@ -67,13 +67,6 @@
 .tabs__content {
   width: 100%;
   margin-top: 20px;
-  height: 1px;
-  min-height: 400px;
-  padding: 20px;
-  border-bottom-right-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
-
-  background-color: var(--color-alt-bg);
 }
 
 .tabs__head_item{
