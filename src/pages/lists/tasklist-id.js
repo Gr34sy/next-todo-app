@@ -2,9 +2,12 @@ import { ListPageLayout } from "@/components/Lists/ListPageLayout";
 import { AddTask } from "@/components/Lists/Tasklist/AddTask";
 import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
 import { useState } from "react";
+import { Dummy_Tasklist } from "@/utils/dummy-data";
 
-export default function TasklistPage() {
+export default function TasklistPage(props) {
   const [enableEdit, setEnableEdit] = useState(false);
+
+  const tasklist = props.tasklist;
 
   function handleClick() {
     setEnableEdit((prev) => !prev);
@@ -12,7 +15,7 @@ export default function TasklistPage() {
 
   return (
     <ListPageLayout
-      title={"Tasklist"}
+      title={tasklist.title}
       onClick={handleClick}
       editMode={enableEdit}
       modifierClass="list-layout--tasklist"
@@ -21,24 +24,37 @@ export default function TasklistPage() {
         <div className="task-list__deadline">
           <p>Deadline:</p>
 
-          <p>22-02-2024</p>
+          <p>{tasklist.deadline}</p>
         </div>
         <div className="task-list__description">
-          <p>
-            Description
-          </p>
+          <p>Description</p>
 
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non sapiente dolor earum iure esse quis excepturi saepe totam maiores tenetur!
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non sapiente dolor earum iure esse quis excepturi saepe totam maiores tenetur!
-          </p>
+          <p>{tasklist.description}</p>
         </div>
         {enableEdit && <AddTask />}
-        <TaskTile editMode={enableEdit} />
-        <TaskTile editMode={enableEdit} />
-        <TaskTile editMode={enableEdit} />
-        <TaskTile editMode={enableEdit} />
+
+        <div className="task-list__tasks">
+        {tasklist.tasks.map((task) => (
+          <TaskTile
+            name={task.name}
+            deadline={task.deadline}
+            isDone={task.isDone}
+            itemId={task.id}
+            operations={task.operations}
+            key={task.id}
+          />
+        ))}
+        </div>
+
       </div>
     </ListPageLayout>
   );
+}
+
+export function getStaticProps() {
+  return {
+    props: {
+      tasklist: Dummy_Tasklist,
+    },
+  };
 }

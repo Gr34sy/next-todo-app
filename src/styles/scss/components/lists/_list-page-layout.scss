@@ -7,12 +7,16 @@
     background-color: var(--color-alt-bg);
     border-radius: $border-radius;
 
-    padding: 20px 30px;
+    padding: 15px 5px;
     border: 3px solid transparent;
     transition: .8s;
 
     display: grid;
     grid-template-rows: auto 1fr auto;
+
+    @media (min-width: 700px) {
+        padding-inline: 30px;
+    }
 }
 
 .list-layout--tasklist{
@@ -21,20 +25,25 @@
 
 .list-layout__header{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
     align-items: flex-start;
-}
-.list-layout__title{
-    font-size: 2rem;
-    padding: 0;
 
     svg{
+        padding-right: 10px;
         color: var(--color-accent-1);
     }
 
-    @media (min-width: 700px) {
-        font-size: 2.4rem;
+    @media(min-width: 680px){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
+}
+.list-layout__title{
+    padding: 0;
+    text-align: center;
 }
 
 .list-layout--edit{

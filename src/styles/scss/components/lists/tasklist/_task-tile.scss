@@ -19,14 +19,13 @@
 }
 
 .task-tile__header{
-    display: grid;
-    grid-template-columns: 1fr auto;
     background-color: var(--color-bg);
     padding: 10px;
     border-bottom: 2px solid transparent;
 }
 .task-tile__header_title{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 5px;
 
@@ -38,7 +37,12 @@
     }
 }
 .task-tile__header_deadline{
-    color: var(--color-accent-1);
+    display: flex;
+    justify-content: space-between;
+
+    p:first-child{
+        color: var(--color-accent-1);
+    }
 }
 
 .task-tile__header_title,.task-tile__header_edit-icon{

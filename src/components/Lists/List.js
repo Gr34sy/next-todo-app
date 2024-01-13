@@ -10,7 +10,7 @@ export function List({ editMode, contentArray }) {
   function ListLine(props) {
     if (editMode)
       return (
-        <li className="list__item">
+        <li className="list__item" data-id={props.itemId}>
           <FontAwesomeIcon icon={faPen} className="list__item_pen-icon" />
           {props.content}
           <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" />
@@ -18,8 +18,8 @@ export function List({ editMode, contentArray }) {
       );
     else
       return (
-        <li className="list__item">
-          <Checkbox isChecked={false} />
+        <li className="list__item" data-id={props.itemId}>
+          <Checkbox isChecked={props.isDone} />
           {props.content}
         </li>
       );
@@ -33,8 +33,13 @@ export function List({ editMode, contentArray }) {
       </div>
 
       <ul className="list__container">
-        {contentArray.map((content, i) => (
-          <ListLine content={content} key={i} />
+        {contentArray.map((content) => (
+          <ListLine
+            content={content.name}
+            itemId={content.id}
+            key={content.id}
+            isDone={content.isDone}
+          />
         ))}
       </ul>
     </div>

@@ -11,9 +11,7 @@ export function ListPageLayout(props) {
       }
     >
       <div className="list-layout__header">
-        <h1 className="section__header list-layout__title">
-          {props.editMode && <FontAwesomeIcon icon={faPen} />} {props.title}
-        </h1>
+        <h1 className="section__header list-layout__title">{props.editMode && <FontAwesomeIcon icon={faPen} />}{props.title}</h1>
         <button
           className="custom-button custom-button--big"
           onClick={props.onClick}

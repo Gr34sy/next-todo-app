@@ -5,9 +5,9 @@ import { Dummy_List } from "@/utils/dummy-data";
 
 import { useState } from "react";
 
-export default function ListPage(props) {
-  console.log(props.simple_list);
+const list = Dummy_List;
 
+export default function ListPage(props) {
   const [enableEdit, setEnableEdit] = useState(false);
 
   function handleClick() {
@@ -16,14 +16,14 @@ export default function ListPage(props) {
 
   return (
     <ListPageLayout
-      title={"The Bay"}
+      title={list.title}
       onClick={handleClick}
       editMode={enableEdit}
     >
       <div className="simple-list">
         <List
           editMode={enableEdit}
-          contentArray={["You've", "got", "the", "body"]}
+          contentArray={list.tasks}
         />
       </div>
     </ListPageLayout>

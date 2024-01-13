@@ -21,23 +21,22 @@ export function TaskTile(props) {
       <div className="task-tile__header">
         <div className="task-tile__header_title">
           {enableEdit && <FontAwesomeIcon icon={faPen} />}{" "}
-          {!enableEdit && <Checkbox isChecked={true} />}
-          <h2>Task Title</h2>
-        </div>
-        <FontAwesomeIcon
+          {!enableEdit && <Checkbox isChecked={props.isDone} />}
+          <h2>{props.name}</h2>
+          <FontAwesomeIcon
           icon={enableEdit ? faArrowRightFromBracket : faPenToSquare}
           className="task-tile__header_edit-icon"
           onClick={handleClick}
         />
+        </div>
 
-        <p className="task-tile__header_deadline">Deadline:</p>
-        <p className="task-tile__header_date">22-2-2024</p>
+        <div className="task-tile__header_deadline">
+          <p>Deadline:</p>
+          <p className="task-tile__header_date">{props.deadline}</p>
+        </div>
       </div>
 
-      <List
-        editMode={enableEdit}
-        contentArray={["Do", "you?", "Paris", "Berlin", "Hong Kong", "Tokyo"]}
-      />
+      <List editMode={enableEdit} contentArray={props.operations} />
     </div>
   );
 }
