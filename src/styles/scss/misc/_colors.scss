@@ -1,33 +1,67 @@
-
 //colors
-$color-black: rgb(22,22,22);
+$color-black: #1B1B1B;
 $color-red: rgb(207, 3, 3);
 $color-white: #FAF3F0; // Isabelline
 $color-jet:  #2d2d2c; // Jet
-
-//default theme
 $color-light-grey: #E4DEDB; // Timberwolf
+
 $color-tropical-indigo: #957FEF; // Tropical indigo
-
-//nightmode theme
-$color-ultraviolet:  #333546; // Ultraviolet as section and grid color
-$color-onyx: #1B1B1B; // Onyx
-
-//celestial blue theme
-$color-powder-blue: #B4C5E4; // Powder blue
-$color-celestial-blue: #3596DC; // Celestial blue
-$color-byzantine-blue: #3D52D5; // Byzantine blue
-
-//midnight green theme
-$color-cadet-gray: #95A3B3; // Cadet gray
-$color-midnight-green: #0B4049; // Midnight green
-
-//pinky  theme
-$color-dogwood: #E7CFCD; // Dogwood
+$color-celestial-blue: #3596DC;   // Celestial blue
+$color-orange: #F5830A; // orange
 $color-pink: #FF6EC7; // Pink
+$color-tiffany-blue:  #50a08c; // Tiffany blue
+$color-midnight-green: #00404b; // Midnight green
 
-//orange  theme
-$color-orange: #F5830A; // Tangerine
+//themes
+body {
+    --color-bg: #FAF3F0;
+    --color-alt-bg: #E4DEDB;
+    --color-accent-1: #957FEF;
+    --color-accent-2: #1B1B1B;
+    --color-font-1: #1B1B1B;
+    --color-font-2: #FAF3F0;
 
-//tiffany blue theme
-$color-tiffany-blue:  #84DCC6; // Tiffany blue
+  &.default {
+    --color-bg: #FAF3F0;
+    --color-alt-bg: #dac6eb;
+    --color-accent-1: #957FEF;
+    --color-accent-2: #1B1B1B;
+    --color-font-1: #1B1B1B;
+    --color-font-2: #FAF3F0;
+  }
+
+  &.nightmode {
+    --color-bg: #1B1B1B;
+    --color-alt-bg: #333546;
+    --color-accent-1: #95A3B3;
+    --color-accent-2: #1B1B1B;
+    --color-font-1: #FAF3F0;
+    --color-font-2: #1B1B1B;
+  }
+
+  &.celestial-blue {
+    --color-alt-bg: #B4C5E4;
+    --color-accent-1: #3596DC;
+    --color-accent-2: #1B1B1B;
+  }
+
+  &.midnight-green {
+    --color-alt-bg: #95A3B3;
+    --color-accent-1: #00404b;
+  }
+
+  &.tiffany-blue {
+    --color-alt-bg: #c3f3d2;
+    --color-accent-1: #50a08c;
+  }
+
+  &.pinky {
+    --color-alt-bg: #E7CFCD;
+    --color-accent-1: #FF6EC7;
+  }
+
+  &.orange {
+    --color-accent-1: #F5830A;
+    --color-alt-bg: #ebe4a9;
+  }
+}

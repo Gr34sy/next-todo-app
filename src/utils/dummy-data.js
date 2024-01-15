@@ -75,25 +75,10 @@ export const Dummy_Tasklist = {
           name: " Dummy operation 2 ",
           isDone: false,
         },
-      ],
-    },
-
-    {
-      id: "dummy-task2",
-      name: "This is dummy task 2",
-      deadline: "01-01-2024",
-      description: "This is dummy task 2 description",
-      isDone: false,
-      operations: [
-        {
-          id: "dummy-operation1",
-          name: " Dummy operation 1 ",
-          isDone: false,
-        },
 
         {
-          id: "dummy-operation2",
-          name: " Dummy operation 2 ",
+          id: "dummy-operation3",
+          name: " Dummy operation 3 ",
           isDone: false,
         },
       ],
@@ -115,6 +100,45 @@ export const Dummy_Tasklist = {
         {
           id: "dummy-operation2",
           name: " Dummy operation 2 ",
+          isDone: false,
+        },
+      ],
+    },
+
+    {
+      id: "dummy-task2",
+      name: "This is dummy task 2",
+      deadline: "01-01-2024",
+      description: "This is dummy task 2 description",
+      isDone: false,
+      operations: [
+        {
+          id: "dummy-operation1",
+          name: " Dummy operation 1 ",
+          isDone: true,
+        },
+
+        {
+          id: "dummy-operation2",
+          name: " Dummy operation 2 ",
+          isDone: false,
+        },
+
+        {
+          id: "dummy-operation3",
+          name: " Dummy operation 3 ",
+          isDone: false,
+        },
+
+        {
+          id: "dummy-operation4",
+          name: " Dummy operation 4 ",
+          isDone: false,
+        },
+
+        {
+          id: "dummy-operation5",
+          name: " Dummy operation 5 ",
           isDone: false,
         },
       ],

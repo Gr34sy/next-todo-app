@@ -1,35 +1,38 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 export function ListPageLayout(props) {
   return (
-    <main
-      className={
-        (props.editMode ? "list-layout list-layout--edit " : "list-layout ") +
-        props.modifierClass
-      }
-    >
-      <div className="list-layout__header">
-        <h1 className="section__header list-layout__title">{props.editMode && <FontAwesomeIcon icon={faPen} />}{props.title}</h1>
-        <button
-          className="custom-button custom-button--big"
-          onClick={props.onClick}
-        >
-          {props.editMode ? "Discard Changes" : "Edit"}
-        </button>
+    <main className={"list-layout " + (props.modifierClass || "")}>
+      <div className="list-layout__header section__header">
+        <h1 className="list-layout__header_title">{props.title}</h1>
+
+        <FontAwesomeIcon
+          icon={faPenToSquare}
+          className="list-layout__header_icon"
+        />
       </div>
+
 
       <div className="list-layout__content">{props.children}</div>
 
-      {props.editMode && (
+
+      <div className="list-layout__buttons">
         <button
-          className="custom-button custom-button--big list-layout__save-btn"
+          className="custom-button list-layout__buttons_discard-btn"
+          onClick={props.onClick}
+        >
+          Discard Changes
+        </button>
+
+        <button
+          className="custom-button list-layout__buttons_save-btn"
           onClick={props.onClick}
         >
           Save Changes
         </button>
-      )}
+      </div>
     </main>
   );
 }

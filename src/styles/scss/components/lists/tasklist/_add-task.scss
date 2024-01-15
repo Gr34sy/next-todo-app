@@ -16,6 +16,7 @@
   display: grid;
   gap: 25px 50px;
   background-color: var(--color-accent-1);
+  background-color: rgb(248, 138, 64);
   padding: 15px;
 
   .list__item_pen-icon {
@@ -65,9 +66,4 @@
   margin-top: 10px;
   align-self: end;
   justify-self: end;
-
-  &:hover {
-    color: var(--color-font-1);
-    background-color: var(--color-font-2);
-  }
 }

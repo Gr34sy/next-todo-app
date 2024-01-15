@@ -60,12 +60,13 @@ a{
 
 .custom-button {
   color: $color-white;
+  display: block;
   padding: 10px;
   outline: none;
   border: none;
   border-radius: 8px;
   transition: .6s;
-  background-color: var(--color-accent-2);
+  background-color: $color-black;
 
   &:hover {
     cursor: pointer;
