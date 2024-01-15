@@ -1,6 +1,10 @@
 .list {
   padding-block: 12px;
   padding-inline: 12px 0;
+  overflow-y: auto;
+}
+.list--operations{
+  background-color: var(--color-accent);
 }
 
 .list__add-item {
@@ -15,11 +19,7 @@
 // }
 .add-item__button {
   font-size: 30px;
-
-  &:hover {
-    cursor: pointer;
-    color: var(--color-accent-1)
-  }
+  cursor: pointer;
 }
 
 .list__container {
@@ -28,7 +28,6 @@
 
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -59,7 +58,7 @@
 }
 
 .list__item_pen-icon{
-  color: var(--color-accent-1);
+  color: $color-black;
 }
 .list__item_trash-icon{
   color: $color-red;

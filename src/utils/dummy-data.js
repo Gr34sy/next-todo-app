@@ -85,7 +85,7 @@ export const Dummy_Tasklist = {
     },
 
     {
-      id: "dummy-task2",
+      id: "dummy-task3",
       name: "This is dummy task 2",
       deadline: "01-01-2024",
       description: "This is dummy task 2 description",
@@ -106,7 +106,7 @@ export const Dummy_Tasklist = {
     },
 
     {
-      id: "dummy-task2",
+      id: "dummy-task4",
       name: "This is dummy task 2",
       deadline: "01-01-2024",
       description: "This is dummy task 2 description",

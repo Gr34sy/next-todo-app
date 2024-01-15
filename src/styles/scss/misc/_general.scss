@@ -51,14 +51,15 @@ a{
   display: inline;
   font-weight: 600;
 
-  color: var(--color-accent-1);
+  color: var(--color-accent);
 
   a {
-    color: var(--color-accent-1);
+    color: var(--color-accent);
   }
 }
 
 .custom-button {
+  font-size: 1rem;
   color: $color-white;
   display: block;
   padding: 10px;
@@ -70,7 +71,7 @@ a{
 
   &:hover {
     cursor: pointer;
-    background-color: var(--color-accent-1);
+    background-color: var(--color-accent);
   }
 
   path{
@@ -81,16 +82,8 @@ a{
   font-size: 1.3rem;
   padding: 10px;
 
-  @media(min-width: 700px){
+  @media(min-width: 670px){
     padding: 16px;
-  }
-}
-.custom-button--small {
-  font-size: 1rem;
-  padding: 8px;
-
-  @media(min-width: 700px){
-    padding: 12px;
   }
 }
 

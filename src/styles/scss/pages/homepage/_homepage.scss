@@ -10,8 +10,8 @@
   font-size: 2rem;
   text-align: center;
   color: var(--color-font-2);
-  background-color: var(--color-accent-1);
-  border: solid 3px var(--color-accent-1);
+  background-color: var(--color-accent);
+  border: solid 3px var(--color-accent);
   border-top-right-radius: $border-radius ;
   border-top-left-radius: $border-radius;
 }
@@ -50,5 +50,5 @@
 
 .homepage__list_icon{
     padding-right: 15px;
-    color: var(--color-accent-1);
+    color: var(--color-accent);
 }

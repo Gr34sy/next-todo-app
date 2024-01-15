@@ -6,7 +6,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-export function List({ contentArray }) {
+export function List({ contentArray, listType }) {
   function ListLine(props) {
       return (
         <li className="list__item" data-id={props.itemId}>
@@ -22,7 +22,7 @@ export function List({ contentArray }) {
   }
 
   return (
-    <div className="list">
+    <div className={"list " + (listType || "")}>
       <div className="list__add-item">
         <input type="text" className="add-item__input" />
         <FontAwesomeIcon icon={faSquarePlus} className="add-item__button" />

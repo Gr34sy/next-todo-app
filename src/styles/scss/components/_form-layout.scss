@@ -43,7 +43,7 @@
   cursor: pointer;
 
   path {
-    color: var(--color-accent-1);
+    color: var(--color-accent);
   }
 
   @media (min-width: 700px) {
@@ -147,7 +147,7 @@
   &.chosen-login-method,
   &:hover {
     color: var(--color-font-2);
-    background-color: var(--color-accent-1);
+    background-color: var(--color-accent);
 
     path {
       color: var(--color-font-2);

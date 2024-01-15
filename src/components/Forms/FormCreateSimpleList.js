@@ -49,16 +49,6 @@ export function FormCreateSimpleList() {
 
       <button className="custom-button custom-button--small">Add Tag</button>
 
-      <label className="form__label" onClick={pinnedListChangeHandler}>
-        <div className="checkbox__div">
-          <div
-            className={isPinned ? "checkmark__div checked" : "checkmark__div"}
-          >
-            <FontAwesomeIcon className="checkmark__icon" icon={faCheck} />
-          </div>
-        </div>
-        <p className="checkbox__description">Pinned List</p>
-      </label>
     </FormLayout>
   );
 }

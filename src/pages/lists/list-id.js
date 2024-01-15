@@ -13,11 +13,9 @@ export default function ListPage(props) {
   return (
     <ListPageLayout
       title={list.title}
-      onClick={handleClick}
     >
       <div className="simple-list">
         <List
-          editMode={enableEdit}
           contentArray={list.tasks}
         />
       </div>

@@ -16,16 +16,14 @@ $color-midnight-green: #00404b; // Midnight green
 body {
     --color-bg: #FAF3F0;
     --color-alt-bg: #E4DEDB;
-    --color-accent-1: #957FEF;
-    --color-accent-2: #1B1B1B;
+    --color-accent: #957FEF;
     --color-font-1: #1B1B1B;
     --color-font-2: #FAF3F0;
 
   &.default {
     --color-bg: #FAF3F0;
     --color-alt-bg: #dac6eb;
-    --color-accent-1: #957FEF;
-    --color-accent-2: #1B1B1B;
+    --color-accent: #957FEF;
     --color-font-1: #1B1B1B;
     --color-font-2: #FAF3F0;
   }
@@ -33,35 +31,33 @@ body {
   &.nightmode {
     --color-bg: #1B1B1B;
     --color-alt-bg: #333546;
-    --color-accent-1: #95A3B3;
-    --color-accent-2: #1B1B1B;
+    --color-accent: #95A3B3;
     --color-font-1: #FAF3F0;
     --color-font-2: #1B1B1B;
   }
 
   &.celestial-blue {
     --color-alt-bg: #B4C5E4;
-    --color-accent-1: #3596DC;
-    --color-accent-2: #1B1B1B;
+    --color-accent: #3596DC;
   }
 
   &.midnight-green {
     --color-alt-bg: #95A3B3;
-    --color-accent-1: #00404b;
+    --color-accent: #00404b;
   }
 
   &.tiffany-blue {
     --color-alt-bg: #c3f3d2;
-    --color-accent-1: #50a08c;
+    --color-accent: #50a08c;
   }
 
   &.pinky {
     --color-alt-bg: #E7CFCD;
-    --color-accent-1: #FF6EC7;
+    --color-accent: #FF6EC7;
   }
 
   &.orange {
-    --color-accent-1: #F5830A;
+    --color-accent: #F5830A;
     --color-alt-bg: #ebe4a9;
   }
 }

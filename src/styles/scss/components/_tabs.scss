@@ -34,7 +34,7 @@
   &.tabs__head_item--active,
   &:hover {
     color: var(--color-font-2);
-    background-color: var(--color-accent-1);
+    background-color: var(--color-accent);
   }
 
   &:hover {
@@ -69,7 +69,7 @@
 .nightmode{
   .tabs__head_item{
     color: var(--color-font-2);
-    background-color: var(--color-accent-1);
+    background-color: var(--color-accent);
   
     &.tabs__head_item--active,
     &:hover {

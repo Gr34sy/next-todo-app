@@ -24,13 +24,8 @@
 .add-task__container {
   display: grid;
   gap: 25px 50px;
-  background-color: var(--color-accent-1);
-  background-color: rgb(248, 138, 64);
+  background-color: var(--color-accent);
   padding: 15px;
-
-  .list__item_pen-icon {
-    color: var(--color-accent-2);
-  }
 
   .add-item__button {
     &:hover {

@@ -123,11 +123,11 @@ function OptionsPage() {
           </label>
         </div>
         <div className="options__themes-panel_buttons">
-          <button className="custom-button custom-button--small">
+          <button className="custom-button custom-button--big">
             Decline Change
           </button>
 
-          <button className="custom-button custom-button--small">
+          <button className="custom-button custom-button--big">
             Save Color Theme
           </button>
         </div>
