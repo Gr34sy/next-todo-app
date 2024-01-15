@@ -6,21 +6,17 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-export function List({ editMode, contentArray }) {
+export function List({ contentArray }) {
   function ListLine(props) {
-    if (editMode)
-      return (
-        <li className="list__item" data-id={props.itemId}>
-          <FontAwesomeIcon icon={faPen} className="list__item_pen-icon" />
-          {props.content}
-          <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" />
-        </li>
-      );
-    else
       return (
         <li className="list__item" data-id={props.itemId}>
           <Checkbox isChecked={props.isDone} />
           {props.content}
+
+          <div className="list__item_icons">
+          <FontAwesomeIcon icon={faPen} className="list__item_pen-icon" />
+          <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" />
+          </div>
         </li>
       );
   }

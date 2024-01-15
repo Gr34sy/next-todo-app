@@ -5,19 +5,12 @@ import { useState } from "react";
 import { Dummy_Tasklist } from "@/utils/dummy-data";
 
 export default function TasklistPage(props) {
-  const [enableEdit, setEnableEdit] = useState(false);
 
   const tasklist = props.tasklist;
-
-  function handleClick() {
-    setEnableEdit((prev) => !prev);
-  }
 
   return (
     <ListPageLayout
       title={tasklist.title}
-      onClick={handleClick}
-      editMode={enableEdit}
       modifierClass="list-layout--tasklist"
     >
       <div className="task-list">
@@ -31,7 +24,8 @@ export default function TasklistPage(props) {
 
           <p>{tasklist.description}</p>
         </div>
-        {enableEdit && <AddTask />}
+
+        <AddTask />
 
         <div className="task-list__tasks">
         {tasklist.tasks.map((task) => (

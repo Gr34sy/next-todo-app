@@ -8,8 +8,17 @@
 
 .add-task__header {
   font-size: 2rem;
-  text-align: center;
+  padding-inline: 10px;
+  cursor: pointer;
   background-color: var(--color-font-2);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  path{
+    color: $color-black;
+  }
 }
 
 .add-task__container {

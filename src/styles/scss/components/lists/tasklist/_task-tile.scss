@@ -10,14 +10,6 @@
     transition: .8s;
 }
 
-.task-tile--edit{
-    border-color: var(--color-accent-1);
-
-    .task-tile__header{
-        border-color: var(--color-accent-1);
-    }
-}
-
 .task-tile__header{
     background-color: var(--color-bg);
     padding: 10px;
@@ -42,6 +34,7 @@
 
     p:first-child{
         color: var(--color-accent-1);
+        cursor: pointer;
     }
 }
 

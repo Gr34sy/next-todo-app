@@ -10,23 +10,16 @@ import { Checkbox } from "@/components/Checkbox/Checkbox";
 import { useState } from "react";
 
 export function TaskTile(props) {
-  const [enableEdit, setEnableEdit] = useState(false);
-
-  function handleClick() {
-    setEnableEdit((prev) => !prev);
-  }
 
   return (
-    <div className={enableEdit ? "task-tile task-tile--edit" : "task-tile"}>
+    <div className="task-tile">
       <div className="task-tile__header">
         <div className="task-tile__header_title">
-          {enableEdit && <FontAwesomeIcon icon={faPen} />}{" "}
-          {!enableEdit && <Checkbox isChecked={props.isDone} />}
+          <Checkbox isChecked={props.isDone} />
           <h2>{props.name}</h2>
           <FontAwesomeIcon
-          icon={enableEdit ? faArrowRightFromBracket : faPenToSquare}
+          icon={faPenToSquare}
           className="task-tile__header_edit-icon"
-          onClick={handleClick}
         />
         </div>
 
@@ -36,7 +29,7 @@ export function TaskTile(props) {
         </div>
       </div>
 
-      <List editMode={enableEdit} contentArray={props.operations} />
+      <List contentArray={props.operations} />
     </div>
   );
 }

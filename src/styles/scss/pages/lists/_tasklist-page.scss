@@ -21,6 +21,7 @@
 
     p:first-child{
         color: var(--color-accent-1);
+        cursor: pointer;
     }
 }
 
@@ -33,5 +34,7 @@
     p:first-child{
         font-size: 1.1rem;
         font-weight: 700;
+        cursor: pointer;
+        display: inline-block;
     }
 }

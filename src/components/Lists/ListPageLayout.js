@@ -20,14 +20,14 @@ export function ListPageLayout(props) {
 
       <div className="list-layout__buttons">
         <button
-          className="custom-button list-layout__buttons_discard-btn"
+          className="custom-button custom-button--big list-layout__buttons_discard-btn"
           onClick={props.onClick}
         >
           Discard Changes
         </button>
 
         <button
-          className="custom-button list-layout__buttons_save-btn"
+          className="custom-button custom-button--big list-layout__buttons_save-btn"
           onClick={props.onClick}
         >
           Save Changes
