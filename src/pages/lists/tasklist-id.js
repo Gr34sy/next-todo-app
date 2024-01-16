@@ -1,11 +1,14 @@
+//Components
 import { ListPageLayout } from "@/components/Lists/ListPageLayout";
 import { AddTask } from "@/components/Lists/Tasklist/AddTask";
 import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
+
+//Functions
+import { ObjectId } from "mongodb";
 import { useState } from "react";
-import { Dummy_Tasklist } from "@/utils/dummy-data";
+import { dbConnect } from "@/utils/dbConnect";
 
 export default function TasklistPage(props) {
-
   const tasklist = props.tasklist;
 
   return (
@@ -28,27 +31,41 @@ export default function TasklistPage(props) {
         <AddTask />
 
         <div className="task-list__tasks">
-        {tasklist.tasks.map((task) => (
-          <TaskTile
-            name={task.name}
-            deadline={task.deadline}
-            isDone={task.isDone}
-            itemId={task.id}
-            operations={task.operations}
-            key={task.id}
-          />
-        ))}
+          {tasklist.tasks.map((task) => (
+            <TaskTile
+              name={task.name}
+              deadline={task.deadline}
+              isDone={task.isDone}
+              itemId={task.id}
+              operations={task.operations}
+              key={task.id}
+            />
+          ))}
         </div>
-
       </div>
     </ListPageLayout>
   );
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const client = await dbConnect();
+  const db = client.db("ToDo");
+
+  const listId = new ObjectId("65a6731eb6a8062447227713");
+  const list = await Object(
+    db.collection("Dummy Tasklist").findOne({ _id: listId })
+  );
+  console.log(list);
+  client.close();
   return {
     props: {
-      tasklist: Dummy_Tasklist,
+      tasklist: {
+        list_id: list._id.toString(),
+        title: list.title,
+        deadline: list.deadline,
+        description: list.description,
+        tasks: list.tasks,
+      },
     },
   };
 }
