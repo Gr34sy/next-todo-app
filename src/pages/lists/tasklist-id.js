@@ -1,5 +1,8 @@
+//Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+
 //Components
-import { ListPageLayout } from "@/components/Lists/ListPageLayout";
 import { AddTask } from "@/components/Lists/Tasklist/AddTask";
 import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
 
@@ -12,10 +15,16 @@ export default function TasklistPage(props) {
   const tasklist = props.tasklist;
 
   return (
-    <ListPageLayout
-      title={tasklist.title}
-      modifierClass="list-layout--tasklist"
-    >
+    <main className="list-layout list-layout--tasklist">
+      <div className="list-layout__header section__header">
+        <h1 className="list-layout__header_title">{tasklist.title}</h1>
+
+        <FontAwesomeIcon
+          icon={faPenToSquare}
+          className="list-layout__header_icon"
+        />
+      </div>
+
       <div className="task-list">
         <div className="task-list__deadline">
           <p>Deadline:</p>
@@ -43,7 +52,17 @@ export default function TasklistPage(props) {
           ))}
         </div>
       </div>
-    </ListPageLayout>
+
+      <div className="list-layout__buttons">
+        <button className="custom-button custom-button--big list-layout__buttons_discard-btn">
+          Discard Changes
+        </button>
+
+        <button className="custom-button custom-button--big list-layout__buttons_save-btn">
+          Save Changes
+        </button>
+      </div>
+    </main>
   );
 }
 

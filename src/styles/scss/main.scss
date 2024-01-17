@@ -11,8 +11,10 @@
 @import './pages/options/options';
 @import './pages/homepage/homepage';
 @import './pages/list-creator/list-creator';
+@import './pages/lists/list-layout';
 @import './pages/lists/list-page';
 @import './pages/lists/tasklist-page';
+
 
 //components
 @import './components/logo';
@@ -23,7 +25,6 @@
 @import './components/img-decoration';
 @import './components/tabs';
 @import './components/checkbox';
-@import './components/lists/list-page-layout';
 @import './components/lists/list';
 @import './components/lists/tasklist/task-tile';
 @import './components/lists/tasklist/add-task';

@@ -11,6 +11,7 @@ export function ListPageLayout(props) {
         <FontAwesomeIcon
           icon={faPenToSquare}
           className="list-layout__header_icon"
+          onClick={props.changeEditMode}
         />
       </div>
 
@@ -28,7 +29,6 @@ export function ListPageLayout(props) {
 
         <button
           className="custom-button custom-button--big list-layout__buttons_save-btn"
-          onClick={props.onClick}
         >
           Save Changes
         </button>
