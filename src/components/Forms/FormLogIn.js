@@ -44,7 +44,7 @@ export function FormLogIn() {
           type="text"
           name="username"
           id="form-username"
-          className="form__input"
+          className="custom-input"
           placeholder="Username"
           autoComplete="on"
         />
@@ -59,7 +59,7 @@ export function FormLogIn() {
           type="password"
           name="password"
           id="form-password"
-          className="form__input"
+          className="custom-input"
           placeholder="Password"
           autoComplete="on"
         />

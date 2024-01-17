@@ -15,9 +15,10 @@
   justify-content: flex-start;
   gap: 10px;
 }
-// .add-item__input {
-// }
-.add-item__button {
+.list__add-item_input {
+  align-self: stretch;
+}
+.list__add-item_button {
   font-size: 30px;
   cursor: pointer;
 }
@@ -28,17 +29,16 @@
 
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .list__item {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 10px;
 
   font-size: 1.1rem;
   align-items: center;
-  justify-content: flex-start;
 
   &:hover {
     cursor: pointer;
@@ -48,19 +48,24 @@
     font-size: 22px;
   }
 }
-
-.list__item_icons{
-  display: flex;
+.list__item_content{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px;
+  align-items: center;
+  overflow-x: auto;
+}
+.list__item_content--done{
+  text-decoration: line-through;
 }
 
-.list__item_trash-icon,.list__item_pen-icon{
-  padding-inline: 12px;
-}
-
-.list__item_pen-icon{
-  color: $color-black;
-}
 .list__item_trash-icon{
+  padding-inline: 12px;
   color: $color-red;
+}
+
+.list__clear-button{
+  margin-top: 20px;
+  margin-left: auto;
 }
 

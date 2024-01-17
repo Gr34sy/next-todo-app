@@ -9,17 +9,24 @@ import { List } from "@/components/Lists/List";
 import { ObjectId } from "mongodb";
 import { dbConnect } from "@/utils/dbConnect";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function ListPage(props) {
-  //List state
+  // Hooks
   const INITIAL_LIST = props.simple_list;
   const [list, setList] = useState(INITIAL_LIST);
-  //Edit State
   const [editTitle, setEditTitle] = useState(false);
+
+  const router = useRouter();
 
   // Operations on Title
   function changeTitleMode() {
     setEditTitle((prev) => !prev);
+  }
+  function changeTitleModeOnEnter(e){
+    if(e.key === "Enter"){
+      setEditTitle((prev) => !prev);
+    }
   }
   function changeTitle(e){
     setList((prevList) => ({
@@ -27,7 +34,7 @@ export default function ListPage(props) {
       title: e.target.value,
     }))
   }
-  //Updating Task Array
+  // Updating Task Array
   function updateTasks(tasks){
     setList((prevList) => ({
       ...prevList,
@@ -36,14 +43,14 @@ export default function ListPage(props) {
   }
   // Saving and Discarding Changes
   function discardChanges(){
-    setList(INITIAL_LIST);
+    router.reload();
   }
 
   return (
-    <main className="list-layout ">
+    <main className="list-layout">
       <div className="list-layout__header section__header">
         <h1 className="list-layout__header_title">
-          {editTitle && <input type="text" value={list.title} onChange={changeTitle} />}
+          {editTitle && <input type="text" value={list.title} onChange={changeTitle} onKeyUp={changeTitleModeOnEnter} className="custom-input"/>}
           {!editTitle && list.title}
         </h1>
 
@@ -64,11 +71,11 @@ export default function ListPage(props) {
 
       <div className="list-layout__buttons">
         <button className="custom-button custom-button--big list-layout__buttons_discard-btn" onClick={discardChanges}>
-          Discard Changes
+          Discard
         </button>
 
         <button className="custom-button custom-button--big list-layout__buttons_save-btn">
-          Save Changes
+          Save
         </button>
       </div>
     </main>

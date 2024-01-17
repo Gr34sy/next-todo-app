@@ -31,7 +31,7 @@ export function FormCreateTaskList() {
           type="text"
           name="title"
           id="form-title"
-          className="form__input"
+          className="custom-input"
           placeholder="List Title"
         />
       </label>
@@ -45,7 +45,7 @@ export function FormCreateTaskList() {
           type="text"
           name="deadline"
           id="form-deadline"
-          className="form__input"
+          className="custom-input"
           placeholder="Deadline"
         />
       </label>
@@ -59,7 +59,7 @@ export function FormCreateTaskList() {
           type="text"
           name="tags"
           id="form-tags"
-          className="form__input"
+          className="custom-input"
           placeholder="Tags"
         />
       </label>
@@ -75,7 +75,7 @@ export function FormCreateTaskList() {
           name="description"
           id="form-description"
           rows="10"
-          className="form__input"
+          className="custom-input"
           placeholder="Description"
         />
       </label>

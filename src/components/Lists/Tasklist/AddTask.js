@@ -37,8 +37,7 @@ export function AddTask() {
         <div className="add-task__add-operation">
           <p>Add Operation:</p>
           <List
-            editMode={true}
-            contentArray={["Operation 1", "Operation 2", "Operation 3"]}
+            items={['Twpj' , 'Stary', 'Coco Jumbo']}
           />
           <button type="submit" className="custom-button custom-button--small add-task__add-operation_button" > Save Task </button>
         </div>

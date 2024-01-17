@@ -14,6 +14,10 @@ import { dbConnect } from "@/utils/dbConnect";
 export default function TasklistPage(props) {
   const tasklist = props.tasklist;
 
+  function updateFunc(){
+    return [];
+  }
+
   return (
     <main className="list-layout list-layout--tasklist">
       <div className="list-layout__header section__header">
@@ -49,6 +53,7 @@ export default function TasklistPage(props) {
               itemId={task.id}
               operations={task.operations}
               key={task.id}
+              updateFunction={updateFunc}
             />
           ))}
         </div>

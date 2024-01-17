@@ -45,7 +45,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {!!userLogged && <FormLogIn />}
+       {/* <FormLogIn /> */}
     </main>
   );
 }

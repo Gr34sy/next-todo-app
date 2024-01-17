@@ -28,7 +28,7 @@ export function FormCreateSimpleList() {
           type="text"
           name="title"
           id="form-title"
-          className="form__input"
+          className="custom-input"
           placeholder="List Title"
         />
       </label>
@@ -42,7 +42,7 @@ export function FormCreateSimpleList() {
           type="text"
           name="tags"
           id="form-tags"
-          className="form__input"
+          className="custom-input"
           placeholder="Tags"
         />
       </label>

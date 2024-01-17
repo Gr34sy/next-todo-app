@@ -59,39 +59,6 @@
   }
 }
 
-.form__input {
-  border-radius: 5px;
-  border: 2px solid transparent;
-  padding: 5px;
-  width: 90%;
-
-  &:focus {
-    border: 2px solid $color-celestial-blue;
-    outline: none;
-  }
-
-  &::placeholder {
-    font-family: $font-logotype;
-    padding-left: 5px;
-    color: $color-light-grey;
-  }
-
-  @media (min-width: 700px) {
-    padding: 8px;
-  }
-}
-
-.form__input,
-.checkbox__description {
-  color: $color-jet;
-  font-family: $font-main;
-  font-size: 1.1rem;
-  color: var(--color-font-1);
-
-  @media (min-width: 700px) {
-    font-size: 1.2rem;
-  }
-}
 
 .form__checkbox {
   width: 21px;

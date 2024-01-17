@@ -1,27 +1,24 @@
 import { Checkbox } from "@/components/Checkbox/Checkbox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPen,
   faSquarePlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-export function List({
-  items,
-  operationsList,
-  listId,
-  itemFunction,
-}) {
-
+export function List({ items, operationsList, listId, updateFunction }) {
   //Hooks
   const INITIAL_ITEMS = items;
   const [listItems, setListItems] = useState(INITIAL_ITEMS);
   const [inputValue, setInputValue] = useState(" ");
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  // }, [])
+    if(updateFunction){
+      updateFunction(listItems);
+    }
+
+  }, [listItems]);
 
   function inputValueChange(e) {
     setInputValue(e.target.value);
@@ -29,43 +26,68 @@ export function List({
 
   // Operations on Items
   function addItem() {
-    setListItems(prevItems => [
+    setListItems((prevItems) => [
       ...prevItems,
       {
         id: `${listId}-${listItems.length}`,
         name: inputValue,
         isDone: false,
-      }
+      },
     ]);
     setInputValue(" ");
   }
-  function deleteItem(id){
-    setListItems(prevItems => {
+  function addOnEnter(e){
+    if(e.key === "Enter"){
+      addItem()
+    }
+  }
+
+  function deleteItem(id) {
+    setListItems((prevItems) => {
       const filteredItems = prevItems.filter((item) => item.id !== id);
       const updatedItems = filteredItems.map((item, i) => ({
         ...item,
-        id: `${listId}-${i} `
-      }))
+        id: `${listId}-${i} `,
+      }));
 
-      return updatedItems
-    })
+      return updatedItems;
+    });
+  }
+
+  function deleteAll(){
+    setListItems([]);
+  }
+
+  function clickItem(id) {
+    setListItems((prevItems) =>
+      prevItems.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            isDone: !item.isDone,
+          };
+        }else{
+          return item;
+        }
+      })
+    );
   }
 
   // ListItem Component
-  function ListItem({id, isDone, name, itemClick, deleteItem, editItem}){
+  function ListItem({ id, isDone, name, clickItem, deleteItem }) {
     return (
-      <li className="list__item" data-id={id} onClick={itemClick}>
-        <Checkbox isChecked={isDone} />
-        {name}
+      <li className="list__item" data-id={id}>
+        <div className={isDone ? "list__item_content list__item_content--done" : "list__item_content" } onClick={() => clickItem(id)}>
+          <Checkbox isChecked={isDone} />
+          {name}
+        </div>
 
-        <div className="list__item_icons">
-          <FontAwesomeIcon icon={faPen} className="list__item_pen-icon" />
+    
           <FontAwesomeIcon
             icon={faTrash}
             className="list__item_trash-icon"
             onClick={() => deleteItem(id)}
           />
-        </div>
       </li>
     );
   }
@@ -75,13 +97,14 @@ export function List({
       <div className="list__add-item">
         <input
           type="text"
-          className="add-item__input"
+          className="list__add-item_input"
           value={inputValue}
           onChange={inputValueChange}
+          onKeyUp={addOnEnter}
         />
         <FontAwesomeIcon
           icon={faSquarePlus}
-          className="add-item__button"
+          className="list__add-item_button"
           onClick={addItem}
         />
       </div>
@@ -93,10 +116,13 @@ export function List({
             id={item.id}
             key={item.id}
             isDone={item.isDone}
+            clickItem={clickItem}
             deleteItem={deleteItem}
           />
         ))}
       </ul>
+
+      <button className="custom-button list__clear-button" onClick={deleteAll}><FontAwesomeIcon icon={faTrash}/> Clear List</button>
     </div>
   );
 }
