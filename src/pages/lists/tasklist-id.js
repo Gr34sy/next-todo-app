@@ -17,7 +17,8 @@ export default function TasklistPage(props) {
   return (
     <main className="list-layout list-layout--tasklist">
       <div className="list-layout__header section__header">
-        <h1 className="list-layout__header_title">{tasklist.title}</h1>
+        <h1 className="list-layout__header_title">{tasklist.title}
+        </h1>
 
         <FontAwesomeIcon
           icon={faPenToSquare}

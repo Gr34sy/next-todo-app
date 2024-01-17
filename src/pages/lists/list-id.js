@@ -1,75 +1,69 @@
 //Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 //Components
-import { ListPageLayout } from "@/components/Lists/ListPageLayout";
 import { List } from "@/components/Lists/List";
 
 //Functions
 import { ObjectId } from "mongodb";
 import { dbConnect } from "@/utils/dbConnect";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function ListPage(props) {
-  const INITIAL_STATE = props.simple_list;
-  const [list, setList] = useState(INITIAL_STATE);
-  const [editMode, setEditMode] = useState(false);
+  //List state
+  const INITIAL_LIST = props.simple_list;
+  const [list, setList] = useState(INITIAL_LIST);
+  //Edit State
+  const [editTitle, setEditTitle] = useState(false);
 
-  function changeEditMode() {
-    setEditMode((prev) => !prev);
+  // Operations on Title
+  function changeTitleMode() {
+    setEditTitle((prev) => !prev);
   }
-  function addTask(taskname) {
-    const taskId = list.tasks.length.toString();
-
-    const task = {
-      id: list.list_id + "-" + taskId,
-      name: taskname,
-      isDone: false,
-    };
-
+  function changeTitle(e){
     setList((prevList) => ({
       ...prevList,
-      tasks: [...prevList.tasks, task],
-    }));
+      title: e.target.value,
+    }))
   }
-  function deleteTask(taskId) {
-    console.log(taskId);
-    const filteredTasks = list.tasks.filter((task) => task.id != taskId);
-
+  //Updating Task Array
+  function updateTasks(tasks){
     setList((prevList) => ({
       ...prevList,
-      tasks: filteredTasks,
-    }));
+      tasks
+    }))
   }
-  function editTask() {}
+  // Saving and Discarding Changes
+  function discardChanges(){
+    setList(INITIAL_LIST);
+  }
 
   return (
     <main className="list-layout ">
       <div className="list-layout__header section__header">
-        <h1 className="list-layout__header_title">{list.title}</h1>
+        <h1 className="list-layout__header_title">
+          {editTitle && <input type="text" value={list.title} onChange={changeTitle} />}
+          {!editTitle && list.title}
+        </h1>
 
         <FontAwesomeIcon
-          icon={faPenToSquare}
+          icon={editTitle ? faRightFromBracket: faPenToSquare}
           className="list-layout__header_icon"
-          onClick={changeEditMode}
+          onClick={changeTitleMode}
         />
       </div>
 
-      <div className="list-layout__content">
-        <div className="simple-list">
-          <List
-            contentArray={list.tasks}
-            addItem={addTask}
-            deleteItem={deleteTask}
-          />
-        </div>
+      <div className="simple-list">
+        <List
+          items={list.tasks}
+          updateFunction={updateTasks}
+          listId={list.list_id}
+        />
       </div>
 
       <div className="list-layout__buttons">
-        <button
-          className="custom-button custom-button--big list-layout__buttons_discard-btn"
-        >
+        <button className="custom-button custom-button--big list-layout__buttons_discard-btn" onClick={discardChanges}>
           Discard Changes
         </button>
 
@@ -81,6 +75,8 @@ export default function ListPage(props) {
   );
 }
 
+
+// Getting Props
 export async function getStaticProps() {
   const client = await dbConnect();
   const db = client.db("ToDo");

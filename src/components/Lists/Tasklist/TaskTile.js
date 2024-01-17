@@ -29,7 +29,7 @@ export function TaskTile(props) {
         </div>
       </div>
 
-      <List listType="list--operations" contentArray={props.operations} />
+      <List operationsList={true} items={props.operations} />
     </div>
   );
 }
