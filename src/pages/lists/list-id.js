@@ -46,6 +46,16 @@ export default function ListPage(props) {
     router.reload();
   }
 
+  async function saveChanges(list){
+    const response = await fetch('/api/list', {
+      method: 'POST',
+      body: JSON.stringify(list),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+  }
+
   return (
     <main className="list-layout">
       <div className="list-layout__header section__header">
@@ -74,7 +84,7 @@ export default function ListPage(props) {
           Discard
         </button>
 
-        <button className="custom-button custom-button--big list-layout__buttons_save-btn">
+        <button className="custom-button custom-button--big list-layout__buttons_save-btn" onClick={() => saveChanges(list)}>
           Save
         </button>
       </div>
