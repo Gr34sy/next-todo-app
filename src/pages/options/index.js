@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { signOut } from "next-auth/react";
 import { Tabs } from "@/components/Tabs/Tabs";
+import { loginIsRequiredClient } from "@/utils/auth";
 
 function OptionsPage() {
   const [chosenColorTheme, setChosenColorTheme] = useState('default');
+
+  loginIsRequiredClient();
 
   useEffect(() => {
     setChosenColorTheme(document.body.className);

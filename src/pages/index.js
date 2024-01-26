@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
-import {  useSession, useRouter } from "next-auth/react";
+import { loginIsRequiredClient } from "@/utils/auth";
 
 export default function HomePage() {
   
-  const { data: session } = useSession();
+  loginIsRequiredClient();
 
   function HomepageList({ containsTasklists, items }) {
     return (
@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <main className="homepage">
       <Link href="/sign-in">Sign In</Link>
-      <h1 className="section__header">{session && session.user.name ? `Logged ${session.user.name}`: "Not Logged"}</h1>
+      <h1 className="section__header">Your Lists</h1>
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Simple Lists</h2>

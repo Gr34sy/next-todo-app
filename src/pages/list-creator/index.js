@@ -1,8 +1,11 @@
 import { FormCreateSimpleList } from "@/components/Forms/FormCreateSimpleList";
 import { FormCreateTaskList } from "@/components/Forms/FormCreateTaskList";
 import { Tabs } from "@/components/Tabs/Tabs";
+import { loginIsRequiredClient } from "@/utils/auth";
 
 export default function ListCreator() {
+  loginIsRequiredClient();
+
   return (
     <main className="list-creator">
       <h1 className="section__header">Creator</h1>

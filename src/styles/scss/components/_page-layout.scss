@@ -1,7 +1,9 @@
-.page-layout {
+.page-layout{
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
 
+.page-layout__content {
   padding-inline: 10px;
   padding-block: 25px 50px;
 

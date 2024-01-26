@@ -8,8 +8,6 @@ import { signIn } from "next-auth/react";
 
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -32,10 +30,8 @@ export function FormLogIn() {
 
   return (
     <FormLayout
-      displayFormSubmit={false}
-      title="Sign in to use the application!"
+     hideSubmit={true}
     >
-      <h2 className="form__login-methods__title">Choose login option</h2>
       <div className="form__login-methods">
         <button
           className="custom-button custom-button--big form__method-button"
@@ -49,12 +45,12 @@ export function FormLogIn() {
         >
           <FontAwesomeIcon icon={faGoogle} /> Google
         </button>
-        {/* <button
+        <button
           className="custom-button custom-button--big form__method-button"
           onClick={handleFacebookLogin}
         >
           <FontAwesomeIcon icon={faFacebook} /> Facebook
-        </button> */}
+        </button>
       </div>
     </FormLayout>
   );

@@ -2,7 +2,8 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 
-import { useRouter, useSession } from "next/router";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 export const authOptions = {
   providers: [
@@ -45,7 +46,7 @@ export async function loginIsRequiredServer() {
 
 export function loginIsRequiredClient(){
     if(typeof window !== "undefined"){
-        const session = useSession();
+        const {data: session} = useSession();
         const router = useRouter();
         if(!session) router.push("/sign-in");
     }

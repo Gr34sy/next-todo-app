@@ -1,0 +1,32 @@
+.form__login-methods {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+ padding: 20px;
+}
+
+.form__method-button {
+  width: 100%;
+  font-family: $font-logotype;
+  font-size: 1.6rem;
+  text-align: center;
+  color: $color-black;
+  background-color: $color-white;
+  
+  @media(min-width: 768px) {
+    font-size: 2rem;
+    padding-block: 25px;
+  }
+
+  &:hover {
+    color: var(--color-font-2);
+    background-color: var(--color-accent);
+
+    path {
+      color: var(--color-font-2);
+    }
+  }
+}

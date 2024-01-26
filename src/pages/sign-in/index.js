@@ -11,6 +11,7 @@ export default function SignInPage(){
 
     return (
         <main className="sign-in">
+            <h1 className="section__header">Sign in</h1>
             <FormLogIn />
         </main>
     )
