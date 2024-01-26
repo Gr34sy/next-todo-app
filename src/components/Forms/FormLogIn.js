@@ -1,69 +1,61 @@
+"use client";
+
+//forms
+import { FormLayout } from "./FormLayout";
+
+//js imports
+import { signIn } from "next-auth/react";
+
 //icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-//forms
-import { FormLayout } from "./FormLayout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-//js imports
-import { useState } from "react";
-
 export function FormLogIn() {
-  const [logInMethod, setLogInMethod] = useState(null);
-
-  function logInMethodHandler(e){
+  function handleGoogleLogin(e) {
     e.preventDefault();
-    setLogInMethod(e.target.dataset.value);
+    signIn("google");
+  }
+
+  function handleFacebookLogin(e) {
+    e.preventDefault();
+    signIn("facebook");
+  }
+
+  function handleGithubLogin(e) {
+    e.preventDefault();
+    signIn("github");
   }
 
   return (
-    <FormLayout formSubmitText="Log In" title="Sign in to use the application!">
+    <FormLayout
+      displayFormSubmit={false}
+      title="Sign in to use the application!"
+    >
       <h2 className="form__login-methods__title">Choose login option</h2>
       <div className="form__login-methods">
-        <button className={logInMethod === 'Github' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Github" onClick={logInMethodHandler}>
+        <button
+          className="custom-button custom-button--big form__method-button"
+          onClick={handleGithubLogin}
+        >
           <FontAwesomeIcon icon={faGithub} /> Github
         </button>
-        <button className={logInMethod === 'Google' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Google" onClick={logInMethodHandler}>
+        <button
+          className="custom-button custom-button--big form__method-button"
+          onClick={handleGoogleLogin}
+        >
           <FontAwesomeIcon icon={faGoogle} /> Google
         </button>
-        <button className={logInMethod === 'Facebook' ? "custom-button custom-button--big form__method-button chosen-login-method" : "custom-button custom-button--big form__method-button"} data-value="Facebook" onClick={logInMethodHandler}>
+        {/* <button
+          className="custom-button custom-button--big form__method-button"
+          onClick={handleFacebookLogin}
+        >
           <FontAwesomeIcon icon={faFacebook} /> Facebook
-        </button>
+        </button> */}
       </div>
-
-      <label className="form__label" htmlFor="form-username">
-        <div className="label__icon">
-          <FontAwesomeIcon icon={faUser} />
-        </div>
-
-        <input
-          type="text"
-          name="username"
-          id="form-username"
-          className="custom-input"
-          placeholder="Username"
-          autoComplete="on"
-        />
-      </label>
-
-      <label className="form__label" htmlFor="form-password">
-        <div className="label__icon">
-          <FontAwesomeIcon icon={faKey} />
-        </div>
-
-        <input
-          type="password"
-          name="password"
-          id="form-password"
-          className="custom-input"
-          placeholder="Password"
-          autoComplete="on"
-        />
-      </label>
     </FormLayout>
   );
 }

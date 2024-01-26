@@ -3,9 +3,9 @@ export function FormLayout(props) {
     <form className="form">
       <div className="form__wrapper">
         {props.children}
-        <button className="custom-button custom-button--big">
+        {props.displayFormSubmit && <button className="custom-button custom-button--big">
           {props.formSubmitText}
-        </button>
+        </button>}
       </div>
     </form>
   );

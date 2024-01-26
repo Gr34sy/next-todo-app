@@ -1,12 +1,11 @@
-import { FormLogIn } from "@/components/Forms/FormLogIn";
-import { useState } from "react";
-
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
+import {  useSession, useRouter } from "next-auth/react";
 
 export default function HomePage() {
-  const [userLogged, setUserLogged] = useState(0);
+  
+  const { data: session } = useSession();
 
   function HomepageList({ containsTasklists, items }) {
     return (
@@ -26,7 +25,8 @@ export default function HomePage() {
 
   return (
     <main className="homepage">
-      <h1 className="section__header">Your Lists</h1>
+      <Link href="/sign-in">Sign In</Link>
+      <h1 className="section__header">{session && session.user.name ? `Logged ${session.user.name}`: "Not Logged"}</h1>
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Simple Lists</h2>
@@ -44,8 +44,6 @@ export default function HomePage() {
           />
         </div>
       </div>
-
-       {/* <FormLogIn /> */}
     </main>
   );
 }

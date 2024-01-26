@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { signOut } from "next-auth/react";
 import { Tabs } from "@/components/Tabs/Tabs";
 
 function OptionsPage() {
@@ -19,7 +20,7 @@ function OptionsPage() {
     return (
       <div className="options__logout-panel">
         <p className="menu-content__h2">Are you sure to log out?</p>
-        <button className="custom-button custom-button--big">
+        <button className="custom-button custom-button--big" onClick={() => signOut()}>
           Yes, I'm sure
         </button>
       </div>
