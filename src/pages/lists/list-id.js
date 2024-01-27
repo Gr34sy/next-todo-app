@@ -7,7 +7,7 @@ import { List } from "@/components/Lists/List";
 
 //Functions
 import { ObjectId } from "mongodb";
-import { dbConnect } from "@/utils/dbConnect";
+import { dbConnect } from "@/utils/db";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -96,7 +96,7 @@ export default function ListPage(props) {
 // Getting Props
 export async function getStaticProps() {
   const client = await dbConnect();
-  const db = client.db("ToDo");
+  const db = await dbConnect();
 
   const listId = new ObjectId("65a66a27b6a8062447227710");
   const list = await Object(

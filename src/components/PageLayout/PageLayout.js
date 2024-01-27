@@ -1,11 +1,12 @@
+//Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+//Components
 import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "../Footer/Footer";
-import { useSession } from "next-auth/react";
-
 export default function PageLayout(props) {
-  const { data: session } = useSession();
-  console.log(session);
-  
+
   return (
     <div className="page-layout">
       <Navbar />

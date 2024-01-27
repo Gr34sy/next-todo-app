@@ -1,10 +1,21 @@
+//Components
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
-import { loginIsRequiredClient } from "@/utils/auth";
 
-export default function HomePage() {
-  
+//Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faList,
+  faNoteSticky,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+
+// Hooks
+import { loginIsRequiredClient } from "@/utils/auth";
+import { useSession } from "next-auth/react";
+import { dbConnect } from "@/utils/db";
+
+export default function HomePage(props) {
+  const { data: session } = useSession();
   loginIsRequiredClient();
 
   function HomepageList({ containsTasklists, items }) {
@@ -16,7 +27,12 @@ export default function HomePage() {
               icon={containsTasklists ? faList : faNoteSticky}
               className="homepage__list_icon"
             />
-            <Link href={containsTasklists ? 'lists/tasklist-id' : 'lists/list-id'}> {item}</Link>
+            <Link
+              href={containsTasklists ? "lists/tasklist-id" : "lists/list-id"}
+            >
+              {" "}
+              {item}
+            </Link>
           </li>
         ))}
       </ul>
@@ -25,8 +41,11 @@ export default function HomePage() {
 
   return (
     <main className="homepage">
-      <Link href="/sign-in">Sign In</Link>
-      <h1 className="section__header">Your Lists</h1>
+      <h1 className="homepage__header section__header">
+        <FontAwesomeIcon icon={faUser} />
+        {"Welcome, " + ((session && session.user.name) || "Guest")}
+      </h1>
+
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Simple Lists</h2>
@@ -46,4 +65,17 @@ export default function HomePage() {
       </div>
     </main>
   );
+}
+
+export function getStaticProps(){
+  const db = dbConnect();
+
+  return {
+    props: {
+      user_lists: {
+        tasklists: [],
+        lists: [],
+      },
+    },
+  };
 }

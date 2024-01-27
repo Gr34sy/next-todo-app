@@ -10,17 +10,11 @@ import { signIn } from "next-auth/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 export function FormLogIn() {
   function handleGoogleLogin(e) {
     e.preventDefault();
     signIn("google");
-  }
-
-  function handleFacebookLogin(e) {
-    e.preventDefault();
-    signIn("facebook");
   }
 
   function handleGithubLogin(e) {
@@ -44,12 +38,6 @@ export function FormLogIn() {
           onClick={handleGoogleLogin}
         >
           <FontAwesomeIcon icon={faGoogle} /> Google
-        </button>
-        <button
-          className="custom-button custom-button--big form__method-button"
-          onClick={handleFacebookLogin}
-        >
-          <FontAwesomeIcon icon={faFacebook} /> Facebook
         </button>
       </div>
     </FormLayout>

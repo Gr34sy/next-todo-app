@@ -1,10 +1,25 @@
-.homepage {
-  min-height: 76vh;
+// .homepage {
+
+// }
+.homepage__header{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 8px;
+  color: var(--color-font-2);
+  background-color: var(--color-accent);
+  border-radius: 8px;
+  text-align: left;
 }
 
-.homepage__lists {
+
+.homepage__header, .homepage__lists {
   max-width: 1300px;
-  margin: auto;
+  margin-inline: auto;
+}
+.homepage__lists{
+  margin-top: 35px;
 }
 .homepage__list-header {
   font-size: 2rem;
@@ -12,43 +27,43 @@
   color: var(--color-font-2);
   background-color: var(--color-accent);
   border: solid 3px var(--color-accent);
-  border-top-right-radius: $border-radius ;
+  border-top-right-radius: $border-radius;
   border-top-left-radius: $border-radius;
 }
 
 .homepage__list-wrapper {
-    &:first-child{
-        margin-bottom: 60px;
-    }
+  &:first-child {
+    margin-bottom: 60px;
+  }
 }
 
-.homepage__list{
-    border: solid 3px var(--color-alt-bg);
-    background-color: var(--color-alt-bg);
-    border-bottom-right-radius: $border-radius - 3px;
-    border-bottom-left-radius: $border-radius - 3px;
+.homepage__list {
+  border: solid 3px var(--color-alt-bg);
+  background-color: var(--color-alt-bg);
+  border-bottom-right-radius: $border-radius - 3px;
+  border-bottom-left-radius: $border-radius - 3px;
 }
 
 .homepage__list_item {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    font-size: 1.4rem;
-    font-weight: 700;
-    padding: 15px 20px;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 15px 20px;
+  cursor: pointer;
 
-    &:nth-child(2n){
-        background-color: var(--color-bg);
-    }
+  &:nth-child(2n) {
+    background-color: var(--color-bg);
+  }
 
-    &:last-child{
-        border-bottom-right-radius: calc($border-radius - 5px);
-        border-bottom-left-radius: calc($border-radius - 5px);
-    }
+  &:last-child {
+    border-bottom-right-radius: calc($border-radius - 5px);
+    border-bottom-left-radius: calc($border-radius - 5px);
+  }
 }
 
-.homepage__list_icon{
-    padding-right: 15px;
-    color: var(--color-accent);
+.homepage__list_icon {
+  padding-right: 15px;
+  color: var(--color-accent);
 }

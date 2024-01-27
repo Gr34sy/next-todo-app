@@ -1,4 +1,4 @@
-import { dbConnect } from "@/utils/dbConnect";
+import { dbConnect } from "@/utils/db";
 import { ObjectId } from "mongodb";
 
 async function handler(req, res){
@@ -12,7 +12,7 @@ async function handler(req, res){
         tasks: req.body.tasks,
     }
 
-    if(req.method==='POST'){
+    if(req.method==='PUT'){
         const result = await collection.replaceOne({ _id: data._id}, data);
         res.status(201).json({message: 'List updated!'});
     }

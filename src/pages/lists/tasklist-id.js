@@ -9,7 +9,7 @@ import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
 //Functions
 import { ObjectId } from "mongodb";
 import { useState } from "react";
-import { dbConnect } from "@/utils/dbConnect";
+import { dbConnect } from "@/utils/db";
 
 export default function TasklistPage(props) {
   const tasklist = props.tasklist;
@@ -73,8 +73,7 @@ export default function TasklistPage(props) {
 }
 
 export async function getStaticProps() {
-  const client = await dbConnect();
-  const db = client.db("ToDo");
+  const db = await dbConnect();
 
   const listId = new ObjectId("65a6731eb6a8062447227713");
   const list = await Object(

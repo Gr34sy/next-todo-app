@@ -1,9 +1,11 @@
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import FacebookProvider from "next-auth/providers/facebook";
 
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
+import { dbConnect } from "./db";
+import User from "../models/user";
+import { Dummy_List } from "./dummy-data";
 
 export const authOptions = {
   providers: [
@@ -29,11 +31,39 @@ export const authOptions = {
         },
       },
     }),
-    FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    }),
   ],
+
+  callbacks: {
+    async session({session}){
+      return session
+    },
+    async signIn({profile}){
+      console.log(profile);
+      
+      try {
+        await dbConnect();
+        const userExist = await User.findOne({email: profile.email});
+        if(!userExist){
+          const user = await User.create({
+            email: profile.email,
+            name: profile.name,
+            image: profile.picture,
+            theme: 'default',
+            lists: [Dummy_List],
+            tasklists: [],
+          })
+        }
+
+        return true;
+        
+      }catch{
+        console.log(error);
+        return false;
+      }
+    }
+  },
+
+
   pages: {
     signIn: "/sign-in",
   }
