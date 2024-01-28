@@ -9,7 +9,7 @@ import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
 //Functions
 import { ObjectId } from "mongodb";
 import { useState } from "react";
-import { dbConnect } from "@/utils/db";
+import { dbConnect } from "../../utils/db";
 
 export default function TasklistPage(props) {
   const tasklist = props.tasklist;

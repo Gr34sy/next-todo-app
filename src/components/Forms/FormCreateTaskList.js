@@ -21,7 +21,7 @@ export function FormCreateTaskList() {
   }
 
   return (
-    <FormLayout formSubmitText="Create List">
+    <FormLayout>
       <label className="form__label" htmlFor="form-title">
         <div className="label__icon">
           <FontAwesomeIcon icon={faList} />
@@ -79,6 +79,10 @@ export function FormCreateTaskList() {
           placeholder="Description"
         />
       </label>
+
+      <button className="custom-button custom-button--big">
+        Create Tasklist
+      </button>
     </FormLayout>
   );
 }

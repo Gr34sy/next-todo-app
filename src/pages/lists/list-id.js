@@ -7,7 +7,7 @@ import { List } from "@/components/Lists/List";
 
 //Functions
 import { ObjectId } from "mongodb";
-import { dbConnect } from "@/utils/db";
+import { dbConnect } from "../../utils/db";
 import { useState } from "react";
 import { useRouter } from "next/router";
 

@@ -1,12 +1,10 @@
 // password db EMiwXmNIgzBHAzF5
-import mongoose from "mongoose";
+import { MongoClient } from "mongodb";
 
-export const dbConnect = async () => {
+export async function dbConnect() {
   try {
-    await mongoose.connect(process.env.DB_URI);
-    console.log("MongoDB connected");
+    return await MongoClient.connect(process.env.DB_URI);
   } catch (error){
     console.log(error);
-    res.status(500).json({message: 'Could not connect to MongoDB'});
   }
 }

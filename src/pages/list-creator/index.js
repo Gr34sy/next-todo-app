@@ -1,15 +1,27 @@
 import { FormCreateSimpleList } from "@/components/Forms/FormCreateSimpleList";
 import { FormCreateTaskList } from "@/components/Forms/FormCreateTaskList";
 import { Tabs } from "@/components/Tabs/Tabs";
-import { loginIsRequiredClient } from "@/utils/auth";
 
 export default function ListCreator() {
-  loginIsRequiredClient();
+
+  async function addList(list){
+    const response = await fetch('/api/list', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(list),
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+  }
 
   return (
     <main className="list-creator">
-      <h1 className="section__header">Creator</h1>
-      <Tabs header1='Create List' header2='Create Tasklist' content1={<FormCreateSimpleList />} content2={<FormCreateTaskList />} />
+      <h1 className="section__header">Create</h1>
+      <Tabs header1='List' header2='Tasklist' content1={<FormCreateSimpleList formAction={addList} />} content2={<FormCreateTaskList />} />
     </main>
   );
 }

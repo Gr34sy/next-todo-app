@@ -4,9 +4,6 @@ import GoogleProvider from "next-auth/providers/google";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { dbConnect } from "./db";
-import User from "../models/user";
-import { Dummy_List } from "./dummy-data";
-import { redirect } from "next/dist/server/api-utils";
 
 export const authOptions = {
   providers: [
@@ -34,36 +31,29 @@ export const authOptions = {
     }),
   ],
 
-  callbacks: {
-    async session({session}){
-      const sessionUser = await User.findOne({email: session.user.email},{_id:1});
-      session.user.id = sessionUser._id.toString();
-      return session
-    },
-    async signIn({profile}){
-      try {
-        await dbConnect();
-        const userExist = await User.findOne({email: profile.email});
-        if(!userExist){
-          const user = await User.create({
-            email: profile.email,
-            name: profile.name,
-            image: profile.picture,
-            theme: 'default',
-            lists: [Dummy_List],
-            tasklists: [],
-          })
-        }
+  // callbacks: {
+  //   async session({session}){
+  //     return session
+  //   },
+  //   async signIn({profile}){
+  //     console.log(profile);
+  //     try {
+  //       const db = await dbConnect()
 
-        return true;
+  //       if(!userExist){
+  //         await db.createCollection(profile.email)
+  //       }
+
+  //       db.close();
+
+  //       return true;
         
-      }catch{
-        console.log(error);
-        return false;
-      }
-    }
-  },
-
+  //     }catch{
+  //       console.log(error);
+  //       return false;
+  //     }
+  //   }
+  // },
 
   pages: {
     signIn: "/sign-in",

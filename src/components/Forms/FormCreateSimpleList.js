@@ -6,19 +6,10 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 
-export function FormCreateSimpleList() {
-  const [isPinned, setIsPinned] = useState(false);
-
-  function pinnedListChangeHandler() {
-    if (isPinned) {
-      setIsPinned(false);
-    } else {
-      setIsPinned(true);
-    }
-  }
+export function FormCreateSimpleList({formAction}) {
 
   return (
-    <FormLayout formSubmitText="Create List">
+    <FormLayout submitText="Create List" formAction={formAction}>
       <label className="form__label" htmlFor="form-title">
         <div className="label__icon">
           <FontAwesomeIcon icon={faList} />
@@ -48,6 +39,9 @@ export function FormCreateSimpleList() {
       </label>
 
       <button className="custom-button custom-button--small">Add Tag</button>
+      <button className="custom-button custom-button--big" onClick={() => formAction(Dummy_List)}>
+        Create List
+      </button>
 
     </FormLayout>
   );

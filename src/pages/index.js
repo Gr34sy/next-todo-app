@@ -7,16 +7,14 @@ import {
   faList,
   faNoteSticky,
   faUser,
-  faCirclePlus
+  faCirclePlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Hooks
-import { dbConnect } from "@/utils/db";
 
 //Backend
-import { ObjectId } from "mongodb";
-import User from "@/models/user";
-import { authOptions } from "@/utils/auth";
+import { dbConnect } from "../utils/db";
+// import { ObjectId } from "mongodb";
+import { authOptions } from "../utils/auth";
 import { getServerSession } from "next-auth";
 
 export default function HomePage(props) {
@@ -38,13 +36,15 @@ export default function HomePage(props) {
           </li>
         ))}
 
-        {(items.length === 0) && <li className="homepage__list_item">
-        <FontAwesomeIcon
+        {items.length === 0 && (
+          <li className="homepage__list_item">
+            <FontAwesomeIcon
               icon={faCirclePlus}
               className="homepage__list_icon homepage__list_add-icon"
             />
-          <Link href="/list-creator">Go to list creator</Link>
-        </li>}
+            <Link href="/list-creator">Go to list creator</Link>
+          </li>
+        )}
       </ul>
     );
   }
@@ -73,23 +73,20 @@ export default function HomePage(props) {
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
-  if (!session)
-    return {
-      redirect: {
-        destination: "/sign-in",
-      },
-    };
+  if (!session)return{
+    redirect: {
+      destination: "/sign-in",
+    },
+  };
 
-  await dbConnect();
-  const user = await User.findOne(
-    { _id: new ObjectId(session.user.id) },
-    { lists: 1, tasklists: 1 }
-  );
+  const db = await dbConnect();
+
+  db.close();
 
   return {
     props: {
-      tasklists: user.tasklists,
-      lists: user.lists,
+      tasklists: [],
+      lists: [],
     },
   };
 }
