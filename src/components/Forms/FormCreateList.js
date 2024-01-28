@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { Dummy_List } from "@/utils/dummy-data";
 
 import { useState } from "react";
 
-export function FormCreateSimpleList({formAction}) {
+export function FormCreateList({formAction}) {
 
   return (
     <FormLayout submitText="Create List" formAction={formAction}>

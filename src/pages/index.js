@@ -13,7 +13,6 @@ import {
 
 //Backend
 import { dbConnect } from "../utils/db";
-// import { ObjectId } from "mongodb";
 import { authOptions } from "../utils/auth";
 import { getServerSession } from "next-auth";
 
@@ -72,6 +71,7 @@ export default function HomePage(props) {
 }
 
 export async function getServerSideProps(context) {
+  //getting session data
   const session = await getServerSession(context.req, context.res, authOptions);
   if (!session)return{
     redirect: {
@@ -79,14 +79,21 @@ export async function getServerSideProps(context) {
     },
   };
 
-  const db = await dbConnect();
+  //opening mongodb connection
+  const client = await dbConnect();
+  const db = client.db("ToDo");
+  const userCollection = db.collection(session.user.email);
 
-  db.close();
+  //retrieving user lists from mongodb
+  const userLists = await userCollection.find({type: "list"}).toArray();
+  const userTasklists = await userCollection.find({type: "tasklist"}).toArray();
+
+  client.close();
 
   return {
     props: {
-      tasklists: [],
-      lists: [],
+      lists: userLists.map(list => ({...list, _id: list._id.toString()})),
+      tasklists: userTasklists.map(list => ({...list, _id: list._id.toString()})),
     },
   };
 }

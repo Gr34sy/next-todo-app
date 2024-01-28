@@ -8,17 +8,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 
-export function FormCreateTaskList() {
-
-  const [isPinned, setIsPinned] = useState(false);
-
-  function pinnedListChangeHandler() {
-    if (isPinned) {
-      setIsPinned(false);
-    } else {
-      setIsPinned(true);
-    }
-  }
+export function FormCreateTasklist() {
 
   return (
     <FormLayout>

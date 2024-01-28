@@ -1,7 +1,7 @@
 export const Dummy_User_Data = {};
 
 export const Dummy_List = {
-  id: "65a66a27b6a8062447227710",
+  type: "list",
   title: "The Bay",
   tasks: [
     {

@@ -1,5 +1,5 @@
-import { FormCreateSimpleList } from "@/components/Forms/FormCreateSimpleList";
-import { FormCreateTaskList } from "@/components/Forms/FormCreateTaskList";
+import { FormCreateList } from "@/components/Forms/FormCreateList";
+import { FormCreateTasklist } from "@/components/Forms/FormCreateTaskList";
 import { Tabs } from "@/components/Tabs/Tabs";
 
 export default function ListCreator() {
@@ -21,7 +21,7 @@ export default function ListCreator() {
   return (
     <main className="list-creator">
       <h1 className="section__header">Create</h1>
-      <Tabs header1='List' header2='Tasklist' content1={<FormCreateSimpleList formAction={addList} />} content2={<FormCreateTaskList />} />
+      <Tabs header1='List' header2='Tasklist' content1={<FormCreateList formAction={addList} />} content2={<FormCreateTasklist />} />
     </main>
   );
 }
