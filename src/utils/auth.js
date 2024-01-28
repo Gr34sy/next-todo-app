@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { dbConnect } from "./db";
 import User from "../models/user";
 import { Dummy_List } from "./dummy-data";
+import { redirect } from "next/dist/server/api-utils";
 
 export const authOptions = {
   providers: [
@@ -35,11 +36,11 @@ export const authOptions = {
 
   callbacks: {
     async session({session}){
+      const sessionUser = await User.findOne({email: session.user.email},{_id:1});
+      session.user.id = sessionUser._id.toString();
       return session
     },
     async signIn({profile}){
-      console.log(profile);
-      
       try {
         await dbConnect();
         const userExist = await User.findOne({email: profile.email});

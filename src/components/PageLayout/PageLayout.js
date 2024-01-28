@@ -6,7 +6,6 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "../Footer/Footer";
 export default function PageLayout(props) {
-
   return (
     <div className="page-layout">
       <Navbar />
