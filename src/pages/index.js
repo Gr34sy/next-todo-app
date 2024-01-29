@@ -21,13 +21,13 @@ export default function HomePage(props) {
     return (
       <ul className="homepage__list">
         {items.map((item) => (
-          <li className="homepage__list_item" key={item.id}>
+          <li className="homepage__list_item" key={item._id}>
             <FontAwesomeIcon
               icon={containsTasklists ? faList : faNoteSticky}
               className="homepage__list_icon"
             />
             <Link
-              href={containsTasklists ? "lists/tasklist-id" : "lists/list-id"}
+              href={containsTasklists ? `tasklist/${item._id}` : `list/${item._id}`}
             >
               {" "}
               {item.title}
@@ -91,7 +91,7 @@ export async function getServerSideProps(context) {
   client.close();
 
   return {
-    props: {
+    props: { 
       lists: userLists.map(list => ({...list, _id: list._id.toString()})),
       tasklists: userTasklists.map(list => ({...list, _id: list._id.toString()})),
     },
