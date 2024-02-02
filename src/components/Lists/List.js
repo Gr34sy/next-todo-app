@@ -10,7 +10,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
   //Hooks
   const INITIAL_ITEMS = items;
   const [listItems, setListItems] = useState(INITIAL_ITEMS);
-  const [inputValue, setInputValue] = useState(" ");
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
 
@@ -101,6 +101,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
           value={inputValue}
           onChange={inputValueChange}
           onKeyUp={addOnEnter}
+          placeholder="Add"
         />
         <FontAwesomeIcon
           icon={faSquarePlus}
@@ -122,7 +123,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
         ))}
       </ul>
 
-      <button className="custom-button list__clear-button" onClick={deleteAll}><FontAwesomeIcon icon={faTrash}/> Clear List</button>
+      <button className="custom-button list__clear-button" onClick={deleteAll}><FontAwesomeIcon icon={faTrash}/> Clear </button>
     </div>
   );
 }

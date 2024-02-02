@@ -71,7 +71,7 @@ export function FormCreateTasklist() {
       </label>
 
       <button className="custom-button custom-button--big">
-        Create Tasklist
+        Create
       </button>
     </FormLayout>
   );
