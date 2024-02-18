@@ -29,16 +29,16 @@ export function List({ items, operationsList, listId, updateFunction }) {
     setListItems((prevItems) => [
       ...prevItems,
       {
-        id: `${listId}-${listItems.length}`,
+        id: `item-${listItems.length}`,
         name: inputValue,
         isDone: false,
       },
     ]);
-    setInputValue(" ");
+    setInputValue("");
   }
   function addOnEnter(e){
     if(e.key === "Enter"){
-      addItem()
+      addItem();
     }
   }
 
@@ -54,7 +54,8 @@ export function List({ items, operationsList, listId, updateFunction }) {
     });
   }
 
-  function deleteAll(){
+  function deleteAll(e){
+    e.preventDefault;
     setListItems([]);
   }
 
