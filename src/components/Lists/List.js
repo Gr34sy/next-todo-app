@@ -8,8 +8,7 @@ import { useEffect, useState } from "react";
 
 export function List({ items, operationsList, listId, updateFunction }) {
   //Hooks
-  const INITIAL_ITEMS = items;
-  const [listItems, setListItems] = useState(INITIAL_ITEMS);
+  const [listItems, setListItems] = useState(items);
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
@@ -36,11 +35,12 @@ export function List({ items, operationsList, listId, updateFunction }) {
     ]);
     setInputValue("");
   }
-  function addOnEnter(e){
-    if(e.key === "Enter"){
-      addItem();
-    }
-  }
+  // function addOnEnter(e){
+  //   e.preventDefault();
+  //   if(e.key === "Enter"){
+  //     addItem();
+  //   }
+  // }
 
   function deleteItem(id) {
     setListItems((prevItems) => {
@@ -101,7 +101,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
           className="list__add-item_input"
           value={inputValue}
           onChange={inputValueChange}
-          onKeyUp={addOnEnter}
+          // onKeyUp={addOnEnter}
           placeholder="Add"
         />
         <FontAwesomeIcon

@@ -8,8 +8,11 @@ import {
   faNoteSticky,
   faUser,
   faCirclePlus,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
+//Hooks
+import { useState } from "react";
 
 //Backend
 import { dbConnect } from "../utils/db";
@@ -17,6 +20,22 @@ import { authOptions } from "../utils/auth";
 import { getServerSession } from "next-auth";
 
 export default function HomePage(props) {
+  const INITIAL_LISTS = props.lists;
+  const INITIAL_TASKLISTS = props.tasklists;
+
+  const [lists, setLists] = useState(INITIAL_LISTS);
+  const [tasklists, setTasklists] = useState(INITIAL_TASKLISTS);
+
+  async function deleteList(id){
+    const response = await fetch(`/api/lists/${id}`, {
+      method: "DELETE",
+    });
+
+    const data = await response.json();
+    console.log(data);
+    setLists(prevLists => prevLists.filter(list => list._id !== id));
+  }
+
   function HomepageList({ containsTasklists, items }) {
     return (
       <ul className="homepage__list">
@@ -27,11 +46,13 @@ export default function HomePage(props) {
               className="homepage__list_icon"
             />
             <Link
-              href={containsTasklists ? `tasklist/${item._id}` : `list/${item._id}`}
+              href={containsTasklists ? `tasklists/${item._id}` : `lists/${item._id}`}
             >
               {" "}
               {item.title}
             </Link>
+
+            <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" onClick={() => deleteList(item._id)}/>
           </li>
         ))}
 
@@ -58,12 +79,12 @@ export default function HomePage(props) {
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Simple Lists</h2>
-          <HomepageList containsTasklists={false} items={props.lists} />
+          <HomepageList containsTasklists={false} items={lists} />
         </div>
 
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Tasklists</h2>
-          <HomepageList containsTasklists={true} items={props.tasklists} />
+          <HomepageList containsTasklists={true} items={tasklists} />
         </div>
       </div>
     </main>

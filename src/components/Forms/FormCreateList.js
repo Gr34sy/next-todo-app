@@ -4,6 +4,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { List } from "../Lists/List";
 
 export function FormCreateList() {
@@ -13,6 +14,7 @@ export function FormCreateList() {
     tasks: [],
   };
   const [listValues, setListValues] = useState(INITIAL_STATE);
+  const router = useRouter();
 
   //Changing Tasks and Title
   function changeTasks(updatedTasks) {
@@ -28,8 +30,12 @@ export function FormCreateList() {
     }));
   }
 
+  function discardChanges(){
+    router.reload();
+  }
+
   async function addList(list){
-    const response = await fetch('/api/list', {
+    const response = await fetch('/api/lists', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,9 +44,10 @@ export function FormCreateList() {
     });
 
     const data = await response.json();
-
     console.log(data);
+    discardChanges();
   }
+
 
   return (
     <FormLayout submitText="Create List">
@@ -66,7 +73,7 @@ export function FormCreateList() {
       <List items={listValues.tasks} updateFunction={changeTasks} />
 
       <div className="form__buttons">
-        <button className="custom-button custom-button--big">Discard</button>
+        <button className="custom-button custom-button--big" onClick={() => discardChanges()}>Discard</button>
 
         <button onClick={() => addList(listValues)}
           className="custom-button custom-button--big"

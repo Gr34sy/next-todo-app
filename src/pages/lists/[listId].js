@@ -78,6 +78,7 @@ export default function ListPage(props) {
           )}
           {!editTitle && list.title}
         </h1>
+        
 
         <FontAwesomeIcon
           icon={editTitle ? faRightFromBracket : faPenToSquare}
