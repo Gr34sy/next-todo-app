@@ -30,11 +30,6 @@ export default function ListPage(props) {
   function changeTitleMode() {
     setEditTitle((prev) => !prev);
   }
-  function changeTitleModeOnEnter(e) {
-    if (e.key === "Enter") {
-      setEditTitle((prev) => !prev);
-    }
-  }
   function changeTitle(e) {
     setList((prevList) => ({
       ...prevList,
@@ -53,14 +48,17 @@ export default function ListPage(props) {
     router.reload();
   }
 
-  async function saveChanges(list) {
-    const response = await fetch("/api/list", {
-      method: "POST",
+  async function saveChanges() {
+    const response = await fetch(`/api/lists/${list._id}`, {
+      method: "PUT",
       body: JSON.stringify(list),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
+    const data = await response.json();
+    console.log(data);
   }
 
   return (
@@ -105,7 +103,7 @@ export default function ListPage(props) {
 
         <button
           className="custom-button custom-button--big list-layout__buttons_save-btn"
-          onClick={() => saveChanges(list)}
+          onClick={saveChanges}
         >
           Save
         </button>
@@ -133,7 +131,6 @@ export async function getServerSideProps(context) {
 
   //retrieving user lists from mongodb
   const userList = await userCollection.findOne({_id: new ObjectId(params.listId)});
-
   client.close();
 
   return {
