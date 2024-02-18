@@ -37,6 +37,11 @@
   gap: 15px;
   align-items: center;
   width: 100%;
+
+  .textarea_icon{
+    align-self: start;
+    margin-top: 2px;
+  }
 }
 .form__p {
   font-size: 1.6rem;

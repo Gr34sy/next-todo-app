@@ -70,7 +70,6 @@ export default function ListPage(props) {
               type="text"
               value={list.title}
               onChange={changeTitle}
-              onKeyUp={changeTitleModeOnEnter}
               className="custom-input"
             />
           )}

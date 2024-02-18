@@ -1,78 +1,122 @@
-import { FormLayout } from "@/components/Forms/FormLayout";
+
+// icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { faNoteSticky } from "@fortawesome/free-solid-svg-icons";
-import { faTag } from "@fortawesome/free-solid-svg-icons";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
+// components
+import { FormLayout } from "@/components/Forms/FormLayout";
+import { List } from "../Lists/List";
+
+// hooks
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export function FormCreateTasklist() {
+  const INITIAL_STATE = {
+    type: "tasklist",
+    title: "",
+    tasks: [],
+  };
+  const [listValues, setListValues] = useState(INITIAL_STATE);
+  const router = useRouter();
+
+  //Changing Tasks and Title
+  function changeTasks(updatedTasks) {
+    setListValues((prev) => ({
+      ...prev,
+      tasks: [...updatedTasks],
+    }));
+  }
+  function changeTitle(e){
+    setListValues((prev) => ({
+      ...prev,
+      title: e.target.value,
+    }));
+  }
+
+  function discardChanges(){
+    router.reload();
+  }
+
+  async function addList(list){
+    const response = await fetch('/api/lists', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(list),
+    });
+
+    const data = await response.json();
+    console.log(data);
+    discardChanges();
+  }
+
 
   return (
-    <FormLayout>
+    <FormLayout submitText="Create List">
       <label className="form__label" htmlFor="form-title">
-        <div className="label__icon">
-          <FontAwesomeIcon icon={faList} />
-        </div>
+        <FontAwesomeIcon icon={faList} className="form__icon" />
 
         <input
           type="text"
           name="title"
           id="form-title"
-          className="custom-input"
+          className="big-input"
           placeholder="List Title"
+          value={listValues.title}
+          onChange={changeTitle}
         />
       </label>
 
       <label className="form__label" htmlFor="form-deadline">
-        <div className="label__icon">
-          <FontAwesomeIcon icon={faCalendarDays} />
-        </div>
+        <FontAwesomeIcon icon={faCalendarDays} className="form__icon" />
 
         <input
           type="text"
-          name="deadline"
+          name="title"
           id="form-deadline"
-          className="custom-input"
+          className="big-input"
           placeholder="Deadline"
+          value={listValues.deadline}
+          // onChange={changeDeadline}
         />
       </label>
 
-      <label className="form__label" htmlFor="form-tags">
-        <div className="label__icon">
-          <FontAwesomeIcon icon={faTag} />
-        </div>
-
-        <input
-          type="text"
-          name="tags"
-          id="form-tags"
-          className="custom-input"
-          placeholder="Tags"
-        />
-      </label>
-
-      <button className="custom-button custom-button--small">Add Tag</button>
-
-      <label className="form__label label--textarea" htmlFor="form-description">
-        <div className="label__icon">
-          <FontAwesomeIcon icon={faNoteSticky} />
-        </div>
+      <label className="form__label" htmlFor="form-description">
+        <FontAwesomeIcon icon={faNoteSticky} className="form__icon textarea_icon" />
 
         <textarea
-          name="description"
+
+          rows="4"
+          name="title"
           id="form-description"
-          rows="10"
-          className="custom-input"
+          className="big-input"
           placeholder="Description"
+          value={listValues.deadline}
+          // onChange={changeDeadline}
         />
       </label>
 
-      <button className="custom-button custom-button--big">
-        Create
-      </button>
+      <p className="form__p">
+        <FontAwesomeIcon icon={faTag} className="form__icon" />
+        Tasks
+      </p>
+
+      <List items={listValues.tasks} updateFunction={changeTasks} />
+
+      <div className="form__buttons">
+        <button className="custom-button custom-button--big" onClick={() => discardChanges()}>Discard</button>
+
+        <button onClick={() => addList(listValues)}
+          className="custom-button custom-button--big"
+        >
+          Save
+        </button>
+      </div>
     </FormLayout>
   );
 }

@@ -124,7 +124,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
         ))}
       </ul>
 
-      <button className="custom-button list__clear-button" onClick={deleteAll}><FontAwesomeIcon icon={faTrash}/> Clear </button>
+      {listItems.length > 0 && <button className="custom-button list__clear-button" onClick={deleteAll}><FontAwesomeIcon icon={faTrash}/> Clear </button>}
     </div>
   );
 }
