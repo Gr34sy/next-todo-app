@@ -7,6 +7,12 @@
 .task-tile__container{
     padding: 15px;
     background-color: var(--color-accent);
+
+    .list__clear-button{
+        &:hover{
+            background-color: $color-black;
+        }
+    }
 }
 .task-tile__container_p{
     padding-block: 10px;

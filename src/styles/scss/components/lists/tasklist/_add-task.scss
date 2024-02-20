@@ -16,7 +16,7 @@
   grid-template-columns: 1fr auto;
   align-items: center;
 
-  path{
+  path {
     color: $color-black;
   }
 }
@@ -27,9 +27,9 @@
   background-color: var(--color-accent);
   padding: 15px;
 
-  .add-item__button {
-    &:hover {
-      color: var(--color-font-2);
+  button {
+    &:hover{
+      background-color: $color-black;
     }
   }
 
@@ -47,7 +47,6 @@
 }
 
 .add-task__labels_label {
-
   textarea,
   input {
     width: 100%;

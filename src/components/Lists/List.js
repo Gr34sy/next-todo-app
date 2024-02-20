@@ -29,7 +29,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
       setListItems((prevItems) => [
         ...prevItems,
         {
-          id: `item-${listItems.length}`,
+          id: `operation-${listItems.length}`,
           name: inputValue,
           isDone: false,
         },
@@ -40,7 +40,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
       setListItems((prevItems) => [
         ...prevItems,
         {
-          id: `item-${listItems.length}`,
+          id: `task-${listItems.length}`,
           name: inputValue,
           isDone: false,
           deadline: "Not scheduled yet",

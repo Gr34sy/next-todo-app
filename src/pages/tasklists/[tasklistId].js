@@ -7,9 +7,12 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { AddTask } from "@/components/Lists/Tasklist/AddTask";
 import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
 
-//Functions
-import { ObjectId } from "mongodb";
+//hooks
 import { useState } from "react";
+import { useRouter } from "next/router";
+
+//backend
+import { ObjectId } from "mongodb";
 import { dbConnect } from "../../utils/db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/auth";
@@ -18,6 +21,8 @@ export default function TasklistPage(props) {
   const INITIAL_TASKLIST = props.tasklist;
   const [editMode, setEditMode] = useState(false);
   const [tasklist, setTasklist] = useState(INITIAL_TASKLIST);
+
+  const router = useRouter();
 
   // Changing title, deadline and description of the tasklist
   function changeTitle(e) {
@@ -37,6 +42,35 @@ export default function TasklistPage(props) {
       ...prevList,
       description: e.target.value,
     }));
+  }
+
+  // updating task array
+  function updateTasks(updatedTask){
+    setTasklist((prevList) => ({
+      ...prevList,
+      tasks: prevList.tasks.map((task) => {
+        if(task.id === updatedTask.id){
+          return updatedTask;
+        }
+      }) 
+    }))
+  }
+
+  //saving and discarding changes 
+  async function saveTasklist(){
+    const response = await fetch(`/api/tasklists/${tasklist._id}`,{
+      method: 'PUT',
+      body: JSON.stringify(tasklist),
+      headers: {
+        'Content-Type': "application/json",
+      },
+    })
+
+    const data = await response.json(); 
+    console.log(data);
+  }
+  function discardChanges(){
+    router.reload();
   }
 
   return (
@@ -96,20 +130,21 @@ export default function TasklistPage(props) {
               name={task.name}
               deadline={task.deadline}
               isDone={task.isDone}
-              itemId={task.id}
+              id={task.id}
               operations={task.operations}
               key={task.id}
+              updateFunction={updateTasks}
             />
           ))}
         </div>
       </div>
 
       <div className="list-layout__buttons">
-        <button className="custom-button custom-button--big list-layout__buttons_discard-btn">
+        <button className="custom-button custom-button--big list-layout__buttons_discard-btn" onClick={discardChanges}>
           Discard 
         </button>
 
-        <button className="custom-button custom-button--big list-layout__buttons_save-btn">
+        <button className="custom-button custom-button--big list-layout__buttons_save-btn" onClick={saveTasklist}>
           Save 
         </button>
       </div>

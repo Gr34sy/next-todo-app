@@ -1,7 +1,6 @@
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPen,
   faArrowRightFromBracket,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
@@ -12,9 +11,11 @@ import { Checkbox } from "@/components/Checkbox/Checkbox";
 
 //hooks
 import { useState } from "react";
+import { useEffect } from "react";
 
 export function TaskTile(props) {
   const INITIAL_TASK = {
+    id: props.id,
     name: props.name,
     deadline: props.deadline,
     isDone: props.isDone,
@@ -22,6 +23,24 @@ export function TaskTile(props) {
   };
   const [editMode, setEditMode] = useState(false);
   const [task, setTask] = useState(INITIAL_TASK);
+
+  // updating task in tasklist state
+  function handleTaskUpdate(task){
+    if(typeof props.updateFunction === 'function'){
+      props.updateFunction(task);
+    }
+  }
+  useEffect(() => {
+    handleTaskUpdate(task);
+  },[task])
+
+  //updating operations in task state
+  function handleOperationsUpdate(operations){
+    setTask((prevTask) => ({
+      ...prevTask,
+      operations: operations,
+    }))
+  }
 
   //Changing task name, deadline and isDone
   function changeName(e){
@@ -42,6 +61,7 @@ export function TaskTile(props) {
       isDone: !prevTask.isDone,
     }))
   }
+
 
   return (
     <div className="task-tile">
@@ -82,7 +102,7 @@ export function TaskTile(props) {
 
       <div className="task-tile__container">
         <p className="task-tile__container_p">Operations</p>
-        <List operationsList={true} items={task.operations} />
+        <List operationsList={true} items={task.operations} updateFunction={handleOperationsUpdate}/>
       </div>
     </div>
   );
