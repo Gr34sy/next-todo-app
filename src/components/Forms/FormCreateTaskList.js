@@ -18,6 +18,8 @@ export function FormCreateTasklist() {
   const INITIAL_STATE = {
     type: "tasklist",
     title: "",
+    deadline: "",
+    description: "",
     tasks: [],
   };
   const [listValues, setListValues] = useState(INITIAL_STATE);
@@ -36,18 +38,30 @@ export function FormCreateTasklist() {
       title: e.target.value,
     }));
   }
+  function changeDeadline(e){
+    setListValues((prev) => ({
+      ...prev,
+      deadline: e.target.value,
+    }));
+  }
+  function changeDescription(e){
+    setListValues((prev) => ({
+      ...prev,
+      description: e.target.value,
+    }));
+  }
 
   function discardChanges(){
     router.reload();
   }
 
-  async function addList(list){
+  async function addTasklist(tasklist){
     const response = await fetch('/api/lists', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(list),
+      body: JSON.stringify(tasklist),
     });
 
     const data = await response.json();
@@ -82,7 +96,7 @@ export function FormCreateTasklist() {
           className="big-input"
           placeholder="Deadline"
           value={listValues.deadline}
-          // onChange={changeDeadline}
+          onChange={changeDeadline}
         />
       </label>
 
@@ -96,8 +110,8 @@ export function FormCreateTasklist() {
           id="form-description"
           className="big-input"
           placeholder="Description"
-          value={listValues.deadline}
-          // onChange={changeDeadline}
+          value={listValues.description}
+          onChange={changeDescription}
         />
       </label>
 
@@ -111,7 +125,7 @@ export function FormCreateTasklist() {
       <div className="form__buttons">
         <button className="custom-button custom-button--big" onClick={() => discardChanges()}>Discard</button>
 
-        <button onClick={() => addList(listValues)}
+        <button onClick={() => addTasklist(listValues)}
           className="custom-button custom-button--big"
         >
           Save

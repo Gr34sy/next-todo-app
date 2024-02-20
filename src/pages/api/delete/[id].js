@@ -12,11 +12,10 @@ async function handler(req, res) {
 
   const { id } = req.query;
 
-  if (req.method === "PUT") {
-    data._id = new ObjectId(data._id);
+  if (req.method === "DELETE") {
     try {
-      await userCollection.replaceOne({ _id: data._id}, data);
-      res.status(201).json({message: `List ${id} updated`});
+      await userCollection.deleteOne({ _id: new ObjectId(id)});
+      res.status(201).json({ message: `Document with id: ${id} deleted`});
     } catch (err) {
       res.status(500).json({ message: err.message });
     }

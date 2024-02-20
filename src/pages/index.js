@@ -27,13 +27,14 @@ export default function HomePage(props) {
   const [tasklists, setTasklists] = useState(INITIAL_TASKLISTS);
 
   async function deleteList(id){
-    const response = await fetch(`/api/lists/${id}`, {
+    const response = await fetch(`/api/delete/${id}`, {
       method: "DELETE",
     });
 
     const data = await response.json();
     console.log(data);
     setLists(prevLists => prevLists.filter(list => list._id !== id));
+    setTasklists(prevLists => prevLists.filter(list => list._id !== id));
   }
 
   function HomepageList({ containsTasklists, items }) {
@@ -46,7 +47,7 @@ export default function HomePage(props) {
               className="homepage__list_icon"
             />
             <Link
-              href={containsTasklists ? `tasklists/${item._id}` : `lists/${item._id}`}
+              href={containsTasklists ? `/tasklists/${item._id}` : `/lists/${item._id}`}
             >
               {" "}
               {item.title}

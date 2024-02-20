@@ -25,14 +25,29 @@ export function List({ items, operationsList, listId, updateFunction }) {
 
   // Operations on Items
   function addItem() {
-    setListItems((prevItems) => [
-      ...prevItems,
-      {
-        id: `item-${listItems.length}`,
-        name: inputValue,
-        isDone: false,
-      },
-    ]);
+    if(operationsList){
+      setListItems((prevItems) => [
+        ...prevItems,
+        {
+          id: `item-${listItems.length}`,
+          name: inputValue,
+          isDone: false,
+        },
+      ]);
+    }
+
+    if(!operationsList){
+      setListItems((prevItems) => [
+        ...prevItems,
+        {
+          id: `item-${listItems.length}`,
+          name: inputValue,
+          isDone: false,
+          deadline: "Not scheduled yet",
+        },
+      ]);
+    }
+
     setInputValue("");
   }
   // function addOnEnter(e){

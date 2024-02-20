@@ -73,7 +73,8 @@ export default function TasklistPage(props) {
 }
 
 export async function getStaticProps() {
-  const db = await dbConnect();
+  const client = await dbConnect();
+  const db = client.db("ToDo");
 
   const listId = new ObjectId("65a6731eb6a8062447227713");
   const list = await Object(
