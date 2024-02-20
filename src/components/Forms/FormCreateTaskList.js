@@ -1,7 +1,7 @@
 
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { faNoteSticky } from "@fortawesome/free-solid-svg-icons";
@@ -73,7 +73,7 @@ export function FormCreateTasklist() {
   return (
     <FormLayout submitText="Create List">
       <label className="form__label" htmlFor="form-title">
-        <FontAwesomeIcon icon={faList} className="form__icon" />
+        <FontAwesomeIcon icon={faListUl} className="form__icon" />
 
         <input
           type="text"

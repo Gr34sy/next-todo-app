@@ -1,12 +1,13 @@
 //Components
 import Link from "next/link";
+import { DeleteAlert } from "@/components/DeleteAlert/DeleteAlert";
 
 //Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faList,
   faNoteSticky,
-  faUser,
+  faListUl,
   faCirclePlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
@@ -25,6 +26,7 @@ export default function HomePage(props) {
 
   const [lists, setLists] = useState(INITIAL_LISTS);
   const [tasklists, setTasklists] = useState(INITIAL_TASKLISTS);
+  const [displayAlert, setDisplayAlert] = useState(false);
 
   async function deleteList(id){
     const response = await fetch(`/api/delete/${id}`, {
@@ -37,23 +39,23 @@ export default function HomePage(props) {
     setTasklists(prevLists => prevLists.filter(list => list._id !== id));
   }
 
-  function HomepageList({ containsTasklists, items }) {
+  function HomepageList({ forTasklists, items }) {
     return (
       <ul className="homepage__list">
         {items.map((item) => (
           <li className="homepage__list_item" key={item._id}>
             <FontAwesomeIcon
-              icon={containsTasklists ? faList : faNoteSticky}
+              icon={forTasklists ? faListUl : faList}
               className="homepage__list_icon"
             />
             <Link
-              href={containsTasklists ? `/tasklists/${item._id}` : `/lists/${item._id}`}
+              href={forTasklists ? `/tasklists/${item._id}` : `/lists/${item._id}`}
             >
               {" "}
               {item.title}
             </Link>
 
-            <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" onClick={() => deleteList(item._id)}/>
+            <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" onClick={() => setDisplayAlert(item._id)}/>
           </li>
         ))}
 
@@ -80,14 +82,16 @@ export default function HomePage(props) {
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Simple Lists</h2>
-          <HomepageList containsTasklists={false} items={lists} />
+          <HomepageList items={lists} />
         </div>
 
         <div className="homepage__list-wrapper">
           <h2 className="homepage__list-header ">Tasklists</h2>
-          <HomepageList containsTasklists={true} items={tasklists} />
+          <HomepageList forTasklists={true} items={tasklists} />
         </div>
       </div>
+
+      {displayAlert && <DeleteAlert deleteFunction={() => deleteList(displayAlert)} closeFunction={()=>setDisplayAlert(false)}/>}
     </main>
   );
 }
