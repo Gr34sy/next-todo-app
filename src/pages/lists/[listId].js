@@ -70,7 +70,7 @@ export default function ListPage(props) {
               type="text"
               value={list.title}
               onChange={changeTitle}
-              className="custom-input"
+              className="big-input"
             />
           )}
           {!editTitle && list.title}

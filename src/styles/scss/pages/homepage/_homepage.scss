@@ -46,12 +46,15 @@
 
 .homepage__list_item {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 15px 20px;
   cursor: pointer;
+
+  a, .list__item_trash-icon{
+    padding: 15px 20px;
+  }
 
   &:nth-child(2n) {
     background-color: var(--color-bg);

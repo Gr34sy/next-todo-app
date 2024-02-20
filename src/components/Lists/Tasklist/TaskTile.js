@@ -1,35 +1,89 @@
+//icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPen,
   faArrowRightFromBracket,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
+
+//components
 import { List } from "../List";
 import { Checkbox } from "@/components/Checkbox/Checkbox";
 
+//hooks
 import { useState } from "react";
 
 export function TaskTile(props) {
+  const INITIAL_TASK = {
+    name: props.name,
+    deadline: props.deadline,
+    isDone: props.isDone,
+    operations: props.operations,
+  };
+  const [editMode, setEditMode] = useState(false);
+  const [task, setTask] = useState(INITIAL_TASK);
+
+  //Changing task name, deadline and isDone
+  function changeName(e){
+    setTask(prevTask => ({
+      ...prevTask,
+      name: e.target.value,
+    }))
+  }
+  function changeDeadline(e){
+    setTask(prevTask => ({
+      ...prevTask,
+      deadline: e.target.value,
+    }))
+  }
+  function changeIsDone(){
+    setTask(prevTask => ({
+      ...prevTask,
+      isDone: !prevTask.isDone,
+    }))
+  }
 
   return (
     <div className="task-tile">
       <div className="task-tile__header">
         <div className="task-tile__header_title">
-          <Checkbox isChecked={props.isDone} />
-          <h2>{props.name}</h2>
+          <Checkbox isChecked={task.isDone} onClick={changeIsDone}/>
+          <h2>
+          {editMode && (
+              <input
+                type="text"
+                value={task.name}
+                onChange={changeName}
+              />
+            )}
+            {!editMode && task.name}
+          </h2>
           <FontAwesomeIcon
-          icon={faPenToSquare}
-          className="task-tile__header_edit-icon"
-        />
+            icon={editMode ? faArrowRightFromBracket : faPenToSquare}
+            className="task-tile__header_edit-icon"
+            onClick={() => setEditMode((prev) => !prev)}
+          />
         </div>
 
         <div className="task-tile__header_deadline">
           <p>Deadline:</p>
-          <p className="task-tile__header_date">{props.deadline}</p>
+          <p className="task-tile__header_date">
+            {editMode && (
+              <input
+                type="text"
+                value={task.deadline}
+                onChange={changeDeadline}
+              />
+            )}
+            {!editMode && task.deadline}
+          </p>
         </div>
       </div>
 
-      <List operationsList={true} items={props.operations} />
+      <div className="task-tile__container">
+        <p className="task-tile__container_p">Operations</p>
+        <List operationsList={true} items={task.operations} />
+      </div>
     </div>
   );
 }

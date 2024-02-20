@@ -44,6 +44,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
           name: inputValue,
           isDone: false,
           deadline: "Not scheduled yet",
+          operations: [],
         },
       ]);
     }

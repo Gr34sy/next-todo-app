@@ -28,15 +28,15 @@ export default function HomePage(props) {
   const [tasklists, setTasklists] = useState(INITIAL_TASKLISTS);
   const [displayAlert, setDisplayAlert] = useState(false);
 
-  async function deleteList(id){
+  async function deleteList(id) {
     const response = await fetch(`/api/delete/${id}`, {
       method: "DELETE",
     });
 
     const data = await response.json();
     console.log(data);
-    setLists(prevLists => prevLists.filter(list => list._id !== id));
-    setTasklists(prevLists => prevLists.filter(list => list._id !== id));
+    setLists((prevLists) => prevLists.filter((list) => list._id !== id));
+    setTasklists((prevLists) => prevLists.filter((list) => list._id !== id));
   }
 
   function HomepageList({ forTasklists, items }) {
@@ -44,18 +44,23 @@ export default function HomePage(props) {
       <ul className="homepage__list">
         {items.map((item) => (
           <li className="homepage__list_item" key={item._id}>
-            <FontAwesomeIcon
-              icon={forTasklists ? faListUl : faList}
-              className="homepage__list_icon"
-            />
             <Link
-              href={forTasklists ? `/tasklists/${item._id}` : `/lists/${item._id}`}
+              href={
+                forTasklists ? `/tasklists/${item._id}` : `/lists/${item._id}`
+              }
             >
-              {" "}
+              <FontAwesomeIcon
+                icon={forTasklists ? faListUl : faList}
+                className="homepage__list_icon"
+              />{" "}
               {item.title}
             </Link>
 
-            <FontAwesomeIcon icon={faTrash} className="list__item_trash-icon" onClick={() => setDisplayAlert(item._id)}/>
+            <FontAwesomeIcon
+              icon={faTrash}
+              className="list__item_trash-icon"
+              onClick={() => setDisplayAlert(item._id)}
+            />
           </li>
         ))}
 
@@ -91,7 +96,12 @@ export default function HomePage(props) {
         </div>
       </div>
 
-      {displayAlert && <DeleteAlert deleteFunction={() => deleteList(displayAlert)} closeFunction={()=>setDisplayAlert(false)}/>}
+      {displayAlert && (
+        <DeleteAlert
+          deleteFunction={() => deleteList(displayAlert)}
+          closeFunction={() => setDisplayAlert(false)}
+        />
+      )}
     </main>
   );
 }
@@ -99,11 +109,12 @@ export default function HomePage(props) {
 export async function getServerSideProps(context) {
   //getting session data
   const session = await getServerSession(context.req, context.res, authOptions);
-  if (!session)return{
-    redirect: {
-      destination: "/sign-in",
-    },
-  };
+  if (!session)
+    return {
+      redirect: {
+        destination: "/sign-in",
+      },
+    };
 
   //opening mongodb connection
   const client = await dbConnect();
@@ -111,15 +122,20 @@ export async function getServerSideProps(context) {
   const userCollection = db.collection(session.user.email);
 
   //retrieving user lists from mongodb
-  const userLists = await userCollection.find({type: "list"}).toArray();
-  const userTasklists = await userCollection.find({type: "tasklist"}).toArray();
+  const userLists = await userCollection.find({ type: "list" }).toArray();
+  const userTasklists = await userCollection
+    .find({ type: "tasklist" })
+    .toArray();
 
   client.close();
 
   return {
-    props: { 
-      lists: userLists.map(list => ({...list, _id: list._id.toString()})),
-      tasklists: userTasklists.map(list => ({...list, _id: list._id.toString()})),
+    props: {
+      lists: userLists.map((list) => ({ ...list, _id: list._id.toString() })),
+      tasklists: userTasklists.map((list) => ({
+        ...list,
+        _id: list._id.toString(),
+      })),
     },
   };
 }
