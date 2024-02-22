@@ -6,8 +6,7 @@ import { List } from "../List";
 //hooks
 import { useState } from "react";
 
-
-export function AddTask({addTask}) {
+export function AddTask({ addTask }) {
   const INITIAL_TASK = {
     name: "",
     deadline: "",
@@ -17,53 +16,88 @@ export function AddTask({addTask}) {
   const [displayContainer, setDisplayContainer] = useState(false);
   const [task, setTask] = useState(INITIAL_TASK);
 
-  function handleDisplay(){
+  function handleDisplay() {
     setDisplayContainer((prevState) => !prevState);
   }
 
-  function updateOperations(operations){
+  //updating task state
+  function changeName(e) {
+    setTask((prevTask) => ({
+      ...prevTask,
+      name: e.target.value,
+    }));
+  }
+  function changeDeadline(e) {
+    setTask((prevTask) => ({
+      ...prevTask,
+      deadline: e.target.value,
+    }));
+  }
+  function updateOperations(operations) {
     setTask((prevTask) => ({
       ...prevTask,
       operations: operations,
-    }))
+    }));
   }
 
-  function handleAddTask(){
-    if(typeof addTask ==='function'){
+  function handleAddTask() {
+    if (typeof addTask === "function") {
       addTask(task);
     }
+    setKey((k) => k + 1);
   }
 
   return (
     <div className="add-task">
       <h2 className="add-task__header" onClick={handleDisplay}>
-        Adding New Task
-        <FontAwesomeIcon icon ={displayContainer ? faCaretUp : faCaretDown} />
+        New Task
+        <FontAwesomeIcon icon={displayContainer ? faCaretUp : faCaretDown} />
       </h2>
-      {displayContainer && <div className="add-task__container">
-        <div className="add-task__labels">
-          <label htmlFor="add-task__taskname" className="add-task__labels_label">
-            <p>Task name:</p>
-            <input type="text" id="add-task__taskname"/>
-          </label>
+      {displayContainer && (
+        <div className="add-task__container">
+          <div className="add-task__labels">
+            <label
+              htmlFor="add-task__taskname"
+              className="add-task__labels_label"
+            >
+              <p>Name:</p>
+              <input
+                type="text"
+                id="add-task__taskname"
+                onChange={changeName}
+                value={task.name}
+              />
+            </label>
 
-          <label htmlFor="add-task__deadline" className="add-task__labels_label">
-            <p>Task deadline:</p>
-            <input type="date" id="add-task__deadline"/>
-          </label>
+            <label
+              htmlFor="add-task__deadline"
+              className="add-task__labels_label"
+            >
+              <p>Deadline:</p>
+              <input
+                type="text"
+                id="add-task__deadline"
+                onChange={changeDeadline}
+                value={task.deadline}
+              />
+            </label>
+          </div>
 
-          <label htmlFor="add-task__description" className="add-task__labels_label">
-            <p>Task description:</p>
-            <textarea type="text" rows="6" id="add-task__description" />
-          </label>
+          <div className="add-task__add-operation">
+            <p>Operations:</p>
+            <List items={task.operations} updateFunction={updateOperations} />
+          </div>
+
+          <button
+            type="submit"
+            className="custom-button custom-button--big add-task__button"
+            onClick={handleAddTask}
+          >
+            {" "}
+            Add{" "}
+          </button>
         </div>
-
-        <div className="add-task__add-operation">
-          <p>Add Operation:</p>
-          <List items={task.operations} updateFunction={updateOperations} />
-          <button type="submit" className="custom-button custom-button--small add-task__add-operation_button" onClick={handleAddTask}> Add </button>
-        </div>
-      </div>}
+      )}
     </div>
   );
 }

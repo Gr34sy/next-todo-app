@@ -63,7 +63,7 @@ export function List({ items, operationsList, listId, updateFunction }) {
       const filteredItems = prevItems.filter((item) => item.id !== id);
       const updatedItems = filteredItems.map((item, i) => ({
         ...item,
-        id: `${listId}-${i} `,
+        id: `${operationsList ? 'operation': 'task'}-${i} `,
       }));
 
       return updatedItems;

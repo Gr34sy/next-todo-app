@@ -23,7 +23,7 @@
 
 .add-task__container {
   display: grid;
-  gap: 25px 50px;
+  gap: 65px 50px;
   background-color: var(--color-accent);
   padding: 15px;
 
@@ -47,16 +47,8 @@
 }
 
 .add-task__labels_label {
-  textarea,
   input {
-    width: 100%;
-
-    @media (min-width: 780px) {
-      width: 300px;
-    }
-    @media (min-width: 1050px) {
-      width: 450px;
-    }
+    width: 250px;
   }
 }
 
@@ -64,9 +56,15 @@
   display: grid;
   align-content: start;
   grid-template-rows: auto auto 1fr;
+
+  grid-row: span 2;
+
+  ul{
+    overflow-y: auto;
+    max-height: 130px;
+  }
 }
-.add-task__add-operation_button {
+.add-task__button {
   margin-top: 10px;
-  align-self: end;
-  justify-self: end;
+  justify-self: start;
 }

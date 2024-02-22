@@ -44,7 +44,7 @@ export default function TasklistPage(props) {
     }));
   }
 
-  // updating task array
+  // updating task in tasklist state
   function updateTasks(updatedTask) {
     setTasklist((prevList) => {
       const tasksToUpdate = prevList.tasks;
@@ -64,7 +64,7 @@ export default function TasklistPage(props) {
   }
 
   //saving and discarding changes
-  async function saveTasklist() {
+  async function saveTasklist(tasklist) {
     const response = await fetch(`/api/tasklists/${tasklist._id}`, {
       method: "PUT",
       body: JSON.stringify(tasklist),
@@ -75,13 +75,14 @@ export default function TasklistPage(props) {
 
     const data = await response.json();
     console.log(data);
+    router.reload();
   }
   function discardChanges() {
     router.reload();
   }
 
   //adding task to tasklist
-  function addTask(task) {
+  async function addTask(task) {
     const taskToAdd = {
       ...task,
       id: `task-${tasklist.tasks.length}`,
@@ -91,8 +92,6 @@ export default function TasklistPage(props) {
       ...prevList,
       tasks: [...prevList.tasks, taskToAdd],
     }));
-
-    saveTasklist();
   }
 
   return (
@@ -156,6 +155,7 @@ export default function TasklistPage(props) {
               operations={task.operations}
               key={task.id}
               updateFunction={updateTasks}
+              deleteFunction={() => null}
             />
           ))}
         </div>
@@ -171,7 +171,7 @@ export default function TasklistPage(props) {
 
         <button
           className="custom-button custom-button--big list-layout__buttons_save-btn"
-          onClick={saveTasklist}
+          onClick={() => saveTasklist(tasklist)}
         >
           Save
         </button>
