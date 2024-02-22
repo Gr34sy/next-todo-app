@@ -66,11 +66,13 @@ export default function HomePage(props) {
 
         {items.length === 0 && (
           <li className="homepage__list_item">
-            <FontAwesomeIcon
-              icon={faCirclePlus}
-              className="homepage__list_icon homepage__list_add-icon"
-            />
-            <Link href="/list-creator">Go to list creator</Link>
+            <Link href="/list-creator">
+              <FontAwesomeIcon
+                icon={faCirclePlus}
+                className="homepage__list_icon homepage__list_add-icon"
+              />
+              Go to list creator
+            </Link>
           </li>
         )}
       </ul>

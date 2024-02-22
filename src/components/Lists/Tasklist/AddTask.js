@@ -1,13 +1,37 @@
-import { List } from "../List";
-import { useState } from "react";
+//icons
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//components
+import { List } from "../List";
+//hooks
+import { useState } from "react";
 
-export function AddTask() {
+
+export function AddTask({addTask}) {
+  const INITIAL_TASK = {
+    name: "",
+    deadline: "",
+    isDone: "",
+    operations: [],
+  };
   const [displayContainer, setDisplayContainer] = useState(false);
+  const [task, setTask] = useState(INITIAL_TASK);
 
   function handleDisplay(){
     setDisplayContainer((prevState) => !prevState);
+  }
+
+  function updateOperations(operations){
+    setTask((prevTask) => ({
+      ...prevTask,
+      operations: operations,
+    }))
+  }
+
+  function handleAddTask(){
+    if(typeof addTask ==='function'){
+      addTask(task);
+    }
   }
 
   return (
@@ -36,10 +60,8 @@ export function AddTask() {
 
         <div className="add-task__add-operation">
           <p>Add Operation:</p>
-          <List
-            items={['Twpj' , 'Stary', 'Coco Jumbo']}
-          />
-          <button type="submit" className="custom-button custom-button--small add-task__add-operation_button" > Save Task </button>
+          <List items={task.operations} updateFunction={updateOperations} />
+          <button type="submit" className="custom-button custom-button--small add-task__add-operation_button" onClick={handleAddTask}> Add </button>
         </div>
       </div>}
     </div>

@@ -45,32 +45,54 @@ export default function TasklistPage(props) {
   }
 
   // updating task array
-  function updateTasks(updatedTask){
-    setTasklist((prevList) => ({
-      ...prevList,
-      tasks: prevList.tasks.map((task) => {
-        if(task.id === updatedTask.id){
+  function updateTasks(updatedTask) {
+    setTasklist((prevList) => {
+      const tasksToUpdate = prevList.tasks;
+      const updatedTasks = tasksToUpdate.map((task) => {
+        if (updatedTask.id === task.id) {
           return updatedTask;
+        } else {
+          return task;
         }
-      }) 
-    }))
+      });
+
+      return {
+        ...prevList,
+        tasks: updatedTasks,
+      };
+    });
   }
 
-  //saving and discarding changes 
-  async function saveTasklist(){
-    const response = await fetch(`/api/tasklists/${tasklist._id}`,{
-      method: 'PUT',
+  //saving and discarding changes
+  async function saveTasklist() {
+    const response = await fetch(`/api/tasklists/${tasklist._id}`, {
+      method: "PUT",
       body: JSON.stringify(tasklist),
       headers: {
-        'Content-Type': "application/json",
+        "Content-Type": "application/json",
       },
-    })
+    });
 
-    const data = await response.json(); 
+    const data = await response.json();
     console.log(data);
   }
-  function discardChanges(){
+  function discardChanges() {
     router.reload();
+  }
+
+  //adding task to tasklist
+  function addTask(task) {
+    const taskToAdd = {
+      ...task,
+      id: `task-${tasklist.tasks.length}`,
+    };
+
+    setTasklist((prevList) => ({
+      ...prevList,
+      tasks: [...prevList.tasks, taskToAdd],
+    }));
+
+    saveTasklist();
   }
 
   return (
@@ -122,7 +144,7 @@ export default function TasklistPage(props) {
           {!editMode && <p>{tasklist.description}</p>}
         </div>
 
-        <AddTask />
+        <AddTask addTask={addTask} />
 
         <div className="task-list__tasks">
           {tasklist.tasks.map((task) => (
@@ -140,12 +162,18 @@ export default function TasklistPage(props) {
       </div>
 
       <div className="list-layout__buttons">
-        <button className="custom-button custom-button--big list-layout__buttons_discard-btn" onClick={discardChanges}>
-          Discard 
+        <button
+          className="custom-button custom-button--big list-layout__buttons_discard-btn"
+          onClick={discardChanges}
+        >
+          Discard
         </button>
 
-        <button className="custom-button custom-button--big list-layout__buttons_save-btn" onClick={saveTasklist}>
-          Save 
+        <button
+          className="custom-button custom-button--big list-layout__buttons_save-btn"
+          onClick={saveTasklist}
+        >
+          Save
         </button>
       </div>
     </main>

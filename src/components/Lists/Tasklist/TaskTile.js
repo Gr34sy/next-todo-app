@@ -25,13 +25,13 @@ export function TaskTile(props) {
   const [task, setTask] = useState(INITIAL_TASK);
 
   // updating task in tasklist state
-  function handleTaskUpdate(task){
+  function handleTaskUpdate(){
     if(typeof props.updateFunction === 'function'){
       props.updateFunction(task);
     }
   }
   useEffect(() => {
-    handleTaskUpdate(task);
+    handleTaskUpdate();
   },[task])
 
   //updating operations in task state
