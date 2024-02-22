@@ -1,7 +1,16 @@
 .task-tile{
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     max-height: 400px;
+}
+
+.task-tile__delete{
+    margin-left: auto;
+    font-size: 0.8rem;
+    padding-inline: 5px;
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-red;
 }
 
 .task-tile__container{

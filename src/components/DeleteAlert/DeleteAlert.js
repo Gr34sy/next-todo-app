@@ -20,7 +20,7 @@ export function DeleteAlert({deleteFunction, closeFunction}){
     <div className="deleteAlert__overlay">
       <div className="deleteAlert__card">
         <FontAwesomeIcon icon={faSquareXmark} className="deleteAlert__x-icon" onClick={handleClose}/>
-        <p className="deleteAlert__p">Are you sure?</p>
+        <p className="deleteAlert__p">Are you sure? <br/> The changes cannot be reverted</p>
         <button onClick={handleDelete} className="custom-button custom-button--big">Delete</button>
       </div>
     </div>

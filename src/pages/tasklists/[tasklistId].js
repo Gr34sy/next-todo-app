@@ -6,6 +6,7 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 //Components
 import { AddTask } from "@/components/Lists/Tasklist/AddTask";
 import { TaskTile } from "@/components/Lists/Tasklist/TaskTile";
+import { DeleteAlert } from "@/components/DeleteAlert/DeleteAlert";
 
 //hooks
 import { useState } from "react";
@@ -21,6 +22,7 @@ export default function TasklistPage(props) {
   const INITIAL_TASKLIST = props.tasklist;
   const [editMode, setEditMode] = useState(false);
   const [tasklist, setTasklist] = useState(INITIAL_TASKLIST);
+  const [deleteAlert, setDeleteAlert] = useState(false);
 
   const router = useRouter();
 
@@ -63,7 +65,7 @@ export default function TasklistPage(props) {
     });
   }
 
-  //saving and discarding changes
+  //saving tasklist and discarding changes
   async function saveTasklist(tasklist) {
     const response = await fetch(`/api/tasklists/${tasklist._id}`, {
       method: "PUT",
@@ -80,18 +82,55 @@ export default function TasklistPage(props) {
   function discardChanges() {
     router.reload();
   }
+  // adding and deleting task from tasklist
+  async function deleteTask(taskId) {
+    const filteredTasks = tasklist.tasks.filter((task) => task.id != taskId);
+    const updatedTasks = filteredTasks.map((task, i) => ({
+      ...task,
+      id: `task-${i}`,
+    }));
+    const updatedTasklist = {
+      ...tasklist,
+      tasks: updatedTasks,
+    };
 
-  //adding task to tasklist
+    const response = await fetch(`/api/tasklists/${tasklist._id}`, {
+      method: "PUT",
+      body: JSON.stringify(updatedTasklist),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+    console.log(data);
+    router.reload();
+  }
   async function addTask(task) {
     const taskToAdd = {
       ...task,
       id: `task-${tasklist.tasks.length}`,
     };
 
-    setTasklist((prevList) => ({
-      ...prevList,
-      tasks: [...prevList.tasks, taskToAdd],
-    }));
+    const updatedTasklist = {
+      ...tasklist,
+      tasks: [
+        ...tasklist.tasks,
+        taskToAdd,
+      ]
+    }
+
+    const response = await fetch(`/api/tasklists/${tasklist._id}`, {
+      method: "PUT",
+      body: JSON.stringify(updatedTasklist),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+    console.log(data);
+    router.reload();
   }
 
   return (
@@ -155,7 +194,7 @@ export default function TasklistPage(props) {
               operations={task.operations}
               key={task.id}
               updateFunction={updateTasks}
-              deleteFunction={() => null}
+              deleteFunction={setDeleteAlert}
             />
           ))}
         </div>
@@ -176,6 +215,13 @@ export default function TasklistPage(props) {
           Save
         </button>
       </div>
+
+      {deleteAlert && (
+        <DeleteAlert
+          deleteFunction={() => deleteTask(deleteAlert)}
+          closeFunction={() => setDeleteAlert(false)}
+        />
+      )}
     </main>
   );
 }

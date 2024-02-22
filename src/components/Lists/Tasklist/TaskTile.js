@@ -34,6 +34,13 @@ export function TaskTile(props) {
     handleTaskUpdate();
   },[task])
 
+  //deleting task
+  function handleTaskDelete(){
+    if(typeof props.deleteFunction === 'function'){
+      props.deleteFunction(task.id);
+    }
+  }
+
   //updating operations in task state
   function handleOperationsUpdate(operations){
     setTask((prevTask) => ({
@@ -65,6 +72,9 @@ export function TaskTile(props) {
 
   return (
     <div className="task-tile">
+      <div className="task-tile__delete" onClick={handleTaskDelete}>
+        Delete
+      </div>
       <div className="task-tile__header">
         <div className="task-tile__header_title">
           <Checkbox isChecked={task.isDone} onClick={changeIsDone}/>
