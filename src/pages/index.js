@@ -6,7 +6,7 @@ import { DeleteAlert } from "@/components/DeleteAlert/DeleteAlert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faList,
-  faNoteSticky,
+  faUser,
   faListUl,
   faCirclePlus,
   faTrash,
@@ -27,6 +27,7 @@ export default function HomePage(props) {
   const [lists, setLists] = useState(INITIAL_LISTS);
   const [tasklists, setTasklists] = useState(INITIAL_TASKLISTS);
   const [displayAlert, setDisplayAlert] = useState(false);
+
 
   async function deleteList(id) {
     const response = await fetch(`/api/delete/${id}`, {
@@ -66,13 +67,11 @@ export default function HomePage(props) {
 
         {items.length === 0 && (
           <li className="homepage__list_item">
-            <Link href="/list-creator">
-              <FontAwesomeIcon
-                icon={faCirclePlus}
-                className="homepage__list_icon homepage__list_add-icon"
-              />
-              Go to list creator
-            </Link>
+            <FontAwesomeIcon
+              icon={faCirclePlus}
+              className="homepage__list_icon homepage__list_add-icon"
+            />
+            <Link href="/list-creator">Go to list creator</Link>
           </li>
         )}
       </ul>

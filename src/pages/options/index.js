@@ -1,27 +1,19 @@
 import { useState, useEffect } from "react";
 import { signOut } from "next-auth/react";
 import { Tabs } from "@/components/Tabs/Tabs";
+import { useRouter } from "next/router";
 
 function OptionsPage() {
-  const [chosenColorTheme, setChosenColorTheme] = useState('default');
-
-
-  useEffect(() => {
-    setChosenColorTheme(document.body.className);
-  }, [])
-
-  function themeChangeHandler(e) {
-    setChosenColorTheme(e.target.value);
-
-    document.body.className = "";
-    document.body.className = `${e.target.value}`;
-  }
+  const router = useRouter();
 
   function LogOutPanel() {
     return (
       <div className="options__logout-panel">
         <p className="menu-content__h2">Are you sure to log out?</p>
-        <button className="custom-button custom-button--big" onClick={() => signOut()}>
+        <button
+          className="custom-button custom-button--big"
+          onClick={() => signOut()}
+        >
           Yes, I'm sure
         </button>
       </div>
@@ -29,6 +21,39 @@ function OptionsPage() {
   }
 
   function ThemeOptionsPanel() {
+    const [chosenColorTheme, setChosenColorTheme] = useState();
+
+    useEffect(() => {
+      async function getUserTheme(){
+        const response = await fetch('/api/theme')
+        const data = await response.json();
+        setChosenColorTheme(data.theme);
+      }
+      getUserTheme();
+    }, []);
+  
+    function themeChange(e) {
+      setChosenColorTheme(e.target.value);
+  
+      document.body.className = `${e.target.value}`;
+    }
+  
+    async function saveTheme(){
+      const response = fetch('/api/theme', {
+        method: 'PUT',
+        body: JSON.stringify({theme: chosenColorTheme}),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+  
+      // const data = await response.json();
+      // console.log(data);
+    }
+    function discard() {
+      router.reload();
+    }
+
     return (
       <div className="options__themes-panel">
         <div className="themes-panel__radios">
@@ -40,7 +65,7 @@ function OptionsPage() {
               name="color-themes"
               id="theme-default"
               value="default"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "default"}
             />
             <p className="menu-content__p">Default</p>
@@ -53,7 +78,7 @@ function OptionsPage() {
               name="color-themes"
               id="theme-nightmode"
               value="nightmode"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "nightmode"}
             />
             <p className="menu-content__p">Nightmode</p>
@@ -66,7 +91,7 @@ function OptionsPage() {
               name="color-themes"
               id="theme-celestial-blue"
               value="celestial-blue"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "celestial-blue"}
             />
             <p className="menu-content__p">Celestial Blue</p>
@@ -79,7 +104,7 @@ function OptionsPage() {
               name="color-themes"
               id="theme-midnight-green"
               value="midnight-green"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "midnight-green"}
             />
             <p className="menu-content__p">Midnight Green</p>
@@ -92,7 +117,7 @@ function OptionsPage() {
               name="color-themes"
               id="theme-tiffany-blue"
               value="tiffany-blue"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "tiffany-blue"}
             />
             <p className="menu-content__p">Tiffany Blue</p>
@@ -105,7 +130,7 @@ function OptionsPage() {
               name="color-themes"
               id="theme-pinky"
               value="pinky"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "pinky"}
             />
             <p className="menu-content__p">Pinky</p>
@@ -118,18 +143,24 @@ function OptionsPage() {
               name="color-themes"
               id="theme-orange"
               value="orange"
-              onChange={themeChangeHandler}
+              onChange={themeChange}
               checked={chosenColorTheme === "orange"}
             />
             <p className="menu-content__p">Orange</p>
           </label>
         </div>
         <div className="options__themes-panel_buttons">
-          <button className="custom-button custom-button--big">
+          <button
+            className="custom-button custom-button--big"
+            onClick={discard}
+          >
             Decline Change
           </button>
 
-          <button className="custom-button custom-button--big">
+          <button
+            className="custom-button custom-button--big"
+            onClick={saveTheme}
+          >
             Save Color Theme
           </button>
         </div>
