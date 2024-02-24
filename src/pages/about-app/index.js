@@ -40,8 +40,8 @@ export default function AboutAppPage() {
             <div className="section__description_div">
               <h2 className="section__description_h2">Foreword</h2>
               <p className="section__description_p">
-                Hello, I'm Peter.I study IT in Wrocław. I build this app to
-                repeat my frontend knowledge. You can find more information
+                Hello, I'm Peter. I study IT in Wrocław. I built this app to
+                learn backend as well as Next.js. You can find more information
                 about me{" "}
                 <span className="text-highlight">
                   <a
@@ -61,53 +61,57 @@ export default function AboutAppPage() {
                     NextJS
                   </a>
                 </span>{" "}
-                course recently and I needed a practical way to repeat the
-                lessons I've learnt. So I've come up with the idea of ToDo List
-                project. I knew that simple ToDo list would not be that
+                course recently and I needed a practical way to repeat
+                techniques I've learnt. I thought that simple ToDo list would not be that
                 interesting but the kanban board would require too much work.
                 Finally I've decided to build ToDo app expanded with several
-                additional functionalities.
+                functionalities.
               </p>
             </div>
 
             <div className="section__description_div">
               <h2 className="section__description_h2">How to use the app?</h2>
               <p className="section__description_p">
-                All you need to do is to just log in. There are a few ways to
-                log in. The app supports facebook, github and google account
+                Firstly you need to log in. There are two authorization options which allow that. App supports github and google account
                 validation. To log out from the app, go to the options panel.
                 There you will find{" "}
                 <span className="text-highlight">logout button</span>.
               </p>
+              <p className="section__description_p">
+                Then you can use the app to its full potential. To create list or tasklist go to <span className="text-highlight">List Creator</span>. All of your lists are accessable from <span className="text-highlight">Home</span> tab. Editing a list is avialable in the specific list view. You can also customize color theme. In order to do that go to <span className="text-highlight">Options</span> panel.
+                
+              </p>
             </div>
 
             <div className="section__description_div">
-              <h2 className="section__description_h2">Functionalities</h2>
+              <h2 className="section__description_h2">Lists</h2>
               <p className="section__description_p">
                 When using this app you can not only create a simple todo list,
                 but also a much advanced lists which are called
                 <span className="text-highlight"> tasklists</span>. Tasklist
-                contains deadline, tags, operations and description. Operations
-                are kind of subtasks, necessary to complete the main task. Each
-                operation consists of estimated time needed to complete it and
-                description. Tasklists are great tools that will certainly help
-                you with big projects or long-term plans. Whereas, simple todo
+                contains deadline, description and tasks. Tasks in tasklist
+                on the other hand contain subtasks, necessary to complete the main task. Each
+                subtask is called operation and also has a deadline. Tasklists are great tools that will help
+                you with the bigger projects or long-term plans. Whereas, simple todo
                 lists will work perfectly as reminders, quick notes or shopping
                 lists.
               </p>
 
-              <p className="section__description_p">
-                Users can also see the{" "}
-                <span className="text-highlight"> pinned lists</span> on the
-                homepage. In the list creator, there is a possibility to mark
-                the checkbox in order to display the list in the pinned lists
-                section. There are three slots for simple lists and one slot for
-                tasklist to pin. You can manage the pinned lists in the options
-                panel.
-              </p>
+              
 
               <p className="section__description_p">
                 There is also a bunch of theme options so you can choose your
+                favorite color motive. Among others, application offers
+                celestial blue theme, orange theme,
+                <span className="text-highlight"> nightmode</span> and more. You
+                can change color settings in the options panel.
+              </p>
+            </div>
+
+            <div className="section__description_div">
+              <h2 className="section__description_h2">Color Themes</h2>
+              <p className="section__description_p">
+                There are also a bunch of theme options so you can choose your
                 favorite color motive. Among others, application offers
                 celestial blue theme, orange theme,
                 <span className="text-highlight"> nightmode</span> and more. You
@@ -119,7 +123,7 @@ export default function AboutAppPage() {
       </main>
 
       <section className="lists-diffs">
-        <h1 className="section__header">Tasklists and simple lists</h1>
+        <h1 className="section__header">List Comparison</h1>
         <div className="lists-diffs__picture">
           <ImgDecoration type="top" />
           <ImgDecoration type="bottom" />
@@ -146,14 +150,10 @@ export default function AboutAppPage() {
 
             <p className="section__description_p">
               To create the list, simply go to the{" "}
-              <span className="text-highlight"> Your Lists</span> page and then
-              select simple list on list creator. Now you can write a title of
-              the list, add any tags if you want or choose if the list would be
-              displayed on Homepage as a pinned list. Afterwards you can click
-              button "Create List", which will automatically open up new tab in
-              the browser with the generated list. There you can edit it - add
-              or remove tasks from that list or mark them as finished. Users can
-              also change the tags and title.
+              <span className="text-highlight"> List Creator </span> page and then
+              select list in tab menu. Now you can write a title of
+              the list and add tasks to it. Afterwards you can click
+              button "Save", which will automatically redirect you back to homepage. There you can find newly added list and go to its view. In the view you can edit title and each task. There are also options to add and remove tasks from the list.
             </p>
           </div>
 
@@ -162,41 +162,21 @@ export default function AboutAppPage() {
             <p className="section__description_p">
               When it comes to the projects or long-term plans that consists of
               many subtasks, the tasklists are here to help you to organize them
-              all. In this app the subtasks are called "operations".
+              all. In this app the subtasks are called "operations". Each operation has its own
+              deadline.
             </p>
 
             <p className="section__description_p">
               Creation of tasklist is similar to simple list. Firstly you go to
-              the <span className="text-highlight"> Your Lists</span> page.
-              Secondly you select "tasklist" in list creator. Then you set up
-              your title and tags. In addition to that you can select a deadline
-              (date by which all subtasks should be completed) and add the
-              description. Afterwards you will be redirected to the list you've
-              just created. There you can add and manage operations. Tasklists
-              can contain any amount of them. Each operation can have its own
-              deadline and description. You can also change the subtasks order.
+              the <span className="text-highlight"> List Creator</span> page.
+              Then select "tasklist" in list creator tabs. Next you set up
+              tasklists' title, (date by which all subtasks should be completed) deadline, description and tasks. Afterwards you will also be redirected to the homepage.
+              If you click newly created tasklist you will go to the selected tasklist view.
+              There you can edit tasklist and manage operations  of a  specific task or add a new one. Tasklists
+              can contain any amount of tasks or operations.
             </p>
           </div>
 
-          <div className="section__description_div">
-            <h2 className="section__description_h2">Tags</h2>
-            <p className="section__description_p">
-              Tags are sort of keywords that you can assign to each list. They
-              enable you to find them by filtering lists on{" "}
-              <span className="text-highlight"> Your Lists </span> page.
-            </p>
-          </div>
-
-          <div className="section__description_div">
-            <h2 className="section__description_h2">
-              Pinning lists and tasklists
-            </h2>
-            <p className="section__description_p">
-              You can have up to three pinned simple lists and one tasklist. To
-              manage pinned lists you need to go to the{" "}
-              <span className="text-highlight">Options</span> page.
-            </p>
-          </div>
         </div>
       </section>
     </div>

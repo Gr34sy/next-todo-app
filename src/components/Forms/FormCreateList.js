@@ -45,7 +45,7 @@ export function FormCreateList() {
 
     const data = await response.json();
     console.log(data);
-    discardChanges();
+    router.push('/');
   }
 
 

@@ -80,10 +80,10 @@ export default function HomePage(props) {
 
   return (
     <main className="homepage">
-      {/* <h1 className="homepage__header section__header">
+      <h1 className="homepage__header">
         <FontAwesomeIcon icon={faUser} />
-        {"Welcome, " + ((session && session.user.name) || "Guest")}
-      </h1> */}
+        {"Welcome, " + ((props.user && props.user.email) || "Guest")}
+      </h1>
 
       <div className="homepage__lists">
         <div className="homepage__list-wrapper">
@@ -137,6 +137,7 @@ export async function getServerSideProps(context) {
         ...list,
         _id: list._id.toString(),
       })),
+      user: session.user,
     },
   };
 }

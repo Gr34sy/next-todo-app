@@ -12,7 +12,7 @@ export default function App({
 
     const response = await fetch('/api/theme')
     const data = await response.json();
-    body.className = data.theme;
+    body.className = data.theme || 'default';
   }
 
   useEffect(() => {

@@ -66,7 +66,7 @@ export function FormCreateTasklist() {
 
     const data = await response.json();
     console.log(data);
-    discardChanges();
+    router.push('/');
   }
 
 
