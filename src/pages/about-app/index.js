@@ -33,7 +33,7 @@ export default function AboutAppPage() {
 
         <div className="app-info__content">
           <h1 className="section__header">
-            About the <Logo isDark={true} />{" "}
+            About the <Logo isDark={true} />
           </h1>
 
           <div className="section__description">
@@ -42,7 +42,7 @@ export default function AboutAppPage() {
               <p className="section__description_p">
                 Hello, I'm Peter. I study IT in Wrocław. I built this app to
                 learn backend as well as Next.js. You can find more information
-                about me{" "}
+                about me
                 <span className="text-highlight">
                   <a
                     target="_blank"
@@ -55,12 +55,12 @@ export default function AboutAppPage() {
               </p>
               <p className="section__description_p">
                 The idea behind this app was to create project which will be at
-                least a little bit useful, but not too complex. I've completed{" "}
+                least a little bit useful, but not too complex. I've completed
                 <span className="text-highlight">
                   <a target="_blank" href="https://nextjs.org">
                     NextJS
                   </a>
-                </span>{" "}
+                </span>
                 course recently and I needed a practical way to repeat
                 techniques I've learnt. I thought that simple ToDo list would not be that
                 interesting but the kanban board would require too much work.
@@ -74,12 +74,16 @@ export default function AboutAppPage() {
               <p className="section__description_p">
                 Firstly you need to log in. There are two authorization options which allow that. App supports github and google account
                 validation. To log out from the app, go to the options panel.
-                There you will find{" "}
+                There you will find
                 <span className="text-highlight">logout button</span>.
               </p>
               <p className="section__description_p">
-                Then you can use the app to its full potential. To create list or tasklist go to <span className="text-highlight">List Creator</span>. All of your lists are accessable from <span className="text-highlight">Home</span> tab. Editing a list is avialable in the specific list view. You can also customize color theme. In order to do that go to <span className="text-highlight">Options</span> panel.
-                
+                Then you can use the app to its full potential. To create list or tasklist go to 
+                <span className="text-highlight">List Creator</span>. 
+                All of your lists are accessable from 
+                <span className="text-highlight">Home</span> tab. 
+                Editing a list is avialable in the specific list view. You can also customize color theme. In order to do that go to 
+                <span className="text-highlight">Options</span> panel.
               </p>
             </div>
 
@@ -149,11 +153,13 @@ export default function AboutAppPage() {
             </p>
 
             <p className="section__description_p">
-              To create the list, simply go to the{" "}
+              To create the list, simply go to the
               <span className="text-highlight"> List Creator </span> page and then
               select list in tab menu. Now you can write a title of
               the list and add tasks to it. Afterwards you can click
-              button "Save", which will automatically redirect you back to homepage. There you can find newly added list and go to its view. In the view you can edit title and each task. There are also options to add and remove tasks from the list.
+              button "Save", which will automatically redirect you back to homepage. 
+              There you can find newly added list and go to its view. In the view you can edit title and each task. 
+              There are also options to add and remove tasks from the list.
             </p>
           </div>
 
