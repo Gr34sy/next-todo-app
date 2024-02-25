@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 
 function OptionsPage() {
-  const session = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   if(!session.user) {
@@ -24,7 +24,7 @@ function OptionsPage() {
           className="custom-button custom-button--big"
           onClick={() => signOut()}
         >
-          Yes, I'm sure
+          Yes, I&apos;m sure
         </button>
       </div>
     );

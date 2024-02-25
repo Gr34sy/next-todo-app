@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 export default function ListCreator() {
-  const session = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   if(!session.user) {
