@@ -11,7 +11,7 @@ export default function ListCreator() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if(!session.user) {
+  if(status != "authenticated"){
     router.push('/sign-in')
     return <main></main>;
   }; 

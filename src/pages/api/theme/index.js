@@ -4,8 +4,12 @@ import { getServerSession } from "next-auth";
 
 async function handler(req, res) {
   const session = await getServerSession(req, res, authOptions);
-  const data = req.body;
 
+  if(!session){
+    return res.status(500).json({ message: 'Session user was not found' });
+  }
+
+  const data = req.body || {};
   const client = await dbConnect();
   const db = client.db("ToDo");
   const userCollection = db.collection(session.user.email);

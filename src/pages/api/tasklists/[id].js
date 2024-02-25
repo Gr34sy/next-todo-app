@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 
 async function handler(req, res) {
   const session = await getServerSession(req, res, authOptions);
+
   const data = req.body || {};
   const client = await dbConnect();
   const db = client.db("ToDo");

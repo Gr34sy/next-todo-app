@@ -11,7 +11,7 @@ function OptionsPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if(!session.user) {
+  if(status != "authenticated"){
     router.push('/sign-in')
     return <main></main>;
   }; 
@@ -34,29 +34,33 @@ function OptionsPage() {
     const [chosenColorTheme, setChosenColorTheme] = useState();
 
     useEffect(() => {
-      async function getUserTheme(){
-        const response = await fetch('/api/theme')
-        const data = await response.json();
-        setChosenColorTheme(data.theme);
+      async function getUserTheme() {
+        try {
+          const response = await fetch("/api/theme");
+          const data = await response.json();
+          setChosenColorTheme(data.theme);
+        } catch (err) {
+          console.error(err);
+        }
       }
       getUserTheme();
     }, []);
-  
+
     function themeChange(e) {
       setChosenColorTheme(e.target.value);
-  
+
       document.body.className = `${e.target.value}`;
     }
-  
-    async function saveTheme(){
-      const response = fetch('/api/theme', {
-        method: 'PUT',
-        body: JSON.stringify({theme: chosenColorTheme}),
+
+    async function saveTheme() {
+      const response = fetch("/api/theme", {
+        method: "PUT",
+        body: JSON.stringify({ theme: chosenColorTheme }),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      })
-  
+      });
+
       // const data = await response.json();
       // console.log(data);
     }

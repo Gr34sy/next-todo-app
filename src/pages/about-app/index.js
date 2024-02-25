@@ -40,7 +40,7 @@ export default function AboutAppPage() {
             <div className="section__description_div">
               <h2 className="section__description_h2">Foreword</h2>
               <p className="section__description_p">
-                Hello, I'm Peter. I study IT in Wrocław. I built this app to
+                Hello, I&apos;m Peter. I study IT in Wrocław. I built this app to
                 learn backend as well as Next.js. You can find more information
                 about me
                 <span className="text-highlight">
@@ -55,16 +55,16 @@ export default function AboutAppPage() {
               </p>
               <p className="section__description_p">
                 The idea behind this app was to create project which will be at
-                least a little bit useful, but not too complex. I've completed
+                least a little bit useful, but not too complex. I&apos;ve completed
                 <span className="text-highlight">
                   <a target="_blank" href="https://nextjs.org">
                     NextJS
                   </a>
                 </span>
                 course recently and I needed a practical way to repeat
-                techniques I've learnt. I thought that simple ToDo list would not be that
+                techniques I&apos;ve learnt. I thought that simple ToDo list would not be that
                 interesting but the kanban board would require too much work.
-                Finally I've decided to build ToDo app expanded with several
+                Finally I&apos;ve decided to build ToDo app expanded with several
                 functionalities.
               </p>
             </div>
@@ -145,11 +145,11 @@ export default function AboutAppPage() {
           <div className="section__description_div">
             <h2 className="section__description_h2">Simple lists</h2>
             <p className="section__description_p">
-              Great option for simple tasks which don't take much time to
-              finish. If you have to do bunch of easy things which don't require
+              Great option for simple tasks which don&apos;t take much time to
+              finish. If you have to do bunch of easy things which don&apos;t require
               much effort nor complicated operations, this type of a list would
               be perfect. They also work great as shopping lists or house
-              chores' lists.
+              chores&apos; lists.
             </p>
 
             <p className="section__description_p">
@@ -157,7 +157,7 @@ export default function AboutAppPage() {
               <span className="text-highlight"> List Creator </span> page and then
               select list in tab menu. Now you can write a title of
               the list and add tasks to it. Afterwards you can click
-              button "Save", which will automatically redirect you back to homepage. 
+              button &ldquo;Save&ldquo;, which will automatically redirect you back to homepage. 
               There you can find newly added list and go to its view. In the view you can edit title and each task. 
               There are also options to add and remove tasks from the list.
             </p>
@@ -168,15 +168,15 @@ export default function AboutAppPage() {
             <p className="section__description_p">
               When it comes to the projects or long-term plans that consists of
               many subtasks, the tasklists are here to help you to organize them
-              all. In this app the subtasks are called "operations". Each operation has its own
+              all. In this app the subtasks are called &ldquo;operations&ldquo;. Each operation has its own
               deadline.
             </p>
 
             <p className="section__description_p">
               Creation of tasklist is similar to simple list. Firstly you go to
               the <span className="text-highlight"> List Creator</span> page.
-              Then select "tasklist" in list creator tabs. Next you set up
-              tasklists' title, (date by which all subtasks should be completed) deadline, description and tasks. Afterwards you will also be redirected to the homepage.
+              Then select &ldquo;tasklist&ldquo; in list creator tabs. Next you set up
+              tasklists&apos; title, (date by which all subtasks should be completed) deadline, description and tasks. Afterwards you will also be redirected to the homepage.
               If you click newly created tasklist you will go to the selected tasklist view.
               There you can edit tasklist and manage operations  of a  specific task or add a new one. Tasklists
               can contain any amount of tasks or operations.
