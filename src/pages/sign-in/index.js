@@ -4,9 +4,10 @@ import { useSession } from "next-auth/react"
 
 export default function SignInPage(){
     const { data: session} = useSession();
+    const router = useRouter();
 
     if(session) {
-        useRouter().push('/')
+        router.push('/')
     };
 
     return (
