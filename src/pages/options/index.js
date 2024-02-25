@@ -11,10 +11,12 @@ function OptionsPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if(status != "authenticated"){
-    router.push('/sign-in')
-    return <main></main>;
-  }; 
+  useEffect(() => {
+    if(status != "authenticated"){
+      router.replace('/sign-in')
+      return <main></main>;
+    }; 
+  }, [])
 
   function LogOutPanel() {
     return (

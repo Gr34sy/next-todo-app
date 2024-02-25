@@ -6,15 +6,18 @@ import { Tabs } from "@/components/Tabs/Tabs";
 //hooks
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function ListCreator() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if(status != "authenticated"){
-    router.push('/sign-in')
-    return <main></main>;
-  }; 
+  useEffect(() => {
+    if(status != "authenticated"){
+      router.replace('/sign-in')
+      return <main></main>;
+    }; 
+  }, [])
 
   return (
     <main className="list-creator">

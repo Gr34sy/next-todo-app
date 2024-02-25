@@ -1,14 +1,17 @@
 import { FormLogIn } from "@/components/Forms/FormLogIn"
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react"
+import { useEffect } from "react";
 
 export default function SignInPage(){
     const { data: session} = useSession();
     const router = useRouter();
 
-    if(session) {
-        router.push('/')
-    };
+    useEffect(() => {
+        if(session) {
+            router.replace('/')
+        };
+    }, [])
 
     return (
         <main className="sign-in">
