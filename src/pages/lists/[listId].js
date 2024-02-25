@@ -59,6 +59,8 @@ export default function ListPage(props) {
 
     const data = await response.json();
     console.log(data);
+
+    router.reload();
   }
 
   return (

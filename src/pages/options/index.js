@@ -1,10 +1,20 @@
-import { useState, useEffect } from "react";
+//components
 import { signOut } from "next-auth/react";
 import { Tabs } from "@/components/Tabs/Tabs";
+
+//hooks
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
 
 function OptionsPage() {
+  const session = useSession();
   const router = useRouter();
+
+  if(!session.user) {
+    router.push('/sign-in')
+    return <main></main>;
+  }; 
 
   function LogOutPanel() {
     return (

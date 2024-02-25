@@ -3,7 +3,6 @@ import GoogleProvider from "next-auth/providers/google";
 
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
-import { dbConnect } from "./db";
 
 export const authOptions = {
   providers: [
@@ -59,16 +58,3 @@ export const authOptions = {
     signIn: "/sign-in",
   }
 };
-
-export async function loginIsRequiredServer() {
-  const session = await getServerSession(authOptions);
-  if (!session) return redirect("/sign-in");
-}
-
-export function loginIsRequiredClient(){
-    if(typeof window !== "undefined"){
-        const {data: session} = useSession();
-        const router = useRouter();
-        if(!session) router.push("/sign-in");
-    }
-}
