@@ -5,7 +5,7 @@
 ### The app was created in order to learn NextJS functionalities in a practical way. User can log in with google or github account. Then he is able to view, create, edit and delete simple todo lists or more complex tasklists. User can also change color theme according to his preferences.
 
 #### Technologies used in the app:
-[<img  align="left" alt="Next" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" style="padding-right:10px;"/>]() NextJS
+[<img  align="left" alt="Next" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" style="padding-right:10px;"/>  NextJS]
 [<img align="left" alt="MongoDB" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" style="padding-right:10px;" />]() MongoDB
 [<img align="left" alt="React" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />]()React
 [<img align="left" alt="Sass" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" style="padding-right:10px;" />]()SASS
@@ -22,7 +22,6 @@
 1. Download repo
 2. use npm i in downloaded folder
 3. use npm run dev in order to run the app
-4.
 
 #### App User Guide:
 1. Creating List:
