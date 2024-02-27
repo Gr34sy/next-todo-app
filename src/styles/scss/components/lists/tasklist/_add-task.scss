@@ -24,6 +24,7 @@
 .add-task__container {
   display: grid;
   gap: 65px 50px;
+  gap: 15px 10px;
   background-color: var(--color-accent);
   padding: 15px;
 
@@ -35,6 +36,7 @@
 
   @media (min-width: 780px) {
     grid-template-columns: 1fr 1fr;
+    gap: 65px 50px;
   }
 }
 
@@ -48,7 +50,10 @@
 
 .add-task__labels_label {
   input {
-    width: 250px;
+    width: 185px;
+    @media (min-width: 780px) {
+      width: 250px;
+    }
   }
 }
 
@@ -67,4 +72,9 @@
 .add-task__button {
   margin-top: 10px;
   justify-self: start;
+}
+
+.add-task__buttons{
+  display: flex;
+  gap: 5px;
 }

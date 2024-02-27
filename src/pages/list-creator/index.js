@@ -14,9 +14,11 @@ export default function ListCreator() {
 
   useEffect(() => {
     if(status != "authenticated"){
-      router.replace('/sign-in')
-      return <main></main>;
+      router.push('/sign-in')
+      return () => {};
     }; 
+
+    return () => {};
   }, [])
 
   return (

@@ -40,9 +40,9 @@ export default function AboutAppPage() {
             <div className="section__description_div">
               <h2 className="section__description_h2">Foreword</h2>
               <p className="section__description_p">
-                Hello, I&apos;m Peter. I study IT in Wrocław. I built this app to
-                learn backend as well as Next.js. You can find more information
-                about me
+                Hello, I&apos;m Peter. I study IT in Wrocław. I built this app
+                to learn backend as well as Next.js. You can find more
+                information about me
                 <span className="text-highlight">
                   <a
                     target="_blank"
@@ -54,35 +54,41 @@ export default function AboutAppPage() {
                 , on my portfolio site.
               </p>
               <p className="section__description_p">
-                The idea behind this app was to create project which will be at
-                least a little bit useful, but not too complex. I&apos;ve completed
+                This app faciliates the organisation of everyday life or
+                long-term plans to its users. It provides ability to manage time
+                better with tasklists and simple lists. The idea behind this app
+                was to create project which will be at least a little bit
+                useful, but not too complex. I&apos;ve completed
                 <span className="text-highlight">
                   <a target="_blank" href="https://nextjs.org">
                     NextJS
                   </a>
                 </span>
                 course recently and I needed a practical way to repeat
-                techniques I&apos;ve learnt. I thought that simple ToDo list would not be that
-                interesting but the kanban board would require too much work.
-                Finally I&apos;ve decided to build ToDo app expanded with several
-                functionalities.
+                techniques I&apos;ve learnt. I thought that simple ToDo list
+                would not be that interesting but the kanban board would require
+                too much work. Finally I&apos;ve decided to build ToDo app
+                expanded with several functionalities.
               </p>
             </div>
 
             <div className="section__description_div">
               <h2 className="section__description_h2">How to use the app?</h2>
               <p className="section__description_p">
-                Firstly you need to log in. There are two authorization options which allow that. App supports github and google account
+                Firstly you need to log in. There are two authorization options
+                which allow that. App supports github and google account
                 validation. To log out from the app, go to the options panel.
                 There you will find
                 <span className="text-highlight">logout button</span>.
               </p>
               <p className="section__description_p">
-                Then you can use the app to its full potential. To create list or tasklist go to 
-                <span className="text-highlight">List Creator</span>. 
-                All of your lists are accessable from 
-                <span className="text-highlight">Home</span> tab. 
-                Editing a list is avialable in the specific list view. You can also customize color theme. In order to do that go to 
+                Then you can use the app to its full potential. To create list
+                or tasklist go to
+                <span className="text-highlight">List Creator</span>. All of
+                your lists are accessable from
+                <span className="text-highlight">Home</span> tab. Editing a list
+                is avialable in the specific list view. You can also customize
+                color theme. In order to do that go to
                 <span className="text-highlight">Options</span> panel.
               </p>
             </div>
@@ -93,15 +99,13 @@ export default function AboutAppPage() {
                 When using this app you can not only create a simple todo list,
                 but also a much advanced lists which are called
                 <span className="text-highlight"> tasklists</span>. Tasklist
-                contains deadline, description and tasks. Tasks in tasklist
-                on the other hand contain subtasks, necessary to complete the main task. Each
-                subtask is called operation and also has a deadline. Tasklists are great tools that will help
-                you with the bigger projects or long-term plans. Whereas, simple todo
-                lists will work perfectly as reminders, quick notes or shopping
-                lists.
+                contains deadline, description and tasks. Tasks in tasklist on
+                the other hand contain subtasks, necessary to complete the main
+                task. Each subtask is called operation and also has a deadline.
+                Tasklists are great tools that will help you with the bigger
+                projects or long-term plans. Whereas, simple todo lists will
+                work perfectly as reminders, quick notes or shopping lists.
               </p>
-
-              
 
               <p className="section__description_p">
                 There is also a bunch of theme options so you can choose your
@@ -146,20 +150,21 @@ export default function AboutAppPage() {
             <h2 className="section__description_h2">Simple lists</h2>
             <p className="section__description_p">
               Great option for simple tasks which don&apos;t take much time to
-              finish. If you have to do bunch of easy things which don&apos;t require
-              much effort nor complicated operations, this type of a list would
-              be perfect. They also work great as shopping lists or house
-              chores&apos; lists.
+              finish. If you have to do bunch of easy things which don&apos;t
+              require much effort nor complicated operations, this type of a
+              list would be perfect. They also work great as shopping lists or
+              house chores&apos; lists.
             </p>
 
             <p className="section__description_p">
               To create the list, simply go to the
-              <span className="text-highlight"> List Creator </span> page and then
-              select list in tab menu. Now you can write a title of
-              the list and add tasks to it. Afterwards you can click
-              button &ldquo;Save&ldquo;, which will automatically redirect you back to homepage. 
-              There you can find newly added list and go to its view. In the view you can edit title and each task. 
-              There are also options to add and remove tasks from the list.
+              <span className="text-highlight"> List Creator </span> page and
+              then select list in tab menu. Now you can write a title of the
+              list and add tasks to it. Afterwards you can click button
+              &ldquo;Save&ldquo;, which will automatically redirect you back to
+              homepage. There you can find newly added list and go to its view.
+              In the view you can edit title and each task. There are also
+              options to add and remove tasks from the list.
             </p>
           </div>
 
@@ -168,21 +173,22 @@ export default function AboutAppPage() {
             <p className="section__description_p">
               When it comes to the projects or long-term plans that consists of
               many subtasks, the tasklists are here to help you to organize them
-              all. In this app the subtasks are called &ldquo;operations&ldquo;. Each operation has its own
-              deadline.
+              all. In this app the subtasks are called &ldquo;operations&ldquo;.
+              Each operation has its own deadline.
             </p>
 
             <p className="section__description_p">
               Creation of tasklist is similar to simple list. Firstly you go to
               the <span className="text-highlight"> List Creator</span> page.
-              Then select &ldquo;tasklist&ldquo; in list creator tabs. Next you set up
-              tasklists&apos; title, (date by which all subtasks should be completed) deadline, description and tasks. Afterwards you will also be redirected to the homepage.
-              If you click newly created tasklist you will go to the selected tasklist view.
-              There you can edit tasklist and manage operations  of a  specific task or add a new one. Tasklists
-              can contain any amount of tasks or operations.
+              Then select &ldquo;tasklist&ldquo; in list creator tabs. Next you
+              set up tasklists&apos; title, (date by which all subtasks should
+              be completed) deadline, description and tasks. Afterwards you will
+              also be redirected to the homepage. If you click newly created
+              tasklist you will go to the selected tasklist view. There you can
+              edit tasklist and manage operations of a specific task or add a
+              new one. Tasklists can contain any amount of tasks or operations.
             </p>
           </div>
-
         </div>
       </section>
     </div>

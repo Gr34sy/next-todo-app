@@ -12,11 +12,13 @@ function OptionsPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if(status != "authenticated"){
-      router.replace('/sign-in')
-      return <main></main>;
-    }; 
-  }, [])
+    if (status != "authenticated") {
+      router.replace("/sign-in");
+      return () => {};
+    }
+
+    return () => {};
+  }, []);
 
   function LogOutPanel() {
     return (
@@ -46,6 +48,8 @@ function OptionsPage() {
         }
       }
       getUserTheme();
+
+      return () => {};
     }, []);
 
     function themeChange(e) {

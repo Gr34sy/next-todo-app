@@ -6,7 +6,7 @@ import { List } from "../List";
 //hooks
 import { useState } from "react";
 
-export function AddTask({ addTask }) {
+export function AddTask({ addTask, cancelTask }) {
   const INITIAL_TASK = {
     name: "",
     deadline: "",
@@ -44,7 +44,11 @@ export function AddTask({ addTask }) {
     if (typeof addTask === "function") {
       addTask(task);
     }
-    setKey((k) => k + 1);
+  }
+  function handleCancelAddTask() {
+    if (typeof addTask === "function") {
+      cancelTask(task);
+    }
   }
 
   return (
@@ -88,14 +92,21 @@ export function AddTask({ addTask }) {
             <List items={task.operations} updateFunction={updateOperations} />
           </div>
 
-          <button
-            type="submit"
-            className="custom-button custom-button--big add-task__button"
-            onClick={handleAddTask}
-          >
-            {" "}
-            Add{" "}
-          </button>
+          <div className="add-task__buttons">
+            <button
+              type="submit"
+              className="custom-button custom-button--big add-task__button"
+              onClick={handleAddTask}
+            >
+              Add
+            </button>
+            <button
+              className="custom-button custom-button--big add-task__button"
+              onClick={handleCancelAddTask}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       )}
     </div>

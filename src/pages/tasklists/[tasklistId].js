@@ -182,7 +182,7 @@ export default function TasklistPage(props) {
           {!editMode && <p>{tasklist.description}</p>}
         </div>
 
-        <AddTask addTask={addTask} />
+        <AddTask addTask={addTask} cancelTask={() => router.reload()}/>
 
         <div className="task-list__tasks">
           {tasklist.tasks.map((task) => (
