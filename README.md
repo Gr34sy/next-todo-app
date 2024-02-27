@@ -10,7 +10,7 @@
 <img align="left" alt="React" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />
 <img align="left" alt="Sass" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" style="padding-right:10px;" />
 
-<br/> 
+<br/> <br/> <br/> 
 
 #### Next Features used in the app:
 <p>-> OAuth</p>
