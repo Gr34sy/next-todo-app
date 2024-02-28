@@ -79,7 +79,14 @@ export default function HomePage(props) {
   }
 
   return (
-    <main className="homepage">
+    <>
+    {displayAlert && (
+        <DeleteAlert
+          deleteFunction={() => deleteList(displayAlert)}
+          closeFunction={() => setDisplayAlert(false)}
+        />
+      )}
+       <main className="homepage">
       <h1 className="homepage__header">
         <FontAwesomeIcon icon={faUser} />
         {"Welcome, " + ((props.user && props.user.email) || "Guest")}
@@ -96,14 +103,8 @@ export default function HomePage(props) {
           <HomepageList forTasklists={true} items={tasklists} />
         </div>
       </div>
-
-      {displayAlert && (
-        <DeleteAlert
-          deleteFunction={() => deleteList(displayAlert)}
-          closeFunction={() => setDisplayAlert(false)}
-        />
-      )}
     </main>
+    </>
   );
 }
 

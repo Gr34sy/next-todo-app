@@ -21,7 +21,7 @@ export default function App({
 
   return (
     <SessionProvider session={session}>
-      <Layout>
+      <Layout showDeleteOverlay={() => setShowDeleteOverlay((prev) => !prev)}>
         <Component {...pageProps} />
       </Layout>
     </SessionProvider>
