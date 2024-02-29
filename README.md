@@ -21,13 +21,6 @@
 
 <br/> <br/> <br/> 
 
-#### App Setup Instructions:
-<p>1. Download repo</p>
-<p>2. use npm i in downloaded folder</p>
-<p>3. use npm run dev in order to run the app</p>
-
-<br/> <br/> <br/> 
-
 #### App User Guide:
 <p>1. Creating List:</p>
 <p>-> Go to ListCreator</p>
