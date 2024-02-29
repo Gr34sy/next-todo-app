@@ -12,13 +12,13 @@ function OptionsPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (status != "authenticated") {
+    if (status == 'unauthenticated') {
       router.replace("/sign-in");
       return () => {};
     }
 
     return () => {};
-  }, []);
+  }, [status]);
 
   function LogOutPanel() {
     return (

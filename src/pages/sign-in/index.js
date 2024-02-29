@@ -4,14 +4,16 @@ import { useSession } from "next-auth/react"
 import { useEffect } from "react";
 
 export default function SignInPage(){
-    const { data: session} = useSession();
+    const { data: session, status} = useSession();
     const router = useRouter();
 
     useEffect(() => {
-        if(session) {
-            router.replace('/')
+        if(status == 'authenticated') {
+            router.push('/')
+            return () => {};
         };
-    }, [])
+        return () => {};
+    }, [status])
 
     return (
         <main className="sign-in">

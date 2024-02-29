@@ -13,13 +13,13 @@ export default function ListCreator() {
   const router = useRouter();
 
   useEffect(() => {
-    if(status != "authenticated"){
+    if(status == 'unauthenticated'){
       router.push('/sign-in')
       return () => {};
     }; 
 
     return () => {};
-  }, [])
+  }, [status])
 
   return (
     <main className="list-creator">
