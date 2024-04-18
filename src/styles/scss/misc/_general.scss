@@ -9,6 +9,10 @@ html,
   position: relative;
 }
 
+svg{
+  max-width: 40px;
+}
+
 body {
   background-color: var(--color-bg);
   font-family: $font-main;
